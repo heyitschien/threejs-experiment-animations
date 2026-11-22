@@ -9,12 +9,16 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "node --test tests/*.test.js",
-    "check": "npm run test && npm run build"
+    "check": "npm run test && npm run build",
+    "qa:browser": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test",
+    "qa:install": "PLAYWRIGHT_BROWSERS_PATH=0 playwright install --no-shell chromium",
+    "qa:perf": "PLAYWRIGHT_BROWSERS_PATH=0 OCTO_BENCHMARK=1 playwright test performance.spec.js"
   },
   "dependencies": {
     "three": "^0.187.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.65.1",
     "vite": "^7.1.0"
   }
 }

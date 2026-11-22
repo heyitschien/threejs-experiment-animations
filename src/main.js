@@ -184,6 +184,8 @@ document.getElementById('reset-view').addEventListener('click', resetView);
 let frame = 0;
 let fpsElapsed = 0;
 let drawnTime;
+const qa = import.meta.env.DEV && new URLSearchParams(location.search).has('octo-qa');
+let renderedFrames = 0;
 function animate(now) {
   requestAnimationFrame(animate);
   const elapsed = previousFrame === undefined ? 0 : (now - previousFrame) / 1000;
@@ -196,7 +198,9 @@ function animate(now) {
     drawnTime = animationTime;
   }
   controls.update();
+  if (qa && !renderer.info.autoReset) renderer.info.reset();
   composer.render();
+  if (qa) renderedFrames++;
   frame++;
   fpsElapsed += elapsed;
   if (fpsElapsed > 1.2) {
@@ -231,3 +235,43 @@ window.__OCTO_DEBUG__ = {
     };
   },
 };
+
+// Local QA opt-in keeps capture and profiling controls out of production builds.
+if (qa) Object.assign(window.__OCTO_DEBUG__, {
+  setCamera({position, target, up, fov}) {
+    resetView();
+    camera.position.fromArray(position);
+    controls.target.fromArray(target);
+    camera.up.fromArray(up);
+    camera.fov = fov;
+    camera.updateProjectionMatrix();
+    controls.update();
+  },
+  getFrame() {
+    return {
+      number: renderedFrames,
+      pose: drawnTime,
+      camera: {
+        position: camera.position.toArray(), target: controls.target.toArray(),
+        up: camera.up.toArray(), fov: camera.fov, aspect: camera.aspect,
+      },
+      canvas: [renderer.domElement.width, renderer.domElement.height],
+      rendererDpr: renderer.getPixelRatio(),
+      composerDpr: composer.renderTarget1.width / mount.clientWidth,
+    };
+  },
+  enableFrameMetrics() { renderer.info.autoReset = false; },
+  getFrameMetrics() {
+    return {...renderer.info.render, ...renderer.info.memory};
+  },
+  getRenderTargets() {
+    return [composer.renderTarget1, composer.renderTarget2, bloom.renderTargetBright,
+      ...bloom.renderTargetsHorizontal, ...bloom.renderTargetsVertical].map(target => ({
+      width: target.width, height: target.height, depth: target.depthBuffer,
+      stencil: target.stencilBuffer, mipmaps: target.texture.generateMipmaps,
+      samples: target.samples,
+      colorFormat: target.texture.format === THREE.RGBAFormat
+        && target.texture.type === THREE.HalfFloatType ? 'RGBA16F' : 'unknown',
+    }));
+  },
+});
