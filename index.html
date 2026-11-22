@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <meta name="theme-color" content="#050713" />
+    <meta name="description" content="A code-only procedural robotic octopus. Drag, zoom, and watch it come alive." />
+    <title>OCTO // Procedural Intelligence</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="viewport" aria-label="Interactive 3D robotic octopus scene" role="img"></div>
+      <div class="grain" aria-hidden="true"></div>
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">◇</span> OCTO<span class="brand-soft">/ LAB</span></div>
+        <div class="top-note"><span class="status-dot"></span> GENERATIVE SYSTEM ONLINE</div>
+        <div class="version">EXPERIMENT 001 &nbsp;·&nbsp; THREE.JS</div>
+      </header>
+      <main>
+        <section class="hero">
+          <p class="eyebrow">ARTIFICIAL LIFE / PROCEDURAL GEOMETRY</p>
+          <h1>Intelligence<br />in <em>motion.</em></h1>
+          <p class="lede">Eight mechanical limbs. One living system.<br />No imported 3D assets. Just geometry, light &amp; code.</p>
+          <div class="actions"><button id="motion-toggle">⏸&nbsp; PAUSE MOTION</button><button id="reset-view" class="ghost">↺&nbsp; RESET VIEW</button></div>
+        </section>
+        <aside class="data-panel" aria-label="Scene telemetry">
+          <div class="data-head"><span>SPECIMEN / 01</span><span class="micro-led"></span></div>
+          <div class="data-divider"></div>
+          <div class="metric"><span>CLASS</span><strong>OCTOPOD / SYNTHETIC</strong></div>
+          <div class="metric"><span>APPENDAGES</span><strong>08 ARTICULATED</strong></div>
+          <div class="metric"><span>CONSTRUCTION</span><strong>100% PROCEDURAL</strong></div>
+          <div class="metric"><span>RENDER ENGINE</span><strong>THREE.JS / WEBGL</strong></div>
+          <div class="data-divider"></div>
+          <div class="metric"><span>FRAME RATE</span><strong id="fps">— FPS</strong></div>
+          <div class="metric"><span>STATE</span><strong id="motion-state">ACTIVE</strong></div>
+          <p class="panel-foot">LOCAL RENDER · NO MODEL API · NO EXTERNAL ASSETS</p>
+        </aside>
+      </main>
+      <footer class="bottombar"><span>DRAG TO ORBIT &nbsp; / &nbsp; SCROLL TO ZOOM</span><span>ENGINEERED WITH MATHEMATICS <span class="foot-spark">✳</span></span></footer>
+      <div id="fallback" hidden>WebGL is unavailable. Try a recent browser with hardware acceleration enabled.</div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
