@@ -6,6 +6,8 @@ import { readFileSync } from 'node:fs';
 import { desktop, mobile, shots } from './shots.js';
 import { openScene } from './browser.js';
 
+const candidate = process.env.OCTO_CAPTURE_CANDIDATE === '1';
+
 for (const shot of shots) {
   test(shot.name, async ({ browser, baseURL }, info) => {
     const profile = shot.mobile ? mobile : desktop;
@@ -34,9 +36,6 @@ for (const shot of shots) {
       const first = await page.screenshot(options);
       const second = await page.screenshot(options);
       expect(second.equals(first)).toBe(true);
-      await expect(page).toHaveScreenshot(`${shot.name}.png`, {
-        scale: 'css', animations: 'disabled', stylePath, maxDiffPixels: 0,
-      });
       const {number, ...frame} = await page.evaluate(() => window.__OCTO_DEBUG__.getFrame());
       const record = {
         commit: execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(),
@@ -45,7 +44,13 @@ for (const shot of shots) {
         pngSha256: createHash('sha256').update(first).digest('hex'),
       };
       await writeFile(info.outputPath('capture.json'), JSON.stringify(record, null, 2) + '\n');
+      await writeFile(info.outputPath(`${shot.name}.png`), first);
       await health.expectHealthy();
+      if (!candidate) {
+        await expect(page).toHaveScreenshot(`${shot.name}.png`, {
+          scale: 'css', animations: 'disabled', stylePath, maxDiffPixels: 0,
+        });
+      }
     } finally {
       await context.close();
     }

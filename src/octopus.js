@@ -1,5 +1,8 @@
 import * as THREE from 'three';
 import { ARM_COUNT, ARM_SEGMENTS, armPoint, armRadius, TAU } from './tentacleMath.js';
+import { SculptedTentacles } from './sculptedTentacles.js';
+
+const PROTOTYPE_ARM = 3;
 
 const A = new THREE.Vector3();
 const B = new THREE.Vector3();
@@ -162,7 +165,7 @@ export class Octopus {
   }
 
   _buildArms() {
-    const count = ARM_COUNT * ARM_SEGMENTS;
+    const count = (ARM_COUNT - 1) * ARM_SEGMENTS;
     const batch = (geometry, material, size = count) => {
       const mesh = new THREE.InstancedMesh(geometry, material, size);
       mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
@@ -212,6 +215,7 @@ export class Octopus {
       mount.add(bolt);
       this.root.add(mount);
     }
+    this.sculpted = new SculptedTentacles(this.root, this, PROTOTYPE_ARM, 1);
     this.update(0);
   }
 
@@ -224,7 +228,9 @@ export class Octopus {
     this.reactor.rotation.z = Math.sin(time * 0.31) * 0.2;
     this.innerFrame.rotation.x = time * 0.09;
 
+    this.sculpted.update(time);
     for (let i = 0; i < ARM_COUNT; i++) {
+      if (i === PROTOTYPE_ARM) continue;
       A.set(...armPoint(i, 0, time));
       for (let j = 0; j < ARM_SEGMENTS; j++) {
         B.set(...armPoint(i, (j + 1) / ARM_SEGMENTS, time));
@@ -246,7 +252,7 @@ export class Octopus {
         this.segment.scale.y = length;
         this.segment.updateMatrix();
 
-        const index = i * ARM_SEGMENTS + j;
+        const index = (i > PROTOTYPE_ARM ? i - 1 : i) * ARM_SEGMENTS + j;
         const parts = this.armPartMatrices[j];
         for (let k = 0; k < 3; k++) {
           this.armParts[k].setMatrixAt(index, PLACEMENT.multiplyMatrices(this.segment.matrix, parts[k]));
@@ -264,7 +270,7 @@ export class Octopus {
     const materials = new Set();
     this.root.traverse(obj => {
       if (obj.geometry) geometries.add(obj.geometry);
-      if (obj.material) materials.add(obj.material);
+      if (obj.material) [obj.material].flat().forEach(material => materials.add(material));
     });
     geometries.forEach(g => g.dispose());
     materials.forEach(m => m.dispose());
