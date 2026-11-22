@@ -34,10 +34,15 @@ export function sampleArmPoint(out, index, t, time = 0, sculpted = true) {
   const wave = Math.sin(phase);
   const travel = sculpted ? wave * smoothstep(0, 0.45, p) : wave;
   const follow = sculpted ? Math.sin(phase - 0.65) * smoothstep(0.42, 0.92, p) : 0;
-  const curl = smoothstep(0.49, 1, p);
+  const tip = Math.max(0, (p - 0.49) / 0.51);
+  const curl = sculpted ? tip * tip * (2 - tip) : smoothstep(0.49, 1, p);
   const theta = angle + sweep * smoothstep(0.04, 0.66, p) + travel * p * 0.12;
-  const radius = 0.49 + reach * Math.sin(p * 1.58) - 0.48 * curl;
-  const loop = Math.PI * (1.32 + 0.14 * Math.sin(phase - 0.7) + 0.04 * follow) * curl;
+  const radius = sculpted
+    ? 0.49 + reach * Math.sin(p * 1.45) - 0.24 * curl
+    : 0.49 + reach * Math.sin(p * 1.58) - 0.48 * curl;
+  const loop = Math.PI * (sculpted
+    ? (1.24 + 0.11 * Math.sin(phase - 0.7) + 0.03 * follow)
+    : (1.32 + 0.14 * Math.sin(phase - 0.7))) * curl;
   const loopRadius = (0.72 - 0.25 * p) * smoothstep(0.34, 0.69, p);
   const along = radius + loopRadius * Math.sin(loop);
   const across = sign * loopRadius * (1 - Math.cos(loop));

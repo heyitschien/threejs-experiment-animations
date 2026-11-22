@@ -7,6 +7,7 @@ export const SIDES = 12;
 const CENTER_SAMPLES = 144;
 const RING_VERTICES = (RING_STEPS + 1) * SIDES;
 const UNDER = new THREE.Vector3(0, 0, 1);
+const PANEL_SPACING = [0, 0.46, 1.6, 2.73, 4.02];
 const GROOVES = [0.94, 1, 1.025, 1.01, 0.98];
 
 export function sweepRadius(u) {
@@ -41,7 +42,7 @@ export class TentacleSweep {
     const core = [];
     for (let ring = 0; ring < RING_STEPS; ring++) {
       for (let side = 0; side < SIDES; side++) {
-        const underside = side < 2 || side >= SIDES - 2;
+        const underside = side === 0 || side === SIDES - 1;
         const seam = ring % 5 === 0;
         const triangles = underside || seam ? core : armor;
         const a = vertex(ring, side);
@@ -72,7 +73,8 @@ export class TentacleSweep {
 
     let sample = 1;
     for (let ring = 0; ring <= RING_STEPS; ring++) {
-      const distance = arc[CENTER_SAMPLES] * ring / RING_STEPS;
+      const offset = Math.floor(ring / 5) * 5 + PANEL_SPACING[ring % 5];
+      const distance = arc[CENTER_SAMPLES] * offset / RING_STEPS;
       while (sample < CENTER_SAMPLES && arc[sample] < distance) sample++;
       const width = arc[sample] - arc[sample - 1];
       const blend = width > 0 ? (distance - arc[sample - 1]) / width : 0;
