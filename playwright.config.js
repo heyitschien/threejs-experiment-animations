@@ -10,7 +10,7 @@ export default defineConfig({
   timeout: 120_000,
   reporter: 'list',
   snapshotPathTemplate: '{testDir}/goldens/{arg}{ext}',
-  outputDir: 'octo-evidence/test-results',
+  outputDir: benchmark ? 'octo-evidence/performance' : 'octo-evidence/test-results',
   use: {
     baseURL,
     channel: 'chromium',

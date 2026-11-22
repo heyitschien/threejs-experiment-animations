@@ -1,0 +1,392 @@
+{
+  "foundationCommit": "e5a2060161708716af42de9734151d5c1f00709c",
+  "renderBaselineCommit": "20283f48f2e6869e1b783652b5c5dec86acca7d0",
+  "captureCommit": "91b88f1bb53bc9b4849a905de218ec9eb6a5fd13",
+  "referenceSha256": "11b72868239a7010ad327976fed12e03bf990c80f0eeae7ab27642ae9f85fed0",
+  "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+  "lane": {
+    "platform": "macOS 26.6.2 (25G83) arm64",
+    "node": "26.13.0",
+    "npm": "11.20.0",
+    "playwright": "1.65.1",
+    "chromiumRevision": 1255,
+    "browser": "159.0.8154.6",
+    "channel": "chromium",
+    "headless": true,
+    "graphics": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+    "workers": 1
+  },
+  "shots": {
+    "front-pose-0": {
+      "png": "front-pose-0.png",
+      "pngSize": [
+        1440,
+        900
+      ],
+      "pngSha256": "afafec2ec60e47603a516f09d6ff63d24e1849928c956d170904d643f065bf39",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "camera": {
+        "position": [
+          -0.08,
+          -0.32999999999999924,
+          13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "pose": 0,
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1
+    },
+    "front-pose-6-8": {
+      "png": "front-pose-6-8.png",
+      "pngSize": [
+        1440,
+        900
+      ],
+      "pngSha256": "dc9a0eef434050f3c4051ad49576dbd5507cdd9261841afcde1ff1fe994df66f",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "camera": {
+        "position": [
+          -0.08,
+          -0.32999999999999924,
+          13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "pose": 6.8,
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1
+    },
+    "front": {
+      "png": "front.png",
+      "pngSize": [
+        1440,
+        900
+      ],
+      "pngSha256": "c33235334b61e2dbff5aa3008a7ea479f89b7903106bd232c372f3499925c253",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "camera": {
+        "position": [
+          -0.08,
+          -0.32999999999999924,
+          13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "pose": 3.4,
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1
+    },
+    "hero-desktop": {
+      "png": "hero-desktop.png",
+      "pngSize": [
+        1440,
+        900
+      ],
+      "pngSha256": "e36679a35f75930da76eff78facfde3941fad09a75a3e4560b7b5751a463ec55",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "camera": {
+        "position": [
+          0.7000000000000001,
+          0.6300000000000011,
+          13.54657574462399
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "pose": 3.4,
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1
+    },
+    "hero-mobile": {
+      "png": "hero-mobile.png",
+      "pngSize": [
+        390,
+        844
+      ],
+      "pngSha256": "9b6bc44eaee8ec8c5dd7d3891abda76dca064195e37eeb8c71c11580464f501e",
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "camera": {
+        "position": [
+          0.7000000000000021,
+          0.6300000000000018,
+          15.809145681634806
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.8108108108108109
+      },
+      "pose": 3.4,
+      "canvas": [
+        585,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1
+    },
+    "mantle-detail": {
+      "png": "mantle-detail.png",
+      "pngSize": [
+        1440,
+        900
+      ],
+      "pngSha256": "03f50f5c521ab6ebb2efaae9784bbfa84df96789cc51e35ae8d8ec6d87921ade",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "camera": {
+        "position": [
+          1.35,
+          1.4499999999999997,
+          6.1
+        ],
+        "target": [
+          0.2,
+          0.75,
+          0.18
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 27,
+        "aspect": 1.6
+      },
+      "pose": 3.4,
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1
+    },
+    "rear": {
+      "png": "rear.png",
+      "pngSize": [
+        1440,
+        900
+      ],
+      "pngSha256": "db77ba1b7c26c944c5a7bc01221875575321c4157babf0877f95c0265dab8a9b",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "camera": {
+        "position": [
+          -0.07999999999999834,
+          0.6499999999999997,
+          -13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "pose": 3.4,
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1
+    },
+    "side": {
+      "png": "side.png",
+      "pngSize": [
+        1440,
+        900
+      ],
+      "pngSha256": "32e2fbf8a487702d68fa820aeb2b76fdafbea9d9fc175f682de49a2fb2383e53",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "camera": {
+        "position": [
+          13.5,
+          -0.32999999999999924,
+          8.315351766210528e-16
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "pose": 3.4,
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1
+    },
+    "three-quarter": {
+      "png": "three-quarter.png",
+      "pngSize": [
+        1440,
+        900
+      ],
+      "pngSha256": "eb1d34f168c5e502108cdffdb923ae7b0046eadf4132b8b9f0caba53a86f605d",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "camera": {
+        "position": [
+          7.499999999999999,
+          1.599999999999999,
+          11.5
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "pose": 3.4,
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1
+    }
+  }
+}

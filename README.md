@@ -52,3 +52,7 @@ v0.1 is the current procedural baseline. The planning documents propose future w
 - [Cinematic reference and visual rubric](docs/VISUAL-TARGET.md)
 - [Capture, measurement and iteration workflow](docs/VISUAL-ITERATION-PROTOCOL.md)
 - [Setup plan and approvals](docs/SETUP-PLAN.md)
+
+## Stage 2 browser validation
+
+With the approved dev tooling installed, run `npm run qa:install` once, then `npm run qa:browser` for smoke and screenshot checks. Run `npm run qa:perf` separately in an active graphical session. See [validation commands, baseline and limitations](docs/STAGE-2-VALIDATION.md) and the [iteration ledger](docs/ITERATION-LEDGER.md).
