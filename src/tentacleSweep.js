@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { ArmPath, TAU } from './tentacleMath.js';
+import { ArmPath, armRadius, TAU } from './tentacleMath.js';
 
 export const PANEL_COUNT = 12;
 export const RING_STEPS = PANEL_COUNT * 5;
@@ -9,11 +9,6 @@ const RING_VERTICES = (RING_STEPS + 1) * SIDES;
 const UNDER = new THREE.Vector3(0, 0, 1);
 const PANEL_SPACING = [0, 0.46, 1.6, 2.73, 4.02];
 const GROOVES = [0.94, 1, 1.025, 1.01, 0.98];
-
-export function sweepRadius(u) {
-  // A substantial shoulder, long taper, and a small closed tip.
-  return 0.018 + 0.274 * (1 - u) ** 1.08;
-}
 
 const vecs = count => Array.from({length: count}, () => new THREE.Vector3());
 const vertex = (ring, side) => ring * SIDES + (side + SIDES) % SIDES;
@@ -98,7 +93,7 @@ export class TentacleSweep {
       }
       const side = sides[ring].crossVectors(tangent, under).normalize();
       under.crossVectors(side, tangent);
-      const radius = sweepRadius(ring / RING_STEPS) * GROOVES[ring % 5];
+      const radius = armRadius(ring / RING_STEPS) * GROOVES[ring % 5];
       radii[ring] = radius;
       const center = centers[ring];
 

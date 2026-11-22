@@ -21,40 +21,14 @@ export function smoothstep(a, b, value) {
 }
 
 export function armPoint(index, t, time = 0) {
-  const point = {set(x, y, z) { return [x, y, z]; }};
-  return sampleArmPoint(point, index, t, time, false);
-}
-
-export function sampleArmPoint(out, index, t, time = 0, sculpted = true) {
-  const i = ((index % ARM_COUNT) + ARM_COUNT) % ARM_COUNT;
-  const [angle, sweep, reach, depth] = arms[i];
-  const p = Math.max(0, Math.min(1, t));
-  const sign = i < 3 || i === 7 ? -1 : 1;
-  const phase = time * (0.68 + i * 0.036) + i * 1.37 - p * 6;
-  const wave = Math.sin(phase);
-  const travel = sculpted ? wave * smoothstep(0, 0.45, p) : wave;
-  const follow = sculpted ? Math.sin(phase - 0.65) * smoothstep(0.42, 0.92, p) : 0;
-  const tip = Math.max(0, (p - 0.49) / 0.51);
-  const curl = sculpted ? tip * tip * (2 - tip) : smoothstep(0.49, 1, p);
-  const theta = angle + sweep * smoothstep(0.04, 0.66, p) + travel * p * 0.12;
-  const radius = sculpted
-    ? 0.49 + reach * Math.sin(p * 1.45) - 0.24 * curl
-    : 0.49 + reach * Math.sin(p * 1.58) - 0.48 * curl;
-  const loop = Math.PI * (sculpted
-    ? (1.24 + 0.11 * Math.sin(phase - 0.7) + 0.03 * follow)
-    : (1.32 + 0.14 * Math.sin(phase - 0.7))) * curl;
-  const loopRadius = (0.72 - 0.25 * p) * smoothstep(0.34, 0.69, p);
-  const along = radius + loopRadius * Math.sin(loop);
-  const across = sign * loopRadius * (1 - Math.cos(loop));
-  return out.set(
-    along * Math.cos(theta) - across * Math.sin(theta),
-    -0.31 + along * Math.sin(theta) + across * Math.cos(theta) + travel * p * 0.09,
-    depth * Math.sin(p * 2.2) + 0.23 * p * Math.cos(phase) + follow * 0.10,
-  );
+  const path = new ArmPath();
+  path.begin(((index % ARM_COUNT) + ARM_COUNT) % ARM_COUNT, time);
+  return path.sample({set(x, y, z) { return [x, y, z === 0 ? 0 : z]; }}, Math.max(0, Math.min(1, t)));
 }
 
 export function armRadius(t) {
-  return 0.255 * Math.pow(1 - Math.max(0, Math.min(1, t)), 0.87) + 0.027;
+  // A substantial shoulder, long taper, and a small closed tip.
+  return 0.018 + 0.274 * (1 - Math.max(0, Math.min(1, t))) ** 1.08;
 }
 
 const CURL_START = 0.59;

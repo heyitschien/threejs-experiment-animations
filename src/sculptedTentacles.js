@@ -1,10 +1,10 @@
 import * as THREE from 'three';
+import { ARM_COUNT } from './tentacleMath.js';
 import { PANEL_COUNT, TentacleSweep } from './tentacleSweep.js';
 
 export class SculptedTentacles {
-  constructor(root, materials, firstArm, armCount) {
-    this.firstArm = firstArm;
-    this.arms = Array.from({length: armCount}, () => {
+  constructor(root, materials) {
+    this.arms = Array.from({length: ARM_COUNT}, () => {
       const sweep = new TentacleSweep();
       const mesh = new THREE.Mesh(sweep.geometry, [materials.chrome, materials.darkChrome]);
       // Bounds are animated. The eight small meshes share the octopus's visible region.
@@ -31,7 +31,7 @@ export class SculptedTentacles {
   update(time) {
     for (let arm = 0; arm < this.arms.length; arm++) {
       const sweep = this.arms[arm];
-      sweep.update(this.firstArm + arm, time);
+      sweep.update(arm, time);
       for (let panel = 0; panel < PANEL_COUNT; panel++) {
         const ring = panel * 5 + 2;
         const {centers, radii, sides, tangents, undersides} = sweep;
