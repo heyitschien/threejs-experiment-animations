@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { sampleArmPoint, TAU } from './tentacleMath.js';
+import { ArmPath, TAU } from './tentacleMath.js';
 
 export const PANEL_COUNT = 12;
 export const RING_STEPS = PANEL_COUNT * 5;
@@ -22,6 +22,7 @@ const sines = Array.from({length: SIDES}, (_, i) => Math.sin(i * TAU / SIDES));
 
 export class TentacleSweep {
   constructor() {
+    this.path = new ArmPath();
     this.samples = vecs(CENTER_SAMPLES + 1);
     this.arc = new Float64Array(CENTER_SAMPLES + 1);
     this.centers = vecs(RING_STEPS + 1);
@@ -66,8 +67,9 @@ export class TentacleSweep {
 
   update(arm, time) {
     const {arc, centers, samples, tangents, undersides, sides, radii, positions, normals} = this;
+    this.path.begin(arm, time);
     for (let i = 0; i <= CENTER_SAMPLES; i++) {
-      sampleArmPoint(samples[i], arm, i / CENTER_SAMPLES, time);
+      this.path.sample(samples[i], i / CENTER_SAMPLES);
       if (i > 0) arc[i] = arc[i - 1] + samples[i].distanceTo(samples[i - 1]);
     }
 

@@ -56,3 +56,55 @@ export function sampleArmPoint(out, index, t, time = 0, sculpted = true) {
 export function armRadius(t) {
   return 0.255 * Math.pow(1 - Math.max(0, Math.min(1, t)), 0.87) + 0.027;
 }
+
+const CURL_START = 0.59;
+
+// Cache the moving transition point and tangent once per arm per pose.
+export class ArmPath {
+  constructor() {
+    this.join = {x: 0, y: 0, set(x, y) { this.x = x; this.y = y; }};
+    this.near = {x: 0, y: 0, set: this.join.set};
+  }
+
+  begin(index, time) {
+    const [angle, sweep, reach, depth] = arms[index];
+    this.angle = angle;
+    this.sweep = sweep;
+    this.reach = reach;
+    this.depth = depth;
+    this.phase = time * (0.68 + index * 0.036) + index * 1.37;
+    this.sign = index < 3 || index === 7 ? -1 : 1;
+    this.stem(this.join, CURL_START);
+    this.stem(this.near, CURL_START - 0.001);
+    const dx = this.join.x - this.near.x;
+    const dy = this.join.y - this.near.y;
+    const length = Math.hypot(dx, dy);
+    this.tx = dx / length;
+    this.ty = dy / length;
+    this.curlAngle = 3.65 + 0.3 * Math.sin(this.phase - 6.2);
+    this.curlRadius = 0.67 + 0.08 * Math.sin(this.phase - 4.8);
+  }
+
+  depthAt(p) {
+    return this.depth * Math.sin(p * 2.2)
+      + 0.20 * smoothstep(0, 0.78, p) * Math.cos(this.phase - 6 * p)
+      + 0.10 * smoothstep(0.5, 1, p) * Math.sin(this.phase - 6.65 * p);
+  }
+
+  stem(out, p) {
+    const wave = Math.sin(this.phase - 6 * p) * smoothstep(0, 0.55, p);
+    const theta = this.angle + this.sweep * smoothstep(0.04, 0.66, p) + wave * p * 0.10;
+    const radius = 0.49 + this.reach * Math.sin(p * 1.5);
+    return out.set(radius * Math.cos(theta), -0.31 + radius * Math.sin(theta) + wave * p * 0.08, this.depthAt(p));
+  }
+
+  sample(out, p) {
+    if (p <= CURL_START) return this.stem(out, p);
+    const u = (p - CURL_START) / (1 - CURL_START);
+    const angle = this.curlAngle * u;
+    const along = this.curlRadius * Math.sin(angle) + 0.21 * (1 - Math.exp(-6 * u));
+    const side = this.sign * this.curlRadius * (1 - Math.cos(angle));
+    return out.set(this.join.x + along * this.tx - side * this.ty,
+      this.join.y + along * this.ty + side * this.tx, this.depthAt(p));
+  }
+}
