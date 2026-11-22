@@ -43,3 +43,12 @@ This is a deliberately isolated Vite experiment. It does not connect to any user
 3. Inspect browser console for errors, WebGL shader warnings, clipping, density and visibility. Compare to `reference/octopus-concept.png`.
 4. Prioritize **silhouette** (obvious eight tentacles), **materials** (chrome, translucent dome), then **lighting** (gold/violet/cyan) and frame performance.
 5. Fix defects and iterate with screenshots. Do not add Blender/GLB assets, paid APIs, or deploy. Keep changes isolated and report tested evidence and measured FPS.
+
+## OCTO Studio planning draft
+
+v0.1 is the current procedural baseline. The planning documents propose future work for review.
+
+- [Stack, compatibility and roadmap](docs/OCTO-STUDIO-STACK.md)
+- [Cinematic reference and visual rubric](docs/VISUAL-TARGET.md)
+- [Capture, measurement and iteration workflow](docs/VISUAL-ITERATION-PROTOCOL.md)
+- [Setup plan and approvals](docs/SETUP-PLAN.md)
