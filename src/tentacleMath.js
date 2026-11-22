@@ -28,10 +28,11 @@ export function armPoint(index, t, time = 0) {
 
 export function armRadius(t) {
   // A substantial shoulder, long taper, and a small closed tip.
-  return 0.018 + 0.274 * (1 - Math.max(0, Math.min(1, t))) ** 1.08;
+  return 0.027 + 0.269 * (1 - Math.max(0, Math.min(1, t))) ** 0.85;
 }
 
 const CURL_START = 0.59;
+const curlAngles = [3.55, 3.87, 3.76, 3.82, 3.43, 3.16, 3.45, 3.36];
 
 // Cache the moving transition point and tangent once per arm per pose.
 export class ArmPath {
@@ -55,7 +56,7 @@ export class ArmPath {
     const length = Math.hypot(dx, dy);
     this.tx = dx / length;
     this.ty = dy / length;
-    this.curlAngle = 3.65 + 0.3 * Math.sin(this.phase - 6.2);
+    this.curlAngle = curlAngles[index] + 0.27 * Math.sin(this.phase - 6.2);
     this.curlRadius = 0.67 + 0.08 * Math.sin(this.phase - 4.8);
   }
 

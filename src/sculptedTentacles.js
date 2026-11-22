@@ -14,7 +14,7 @@ export class SculptedTentacles {
     });
 
     this.housing = this.buildEmitters(root, new THREE.TorusGeometry(1, 0.14, 5, 14), materials.gold);
-    this.emitter = this.buildEmitters(root, new THREE.TorusGeometry(0.73, 0.12, 5, 14), materials.glow);
+    this.emitter = this.buildEmitters(root, new THREE.TorusGeometry(0.77, 0.12, 5, 14), materials.glow);
     this.matrix = new THREE.Matrix4();
     this.position = new THREE.Vector3();
     this.scale = new THREE.Vector3();
@@ -37,7 +37,7 @@ export class SculptedTentacles {
         const {centers, radii, sides, tangents, undersides} = sweep;
         const under = undersides[ring];
         const radius = radii[ring];
-        const size = radius * 0.38;
+        const size = radius * 0.42;
         const instance = arm * PANEL_COUNT + panel;
         this.position.copy(centers[ring]).addScaledVector(under, radius * 0.88 + 0.002);
         this.scale.set(size, size * 0.76, size * 0.58);
