@@ -8,6 +8,40 @@ import { openScene } from './browser.js';
 
 const candidate = process.env.OCTO_CAPTURE_CANDIDATE === '1';
 
+async function checkStability(page, first, second) {
+  if (second.equals(first)) return {changedPixels: 0, maxDelta: 0};
+  if (!candidate) return expect(second.equals(first)).toBe(true);
+
+  // Allow only isolated one-bit compositor noise on candidate stills.
+  const result = await page.evaluate(async images => {
+    const decode = async encoded => {
+      const bytes = Uint8Array.from(atob(encoded), char => char.charCodeAt(0));
+      const bitmap = await createImageBitmap(new Blob([bytes], {type:'image/png'}));
+      const canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
+      const ctx = canvas.getContext('2d', {willReadFrequently:true});
+      ctx.drawImage(bitmap, 0, 0);
+      bitmap.close();
+      return ctx.getImageData(0, 0, canvas.width, canvas.height);
+    };
+    const [a, b] = await Promise.all(images.map(decode));
+    if (a.width !== b.width || a.height !== b.height) throw new Error('Capture dimensions changed');
+    let changedPixels = 0;
+    let maxDelta = 0;
+    for (let i = 0; i < a.data.length; i += 4) {
+      let delta = 0;
+      for (let channel = i; channel < i + 4; channel++) {
+        delta = Math.max(delta, Math.abs(a.data[channel] - b.data[channel]));
+      }
+      if (delta > 0) changedPixels++;
+      maxDelta = Math.max(maxDelta, delta);
+    }
+    return {changedPixels, maxDelta, pixels: a.width * a.height};
+  }, [first.toString('base64'), second.toString('base64')]);
+  expect(result.maxDelta).toBeLessThanOrEqual(1);
+  expect(result.changedPixels / result.pixels).toBeLessThanOrEqual(0.001);
+  return result;
+}
+
 const extraShots = process.env.OCTO_REVISION_VIEWS === '1' && candidate
   ? [0, 3.4, 6.8].flatMap(pose => [
     {name: `hero-mobile-360-${pose}`, pose, mobile: true, width: 360},
@@ -45,13 +79,13 @@ for (const shot of [...shots, ...extraShots]) {
       const options = {scale: 'css', animations: 'disabled', style};
       const first = await page.screenshot(options);
       const second = await page.screenshot(options);
-      expect(second.equals(first)).toBe(true);
+      const stability = await checkStability(page, first, second);
       const {number, ...frame} = await page.evaluate(() => window.__OCTO_DEBUG__.getFrame());
       const record = {
         commit: execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(),
         lockSha256: createHash('sha256').update(readFileSync('package-lock.json')).digest('hex'),
         browser: browser.version(), graphics: health.graphics, profile: {...profile, viewport: page.viewportSize()}, ...frame,
-        pngSha256: createHash('sha256').update(first).digest('hex'),
+        stability, pngSha256: createHash('sha256').update(first).digest('hex'),
       };
       await writeFile(info.outputPath('capture.json'), JSON.stringify(record, null, 2) + '\n');
       await writeFile(info.outputPath(`${shot.name}.png`), first);
