@@ -51,3 +51,18 @@ test('arm roots stay seated and adjacent links remain separated through motion',
     }
   }
 });
+
+test('the two visibility adjustments affect only the final fourteen percent of taper', () => {
+  for (let arm = 0; arm < ARM_COUNT; arm++) {
+    assert.equal(armRadius(0.86, arm), armRadius(0.86));
+    if (arm === 2 || arm === 5) {
+      assert.ok(armRadius(1, arm) > armRadius(1));
+      for (let step = 87; step <= 100; step++) {
+        assert.ok(armRadius(step / 100, arm) < armRadius((step - 1) / 100, arm));
+      }
+    } else {
+      assert.equal(armRadius(0.95, arm), armRadius(0.95));
+      assert.equal(armRadius(1, arm), armRadius(1));
+    }
+  }
+});

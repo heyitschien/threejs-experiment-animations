@@ -8,10 +8,20 @@ import { openScene } from './browser.js';
 
 const candidate = process.env.OCTO_CAPTURE_CANDIDATE === '1';
 
-for (const shot of shots) {
+const extraShots = process.env.OCTO_REVISION_VIEWS === '1' && candidate
+  ? [0, 3.4, 6.8].flatMap(pose => [
+    {name: `hero-mobile-360-${pose}`, pose, mobile: true, width: 360},
+    {name: `hero-mobile-390-${pose}`, pose, mobile: true},
+    {name: `hero-desktop-${pose}`, pose},
+  ])
+  : [];
+
+for (const shot of [...shots, ...extraShots]) {
   test(shot.name, async ({ browser, baseURL }, info) => {
     const profile = shot.mobile ? mobile : desktop;
-    const context = await browser.newContext({...profile, baseURL});
+    const context = await browser.newContext({
+      ...profile, baseURL, viewport: {...profile.viewport, width: shot.width ?? profile.viewport.width},
+    });
     try {
       const page = await context.newPage();
       const health = await openScene(page);
@@ -40,7 +50,7 @@ for (const shot of shots) {
       const record = {
         commit: execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(),
         lockSha256: createHash('sha256').update(readFileSync('package-lock.json')).digest('hex'),
-        browser: browser.version(), graphics: health.graphics, profile, ...frame,
+        browser: browser.version(), graphics: health.graphics, profile: {...profile, viewport: page.viewportSize()}, ...frame,
         pngSha256: createHash('sha256').update(first).digest('hex'),
       };
       await writeFile(info.outputPath('capture.json'), JSON.stringify(record, null, 2) + '\n');

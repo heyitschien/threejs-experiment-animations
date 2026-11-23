@@ -26,9 +26,11 @@ export function armPoint(index, t, time = 0) {
   return path.sample({set(x, y, z) { return [x, y, z === 0 ? 0 : z]; }}, Math.max(0, Math.min(1, t)));
 }
 
-export function armRadius(t) {
-  // A substantial shoulder, long taper, and a small closed tip.
-  return 0.027 + 0.269 * (1 - Math.max(0, Math.min(1, t))) ** 0.85;
+export function armRadius(t, index) {
+  const u = Math.max(0, Math.min(1, t));
+  // Lower-left and upper-right tips retain a little more silhouette at phone scale.
+  const tip = index === 2 || index === 5 ? 0.014 * smoothstep(0.86, 1, u) : 0;
+  return 0.027 + 0.269 * (1 - u) ** 0.85 + tip;
 }
 
 const CURL_START = 0.59;
@@ -56,6 +58,8 @@ export class ArmPath {
     const length = Math.hypot(dx, dy);
     this.tx = dx / length;
     this.ty = dy / length;
+    // Open the lower-right foreground tip away from the neighboring curl.
+    this.terminalOffset = index === 3 ? -0.55 : 0;
     this.curlAngle = curlAngles[index] + 0.27 * Math.sin(this.phase - 6.2);
     this.curlRadius = 0.67 + 0.08 * Math.sin(this.phase - 4.8);
   }
@@ -76,7 +80,7 @@ export class ArmPath {
   sample(out, p) {
     if (p <= CURL_START) return this.stem(out, p);
     const u = (p - CURL_START) / (1 - CURL_START);
-    const angle = this.curlAngle * u;
+    const angle = this.curlAngle * u + this.terminalOffset * smoothstep(0.28, 1, u);
     const along = this.curlRadius * Math.sin(angle) + 0.21 * (1 - Math.exp(-6 * u));
     const side = this.sign * this.curlRadius * (1 - Math.cos(angle));
     return out.set(this.join.x + along * this.tx - side * this.ty,

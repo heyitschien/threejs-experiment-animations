@@ -93,7 +93,7 @@ export class TentacleSweep {
       }
       const side = sides[ring].crossVectors(tangent, under).normalize();
       under.crossVectors(side, tangent);
-      const radius = armRadius(ring / RING_STEPS) * GROOVES[ring % 5];
+      const radius = armRadius(ring / RING_STEPS, arm) * GROOVES[ring % 5];
       radii[ring] = radius;
       const center = centers[ring];
 
