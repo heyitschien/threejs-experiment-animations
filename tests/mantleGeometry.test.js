@@ -98,3 +98,30 @@ test('the animated mantle neck and all eight sockets remain seated in the bearin
   }
   octopus.dispose();
 });
+
+test('the lens, rotor and bulkhead stay ordered from the review cameras', () => {
+  const octopus = new Octopus(new THREE.Scene());
+  const lens = octopus.head.children.find(mesh => mesh.material === octopus.glass);
+  const nucleus = octopus.reactor.children.find(mesh => mesh.geometry?.type === 'IcosahedronGeometry');
+  const bulkhead = octopus.head.getObjectByName('Reactor bulkhead');
+  const shell = octopus.head.children[0];
+  const ray = new THREE.Raycaster();
+  for (const time of [0, 3.4, 6.8]) {
+    octopus.update(time);
+    octopus.root.updateMatrixWorld(true);
+    const center = nucleus.getWorldPosition(new THREE.Vector3());
+    for (const position of [[-0.08, -0.33, 13.6], [7.5, 1.6, 11.5], [1.35, 1.45, 6.1]]) {
+      const eye = new THREE.Vector3(...position);
+      ray.set(eye, center.clone().sub(eye).normalize());
+      const [glassHit] = ray.intersectObject(lens, false);
+      const [rotorHit] = ray.intersectObject(nucleus, false);
+      const [backHit] = ray.intersectObject(bulkhead, false);
+      const [shellHit] = ray.intersectObject(shell, false);
+      assert.ok(glassHit && rotorHit && backHit, 'chamber layers visible along the focal ray');
+      assert.ok(rotorHit.distance - glassHit.distance > 0.10, 'rotor is visibly recessed behind the glazing');
+      assert.ok(backHit.distance - rotorHit.distance > 0.20, 'bulkhead sits behind the rotor');
+      assert.ok(!shellHit || shellHit.distance > rotorHit.distance, 'mantle does not occlude the nucleus');
+    }
+  }
+  octopus.dispose();
+});

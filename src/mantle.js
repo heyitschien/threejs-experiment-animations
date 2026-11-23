@@ -14,29 +14,31 @@ function apertureTrim(opening, thickness, material, inset = 0) {
 function buildReactor(materials) {
   const {chrome, darkChrome, gold, glow, purple, core} = materials;
   const chamber = new THREE.Group();
-  chamber.position.set(0.37, 0.94, 0.25);
-  chamber.rotation.set(0.08, 0.38, -0.14);
+  chamber.position.set(0.34, 0.94, 0.16);
+  // Grow the rotor across the aperture while retaining room for its recessed stack.
+  chamber.scale.set(1.42, 1.42, 1);
+  chamber.rotation.set(0.08, 0.44, -0.14);
 
   const mount = new THREE.Mesh(new THREE.CylinderGeometry(0.31, 0.35, 0.17, 12), darkChrome);
   mount.rotation.x = Math.PI / 2;
-  mount.position.z = -0.12;
+  mount.position.z = -0.17;
   chamber.add(mount);
 
   const housing = torus(0.285, 0.041, chrome);
-  housing.position.z = -0.042;
+  housing.position.z = -0.071;
   const bevel = torus(0.248, 0.020, gold);
-  bevel.position.z = 0.001;
+  bevel.position.z = -0.018;
   const conductor = torus(0.198, 0.009, purple);
-  conductor.position.z = -0.006;
+  conductor.position.z = -0.041;
   chamber.add(housing, bevel, conductor);
 
   const rotor = new THREE.Group();
   chamber.add(rotor);
-  const fins = new THREE.InstancedMesh(new THREE.BoxGeometry(0.081, 0.026, 0.044), gold, 12);
+  const fins = new THREE.InstancedMesh(new THREE.BoxGeometry(0.100, 0.031, 0.060), gold, 12);
   const matrix = new THREE.Matrix4();
   for (let i = 0; i < fins.count; i++) {
     const angle = i * Math.PI / 6;
-    matrix.makeRotationZ(angle + 0.27).setPosition(0.221 * Math.cos(angle), 0.221 * Math.sin(angle), 0.014);
+    matrix.makeRotationZ(angle + 0.27).setPosition(0.221 * Math.cos(angle), 0.221 * Math.sin(angle), 0.007);
     fins.setMatrixAt(i, matrix);
   }
 
@@ -91,14 +93,17 @@ export function buildMantle(materials) {
     head.add(new THREE.Mesh(latch, gold));
   }
 
-  const bulkhead = apertureSurface(opening, new THREE.Vector3(0.28, 0.8, -0.36),
-    [[1, -0.006], [0.94, -0.19], [0.73, -0.15], [0.40, -0.08]]);
-  head.add(new THREE.Mesh(bulkhead, darkChrome));
+  const bulkhead = apertureSurface(opening, new THREE.Vector3(0.28, 0.8, -0.43),
+    [[1, -0.006], [0.93, -0.23], [0.72, -0.25], [0.40, -0.14]]);
+  const chamberBacking = new THREE.Mesh(bulkhead, darkChrome);
+  chamberBacking.name = 'Reactor bulkhead';
+  head.add(chamberBacking);
   head.add(apertureTrim(opening, 0.036, darkChrome), apertureTrim(opening, 0.013, gold, 0.025));
 
-  // One convex glazing surface over the recessed assembly, with an opaque throat behind it.
-  const glazing = new THREE.Mesh(apertureSurface(opening, new THREE.Vector3(0.38, 0.94, 0.58),
-    [[1, -0.014], [0.83, 0.018], [0.62, 0.032], [0.38, 0.027], [0.17, 0.015]]), glass);
+  // Reduce the bow so the lens reads as a cover over the larger, recessed rotor.
+  // Its perimeter still seats in the original rim.
+  const glazing = new THREE.Mesh(apertureSurface(opening, new THREE.Vector3(0.38, 0.94, 0.48),
+    [[1, -0.014], [0.83, 0.004], [0.62, 0.012], [0.38, 0.009], [0.17, 0.004]]), glass);
   head.add(glazing);
 
   const {chamber, rotor} = buildReactor(materials);
