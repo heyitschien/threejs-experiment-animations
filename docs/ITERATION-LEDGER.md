@@ -49,3 +49,10 @@ Independent visual verdict and rationale / keep, iterate or revert / next step
 - Focal rays found no shell occlusion. A shallower lens, wider recessed rotor and deeper backing give the existing internals clearer presence. The window remains blue and reflective. `src/mantle.js` and `tests/mantleGeometry.test.js` are the only runtime and test changes.
 - The [validation record](STAGE-4-MANTLE.md#focused-chamber-revision) includes matched front, three-quarter, mantle-detail and 360/390 mobile evidence, a motion clip, tests and exact timing trials.
 - Builder recommendation: keep the geometry pass for independent review. Defer physically clearer glass to a separately approved Stage 5 material/light comparison. Revert the two chamber revision commits together to roll back.
+
+## Stage 5 · Neutral glazing and studio light
+
+- Issue #9. Base `f292943de3a1387b0ed76ca642b0ae17bc33c1b9`, final runtime/QA `944929aead64b8de048a38d93019dacd4e722bf2`. [Engineering and visual evidence](STAGE-5-MATERIALS.md) records both material experiment SHAs, timings and capture provenance.
+- Under identical Stage 4 lighting, the neutral glass held vane sharpness with the existing render budget. Physical transmission was slightly softer and required a second opaque pass. Keep the tuned neutral glass. The subsequent retune reused the five procedural panels, original lights and composer.
+- Changed `src/octopus.js`, `src/main.js` and the targeted glazing test in `tests/mantleGeometry.test.js`. Mantle and tentacle geometry, animation, UI, assets and goldens were preserved.
+- Provisional glass clarity **1 → 2**, chrome/lighting **2 → 3**. Keep for independent review. Ask whether the remaining dark-stage look fits the concept and whether the glass still needs more optical depth. Beyond this pass, the largest reference mismatch is the lack of a reflective, atmospheric ground. Hold separate environment work and merge pending review.
