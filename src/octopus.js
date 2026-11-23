@@ -36,10 +36,9 @@ export class Octopus {
       clearcoat: 1, envMapIntensity: 1.55,
     });
     this.glass = new THREE.MeshPhysicalMaterial({
-      color: 0x6575cb, metalness: 0.37, roughness: 0.08,
-      clearcoat: 1, clearcoatRoughness: 0.04,
-      transparent: true, opacity: 0.46,
-      depthWrite: false, envMapIntensity: 1.15,
+      color: 0xd3d7dc, metalness: 0, roughness: 0.12,
+      specularIntensity: 0.85, clearcoat: 0.18, clearcoatRoughness: 0.11,
+      transparent: true, opacity: 0.23, depthWrite: false, envMapIntensity: 0.8,
     });
     this.glow = new THREE.MeshBasicMaterial({color: new THREE.Color(0xffac58).multiplyScalar(1.55), toneMapped: false});
     this.purple = new THREE.MeshBasicMaterial({color: 0x9a7aff, toneMapped: false});
