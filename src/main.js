@@ -147,7 +147,6 @@ let running = !reducedMotion;
 let animationTime = 0;
 let previousFrame;
 function resetView() {
-  qaCameraFrozen = false;
   controls.enableDamping = false;
   controls.reset();
   camera.position.copy(defaultCamera);
@@ -176,8 +175,6 @@ let fpsElapsed = 0;
 let drawnTime;
 const qa = import.meta.env.DEV && new URLSearchParams(location.search).has('octo-qa');
 let renderedFrames = 0;
-let qaCameraFrozen = false;
-if (qa) controls.addEventListener('start', () => { qaCameraFrozen = false; });
 function animate(now) {
   requestAnimationFrame(animate);
   const elapsed = previousFrame === undefined ? 0 : (now - previousFrame) / 1000;
@@ -189,7 +186,7 @@ function animate(now) {
     starField.rotation.y = animationTime * 0.008;
     drawnTime = animationTime;
   }
-  if (!qaCameraFrozen || running) controls.update();
+  controls.update();
   if (qa && !renderer.info.autoReset) renderer.info.reset();
   composer.render();
   if (qa) renderedFrames++;
@@ -218,13 +215,7 @@ function resize() {
 window.addEventListener('resize', resize);
 
 window.__OCTO_DEBUG__ = {
-  freezeAt(time = 0) {
-    running = false;
-    animationTime = time;
-    // Fixed QA stills render repeatedly with the camera held exactly at the chosen pose.
-    qaCameraFrozen = qa;
-    refreshButton();
-  },
+  freezeAt(time = 0) { running = false; animationTime = time; refreshButton(); },
   resetView,
   getState() {
     return {
