@@ -5,6 +5,7 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { Octopus } from './octopus.js';
+import { HERO_FOV, heroFraming } from './heroFraming.js';
 import './style.css';
 
 const mount = document.getElementById('viewport');
@@ -32,15 +33,13 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x040713);
 scene.fog = new THREE.FogExp2(0x040713, 0.026);
 
-const camera = new THREE.PerspectiveCamera(43, mount.clientWidth / mount.clientHeight, 0.1, 100);
+const camera = new THREE.PerspectiveCamera(HERO_FOV, mount.clientWidth / mount.clientHeight, 0.1, 100);
 const defaultCamera = new THREE.Vector3();
-const defaultTarget = new THREE.Vector3(-0.08, -0.33, 0);
+const defaultTarget = new THREE.Vector3();
 function frameCamera() {
-  const aspect = mount.clientWidth / mount.clientHeight;
-  const visibleWidth = compact.matches ? 9.3 : 15.5;
-  const span = Math.max(compact.matches ? 6.9 : 8.2, visibleWidth / aspect);
-  const distance = span / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))) + 1.25;
-  defaultCamera.set(0.70, 0.63, distance);
+  const {position, target} = heroFraming(mount.clientWidth, mount.clientHeight, compact.matches);
+  defaultCamera.fromArray(position);
+  defaultTarget.fromArray(target);
 }
 frameCamera();
 camera.position.copy(defaultCamera);
@@ -164,6 +163,8 @@ function resetView() {
   controls.enableDamping = false;
   controls.reset();
   camera.position.copy(defaultCamera);
+  camera.fov = HERO_FOV;
+  camera.updateProjectionMatrix();
   controls.target.copy(defaultTarget);
   controls.update();
   controls.enableDamping = true;
