@@ -6,6 +6,7 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { Octopus } from './octopus.js';
 import { HERO_FOV, heroFraming } from './heroFraming.js';
+import { createStudioStage } from './stageEnvironment.js';
 import './style.css';
 
 const mount = document.getElementById('viewport');
@@ -133,21 +134,7 @@ const starField = new THREE.Points(starGeometry, new THREE.PointsMaterial({
 }));
 scene.add(starField);
 
-// A subtle reflective-looking floor disc and rings, without texture downloads.
-const floor = new THREE.Mesh(
-  new THREE.CircleGeometry(8.1, 112),
-  new THREE.MeshStandardMaterial({color: 0x101424, metalness: 0.61, roughness: 0.42, envMapIntensity: 0.40, side: THREE.DoubleSide}),
-);
-floor.rotation.x = -Math.PI / 2;
-floor.position.y = -4.45;
-scene.add(floor);
-for (let i = 0; i < 4; i++) {
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(2.6 + i * 1.16, 0.015, 5, 124),
-    new THREE.MeshBasicMaterial({color: i % 2 ? 0x4ab8ff : 0x845dff, transparent: true, opacity: 0.22, depthWrite: false, toneMapped: false}));
-  ring.rotation.x = Math.PI / 2;
-  ring.position.y = -4.43;
-  scene.add(ring);
-}
+scene.add(createStudioStage(scene.background));
 
 const composer = new EffectComposer(renderer);
 composer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
