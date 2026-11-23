@@ -119,7 +119,8 @@ export function armorStrip(from, to, middle, spread, offset) {
     const half = spread * (0.11 + 0.89 * Math.sin(Math.PI * u) ** 0.7);
     for (let j = 0; j <= columns; j++) {
       const side = middle(u) + (j / columns * 2 - 1) * half;
-      points.push(surface(ring, (side + SIDES) % SIDES, offset));
+      const bevel = Math.sin(Math.PI * j / columns) ** 0.65 * Math.sin(Math.PI * u) ** 0.55;
+      points.push(surface(ring, (side + SIDES) % SIDES, 0.012 + offset * bevel));
     }
     if (i === 26) continue;
     for (let j = 0; j < columns; j++) {

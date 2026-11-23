@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { createMantle, apertureSurface } from './mantleGeometry.js';
+import { buildMantle } from './mantle.js';
 import { ARM_COUNT, armPoint } from './tentacleMath.js';
 import { SculptedTentacles } from './sculptedTentacles.js';
 
@@ -48,20 +48,11 @@ export class Octopus {
   }
 
   _buildHead() {
-    this.head = new THREE.Group();
+    const {head, collar, rotor} = buildMantle(this);
+    this.head = head;
+    this.reactor = rotor;
     this.head.position.set(0.22, 0.53, 0.14);
-    this.root.add(this.head);
-
-    const {shell, opening} = createMantle();
-    this.head.add(new THREE.Mesh(shell, this.chrome));
-    const bulkhead = apertureSurface(opening, new THREE.Vector3(0.28, 0.8, -0.36),
-      [[1, 0], [0.94, -0.19], [0.73, -0.15], [0.40, -0.08]]);
-    this.head.add(new THREE.Mesh(bulkhead, this.darkChrome));
-
-    const collar = sphere(0.69, this.darkChrome, 32);
-    collar.scale.set(1.02, 0.56, 0.73);
-    collar.position.set(0, -0.31, -0.15);
-    this.root.add(collar);
+    this.root.add(collar, this.head);
   }
 
   _buildArms() {
@@ -88,6 +79,7 @@ export class Octopus {
     this.head.rotation.z = -0.34 + Math.sin(time * 0.42) * 0.038;
     this.head.rotation.y = Math.sin(time * 0.28) * 0.09;
 
+    this.reactor.rotation.z = time * 0.22;
     this.sculpted.update(time);
   }
 
