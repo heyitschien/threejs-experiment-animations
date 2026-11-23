@@ -56,3 +56,10 @@ Independent visual verdict and rationale / keep, iterate or revert / next step
 - Under identical Stage 4 lighting, the neutral glass held vane sharpness with the existing render budget. Physical transmission was slightly softer and required a second opaque pass. Keep the tuned neutral glass. The subsequent retune reused the five procedural panels, original lights and composer.
 - Changed `src/octopus.js`, `src/main.js` and the targeted glazing test in `tests/mantleGeometry.test.js`. Mantle and tentacle geometry, animation, UI, assets and goldens were preserved.
 - Provisional glass clarity **1 → 2**, chrome/lighting **2 → 3**. Keep for independent review. Ask whether the remaining dark-stage look fits the concept and whether the glass still needs more optical depth. Beyond this pass, the largest reference mismatch is the lack of a reflective, atmospheric ground. Hold separate environment work and merge pending review.
+
+## Stage 6 · Closer hero and wet-stage proxies
+
+- Issue #11. Base `df1843351ed3540533bda2996cbffeafe91b7346`, selected framing `777bb250eb44739236ceb14cedcd7f0fb6a0018d`, final runtime/QA `8738d86562a27021d0f89db14cbc4af37a0e75dc`.
+- Tested current, close and bold opening shots at three dimensions and poses. Kept the closer view for silhouette clearance. Then added a dark procedural floor, soft reflection proxies and low haze with no reflection pass. Scope covers `src/main.js`, `src/style.css`, `src/heroFraming.js`, `src/stageEnvironment.js` a narrow framing test, and a candidate-only still noise bound in `qa/capture.spec.js`.
+- [Evidence and engineering report](STAGE-6-ENVIRONMENT.md) separates framing from environment A/B, links sanitized frames and motion, and records timing trials. Provisional composition **2 → 3**, ground/atmosphere **1 → 2**. Keep for independent review. Ask whether the streaks read as wet ground at mobile scale and whether left copy stays sufficiently separate over the full loop.
+- Roll back by reverting the Stage 6 commits as a unit. The geometry, material and goldens remain in the parent. Hold merge and Stage 7 pending review.
