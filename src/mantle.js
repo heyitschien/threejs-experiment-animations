@@ -76,11 +76,19 @@ export function buildMantle(materials) {
 
   // Long plates follow the same loft, leaving dark channels along the back and cheek.
   for (const [from, to, path, spread, offset, material] of [
-    [3, 37, u => 47 + 1.8 * u, 5.4, 0.075, chrome],
+    [3, 37, u => 47 + 1.8 * u, 5.4, 0.058, darkChrome],
+    [4, 37, u => 44 - 1.4 * Math.sin(Math.PI * u), 1.55, 0.081, chrome],
+    [8, 38, u => 2.4 + 1.3 * Math.sin(Math.PI * u), 1.24, 0.076, chrome],
     [8, 35, u => 7.5 + 2.7 * u, 3.4, 0.053, darkChrome],
     [5, 36, u => 39.7 - 1.7 * u, 3.5, 0.068, chrome],
   ]) {
     head.add(new THREE.Mesh(armorStrip(from, to, path, spread, offset), material));
+  }
+
+  // Three small service latches articulate the rear spine without a second focal point.
+  for (const [from, to] of [[12, 15], [18, 21], [24, 27]]) {
+    const latch = armorStrip(from, to, u => 48.2 - 0.35 * u, 1.55, 0.082);
+    head.add(new THREE.Mesh(latch, gold));
   }
 
   const bulkhead = apertureSurface(opening, new THREE.Vector3(0.28, 0.8, -0.36),
@@ -97,6 +105,7 @@ export function buildMantle(materials) {
   head.add(chamber, buildOptic(materials));
 
   const collar = new THREE.Group();
+  collar.name = 'Mantle bearing';
   const bearing = new THREE.Mesh(new THREE.SphereGeometry(0.69, 32, 16), darkChrome);
   bearing.scale.set(1.02, 0.56, 0.73);
   bearing.position.set(0, -0.31, -0.15);

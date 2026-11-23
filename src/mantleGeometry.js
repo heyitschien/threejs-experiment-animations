@@ -113,8 +113,9 @@ export function armorStrip(from, to, middle, spread, offset) {
   const points = [];
   const faces = [];
   const columns = 10;
-  for (let i = 0; i <= 26; i++) {
-    const u = i / 26;
+  const rows = Math.ceil(to - from);
+  for (let i = 0; i <= rows; i++) {
+    const u = i / rows;
     const ring = THREE.MathUtils.lerp(from, to, u);
     const half = spread * (0.11 + 0.89 * Math.sin(Math.PI * u) ** 0.7);
     for (let j = 0; j <= columns; j++) {
@@ -122,7 +123,7 @@ export function armorStrip(from, to, middle, spread, offset) {
       const bevel = Math.sin(Math.PI * j / columns) ** 0.65 * Math.sin(Math.PI * u) ** 0.55;
       points.push(surface(ring, (side + SIDES) % SIDES, 0.012 + offset * bevel));
     }
-    if (i === 26) continue;
+    if (i === rows) continue;
     for (let j = 0; j < columns; j++) {
       const a = i * (columns+1) + j, b = a + 1, c = a + columns + 1;
       faces.push(a,b,c,b,c+1,c);
