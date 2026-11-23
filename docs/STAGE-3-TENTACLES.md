@@ -72,3 +72,34 @@ The first pass mixed a 30 FPS base with unstable candidate cadence, including a 
 | Desktop candidate | 120.00 | 8.3 / 8.4 / 9.2–9.3 | 0 / 0 in each trial |
 
 Both passed the 18 ms desktop rAF target in this stable host session. The measured p95 difference was −0.8 ms (−8.7%). The display cadence capped both profiles, so GPU headroom and physical-phone timing remain unverified. Raw intervals and JSON are kept locally in the `before-performance/`, `after-performance/`, and `retest-*-desktop/` evidence subdirectories. Independent visual review and a decision on the draw-call increase are pending.
+
+## Approved silhouette revision
+
+Reviewed base `8645c8cd9a9363e4e7e8231972664bceb0f543f7`. Render and QA candidate `31d1b04561a4f25ca726e372b3bfe52313d763b1`. The revision adds up to 0.014 scene units of radius over the final 14% of arc length on the lower-left and upper-right arms (arms 3 and 6, one-based). Both tips still taper monotonically to their existing closed caps. The foreground lower-right arm (arm 4) opens its terminal curl by 0.55 radians, smoothly blended after the first 28% of the curl. The mantle, materials, lighting, UI, dependencies and all nine v0.1 goldens were preserved.
+
+Playwright 1.65.1 and pinned Chromium 159.0.8154.6 (revision 1255), macOS arm64, ANGLE Metal on Apple M3 Max. Matched page-only captures used 1440 × 900 at DPR 1 and 360 × 844 and 390 × 844 at emulated DPR 3. Compared hero and front at 0, 3.4 and 6.8 seconds and checked side, rear, three-quarter and mantle-detail at 3.4 seconds. Camera, viewport and pose metadata matched within numerical precision. The 360 and 390 images retain a more legible tip edge without thickening the shafts. The lower-right endpoint now reads separately from the neighboring shaft, though the shafts can still overlap in projection. At 3.4 seconds, the sampled projected endpoint-to-neighbor-centerline distance rose from 5.5 to 13.3 CSS pixels at 360, and from 5.6 to 14.1 at 390. This diagnostic measures centerlines, not the gap between individual rendered edges. Provisional silhouette score stays **2/3**, with the named defects improved and some view-dependent overlap remaining. Independent review is pending.
+
+[Matched 360/390 renders](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/cbe3097f5fe47f0a91396d97dc1cfadea78b99b1/mobile-before-after.jpg) · [Desktop hero/front](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/cbe3097f5fe47f0a91396d97dc1cfadea78b99b1/desktop-before-after.jpg) · [Three-pose sequence](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/cbe3097f5fe47f0a91396d97dc1cfadea78b99b1/mobile-pose-sequence.jpg).
+
+`npm run check` passed 10 Node tests and the build with the existing bundle-size warning. `OCTO_CAPTURE_CANDIDATE=1 OCTO_REVISION_VIEWS=1 npm run qa:browser` passed 18 deterministic captures and four smoke cases. The nine original golden files have identical Git blobs. Direct pixel comparison confirmed differences for all nine candidate views, so those strict-golden mismatches remain expected. The strict suite was not rerun for this revision.
+
+### Revision timing check
+
+Reran `npm run qa:perf` on both runtime commits. Headed pinned Chromium with Apple M3 Max ANGLE Metal, 5-second warmup, three 15-second foreground trials in each profile.
+
+| Run | FPS | p50 / p95 / p99 (ms) | Frames >16.7 / >33.3 ms |
+| --- | ---: | --- | --- |
+| Desktop Reviewed 1 | 120.00 | 8.30 / 9.20 / 9.30 | 0 / 0 |
+| Desktop Reviewed 2 | 120.00 | 8.30 / 9.10 / 9.30 | 0 / 0 |
+| Desktop Reviewed 3 | 120.00 | 8.30 / 9.10 / 9.30 | 0 / 0 |
+| 390 px emulated Reviewed 1 | 120.00 | 8.30 / 8.90 / 9.30 | 0 / 0 |
+| 390 px emulated Reviewed 2 | 120.00 | 8.30 / 8.80 / 9.30 | 0 / 0 |
+| 390 px emulated Reviewed 3 | 120.00 | 8.30 / 9.20 / 9.40 | 0 / 0 |
+| Desktop Revision 1 | 120.00 | 8.30 / 8.70 / 9.30 | 0 / 0 |
+| Desktop Revision 2 | 120.00 | 8.30 / 8.80 / 9.30 | 0 / 0 |
+| Desktop Revision 3 | 120.00 | 8.30 / 8.70 / 9.30 | 0 / 0 |
+| 390 px emulated Revision 1 | 120.00 | 8.30 / 8.50 / 9.30 | 0 / 0 |
+| 390 px emulated Revision 2 | 120.01 | 8.30 / 8.50 / 9.30 | 0 / 0 |
+| 390 px emulated Revision 3 | 120.00 | 8.30 / 8.40 / 9.30 | 0 / 0 |
+
+All runs used 106 calls and 90,862 triangles per composer frame. The approved Stage 3 draw-call exception remains in effect. The cadence measurements are browser rAF intervals. Physical mobile and GPU headroom remain unverified. Raw captures, manifests and intervals are local and ignored.
