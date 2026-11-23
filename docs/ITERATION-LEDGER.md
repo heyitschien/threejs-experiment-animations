@@ -35,3 +35,10 @@ Independent visual verdict and rationale / keep, iterate or revert / next step
 - Reviewed base `8645c8cd9a9363e4e7e8231972664bceb0f543f7` → render/QA candidate `31d1b04561a4f25ca726e372b3bfe52313d763b1`. Scope authorized in [PR #6](https://github.com/heyitschien/threejs-experiment-animations/pull/6#issuecomment-7090377863).
 - `src/tentacleMath.js` and `src/tentacleSweep.js` ease only the two terminal tapers and open one curl. `tests/tentacleMath.test.js` verifies the taper scope and monotonicity. `qa/capture.spec.js` adds opt-in pose/viewport evidence while preserving the original strict path.
 - [Matched views, benchmark and test results](STAGE-3-TENTACLES.md#approved-silhouette-revision). Provisional silhouette score **2/3**. The right endpoint separates at the reviewed pose; some projected shaft overlap remains. Physical mobile and independent review remain pending. Roll back by reverting the two revision commits together.
+
+## Stage 4 · Sculpted mantle and chamber
+
+- Issue #7. Base `9052650a8e3da6c89567003537192e292fb3b30c`, silhouette proof `558e30e949a5e9c19d7a5710e5011def1e49b22b`, render candidate `fddaa6ceb82fab49e181106cbc925b923cb56415`.
+- Hypothesis: one swept chrome shell with an aperture and seated neck reads as an integrated biomechanical object. Validate that primary form first, then add a recessed rotor, small optic, and rear plates. Preserved the original lights, arm behavior and nine goldens.
+- Changed `src/mantleGeometry.js`, `src/mantle.js`, `src/octopus.js`, and `tests/mantleGeometry.test.js`. The [engineering report](STAGE-4-MANTLE.md) records matched evidence, browser and build results and same-lane timing deltas.
+- Provisional mantle score **2 → 3**. Other rubric categories remain at 2. Keep for independent review. Review phone-scale chamber contrast and the subtle dorsal seams. The next lighting stage requires separate authorization. Roll back by reverting the Stage 4 commits as a unit.
