@@ -58,3 +58,42 @@ Both runs used `npm run qa:perf` on headed pinned Chromium and Apple M3 Max with
 | 390 px emulated Stage 4 3 | 119.99 | 8.30 / 9.20 / 9.30 | 0 / 0 |
 
 The new mantle replaces many separately drawn rings and rivets. Full-frame draw calls dropped **106 → 84 (−20.8%)**, triangles **90,862 → 76,782 (−15.5%)**, geometries **85 → 63**, with textures unchanged at 15. Timing stayed near the 120 FPS cadence limit. Desktop p95 remained within the prior range. The emulated mobile p95 increased 0.5–0.7 ms with unchanged display-rate throughput and no interval above 16.7 ms. GPU headroom and physical-phone performance remain unverified.
+
+## Focused chamber revision
+
+[Independent feedback](https://github.com/heyitschien/threejs-experiment-animations/pull/8#issuecomment-7091010869) reviewed `fdca0d3b843d63cb41b347e58ae10b1a51aeb0ec`. The revised runtime is `9f0362591159466fc3896eacd7ce743737ed0703`.
+
+**Diagnosis.** The reviewed lens used the existing blue material at 0.46 opacity, with transparency on and depth writes off. At 3.4 seconds, focal rays from the front, three-quarter and detail cameras hit the lens, nucleus and bulkhead in that order. The lens-to-nucleus distances were 0.218, 0.127 and 0.204 scene units. The opaque shell did not block the nucleus. This rules out shell occlusion at those focal rays. The close-up instead showed a large, continuous highlight over a comparatively small rotor. The unchanged material and lighting still contribute to the panel-like appearance.
+
+**Changes.** `src/mantle.js` recesses the convex lens center by 0.10 scene units while keeping its rim, moves the backing farther into the cavity, and enlarges the existing rotor assembly by 42% across its face without scaling its depth. The rotor center sits farther back, and the housing, bevel, conductor and vanes are more clearly separated in depth. No meshes were added. The sculpted shell, rear armor, lights, materials, optic, camera presets, UI, tentacles, animation, dependencies and goldens were preserved.
+
+**Visual result.** The rotor fills more of the window. Gold vanes and the layered bezel read distinctly in the detail view, and the warm center has a clearer silhouette in front, three-quarter and phone views. The revised focal rays retain lens-to-nucleus distances of 0.207, 0.144 and 0.190 scene units. The glass still reads as tinted and reflective, especially at oblique angles. Keep this geometry revision for independent review. Maintain the approved silhouette and leave final chamber art sign-off pending. If a clearer optical material is needed, Stage 5 should compare transmission and reflection balance with controlled material/light changes while holding this geometry and the camera presets fixed.
+
+[Front, three-quarter and detail](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/d47815a3dcfe67a4642a2ca45dbfb20b9c63654d/mantle-angles.jpg) · [360/390 px mobile](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/d47815a3dcfe67a4642a2ca45dbfb20b9c63654d/mobile.jpg) · [Four-second chamber motion](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/d47815a3dcfe67a4642a2ca45dbfb20b9c63654d/chamber-motion.mp4) · [Capture manifest](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/d47815a3dcfe67a4642a2ca45dbfb20b9c63654d/manifest.json) · [Full-resolution before/after images](https://github.com/heyitschien/threejs-experiment-animations/tree/d47815a3dcfe67a4642a2ca45dbfb20b9c63654d).
+
+The matched browser lane used Playwright 1.65.1, headed Chrome for Testing for performance and headless for captures, Chromium 159.0.8154.6 (revision 1255), ANGLE Metal on Apple M3 Max on macOS arm64. The desktop shots are 1440 × 900 DPR 1. Both 360/390 × 844 mobile profiles use emulated DPR 3. Camera, pose and effective buffers matched. The manifest logs original and published file hashes. Public images are page-only and stripped of metadata.
+
+- `npm run check` passed 14 Node tests and the production build with the existing chunk-size warning. The new test checks the ordering and clearance of the glass, rotor and backing at 0, 3.4 and 6.8 seconds from the three fixed review cameras.
+- `OCTO_CAPTURE_CANDIDATE=1 OCTO_REVISION_VIEWS=1 npm run qa:browser` passed 18 repeatable captures and four interaction/health tests. Seven matching before shots were captured, including the requested phone widths and the alternate front poses.
+- All original golden blobs are identical. Direct pixel comparisons still differ in all nine candidate views, as expected. The strict suite was not rerun.
+
+### Chamber timing
+
+Reran `npm run qa:perf` on each exact runtime commit, with 5 seconds of warmup and three 15-second foreground trials per profile. Blank-page controls measured 119.90 and 119.99 FPS, both at 8.4 ms p95.
+
+| Run | FPS | p50 / p95 / p99 (ms) | Frames >16.7 / >33.3 ms |
+| --- | ---: | --- | --- |
+| Desktop Reviewed 1 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| Desktop Reviewed 2 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| Desktop Reviewed 3 | 119.99 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| 390 px emulated Reviewed 1 | 120.01 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| 390 px emulated Reviewed 2 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| 390 px emulated Reviewed 3 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| Desktop Revision 1 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| Desktop Revision 2 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| Desktop Revision 3 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| 390 px emulated Revision 1 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| 390 px emulated Revision 2 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+| 390 px emulated Revision 3 | 120.00 | 8.30 / 9.30 / 9.40 | 0 / 0 |
+
+All trials retained 84 draw calls and 76,782 triangles per composer frame. Browser cadence constrains this comparison. GPU headroom and physical-phone timing remain unverified. Full interval records stay in ignored local evidence.

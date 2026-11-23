@@ -42,3 +42,10 @@ Independent visual verdict and rationale / keep, iterate or revert / next step
 - Hypothesis: one swept chrome shell with an aperture and seated neck reads as an integrated biomechanical object. Validate that primary form first, then add a recessed rotor, small optic, and rear plates. Preserved the original lights, arm behavior and nine goldens.
 - Changed `src/mantleGeometry.js`, `src/mantle.js`, `src/octopus.js`, and `tests/mantleGeometry.test.js`. The [engineering report](STAGE-4-MANTLE.md) records matched evidence, browser and build results and same-lane timing deltas.
 - Provisional mantle score **2 → 3**. Other rubric categories remain at 2. Keep for independent review. Review phone-scale chamber contrast and the subtle dorsal seams. The next lighting stage requires separate authorization. Roll back by reverting the Stage 4 commits as a unit.
+
+### Stage 4 · Chamber focal point revision
+
+- Review base `fdca0d3b843d63cb41b347e58ae10b1a51aeb0ec` → candidate `9f0362591159466fc3896eacd7ce743737ed0703`. [Independent feedback](https://github.com/heyitschien/threejs-experiment-animations/pull/8#issuecomment-7091010869) approved the mantle structure and asked for a bounded chamber revision.
+- Focal rays found no shell occlusion. A shallower lens, wider recessed rotor and deeper backing give the existing internals clearer presence. The window remains blue and reflective. `src/mantle.js` and `tests/mantleGeometry.test.js` are the only runtime and test changes.
+- The [validation record](STAGE-4-MANTLE.md#focused-chamber-revision) includes matched front, three-quarter, mantle-detail and 360/390 mobile evidence, a motion clip, tests and exact timing trials.
+- Builder recommendation: keep the geometry pass for independent review. Defer physically clearer glass to a separately approved Stage 5 material/light comparison. Revert the two chamber revision commits together to roll back.
