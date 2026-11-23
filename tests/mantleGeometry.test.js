@@ -125,3 +125,19 @@ test('the lens, rotor and bulkhead stay ordered from the review cameras', () => 
   }
   octopus.dispose();
 });
+
+test('studio glazing keeps alpha compositing without a transmission prepass', () => {
+  const octopus = new Octopus(new THREE.Scene());
+  try {
+    const lens = octopus.head.children.find(mesh => mesh.material === octopus.glass);
+    assert.ok(lens);
+    const {transparent, opacity, depthWrite, metalness, transmission} = lens.material;
+    assert.equal(transparent, true);
+    assert.ok(opacity > 0 && opacity < 1);
+    assert.equal(depthWrite, false);
+    assert.equal(metalness, 0);
+    assert.equal(transmission, 0);
+  } finally {
+    octopus.dispose();
+  }
+});
