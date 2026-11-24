@@ -32,3 +32,8 @@
   .data-panel .metric { flex: 1; width: auto; padding: 0; }
   .data-panel .metric:last-of-type { padding: 0 0 0 12px; border-left: 1px solid #333e59; }
 }
+
+@media (min-width: 1240px) {
+  .hero { left: 4.4%; top: 21%; }
+  .data-panel { right: 2.5%; width: 224px; padding-inline: 16px; }
+}
