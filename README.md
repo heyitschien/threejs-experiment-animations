@@ -1,18 +1,18 @@
 # OCTO / Procedural Intelligence · Three.js visual prototype
 
-An experimental **code-only** animated robotic octopus inspired by `reference/octopus-concept.png`. No Blender, no GLB meshes, no stock 3D assets, no API keys, and no paid services. The concept image is **only a visual reference** and is not used as a texture or a fake animated background.
+OCTO v0.1 is a code-only animated robotic octopus inspired by the [concept image](reference/octopus-concept.png). The case-study branch still defaults to eight procedural arms. Add `?tentacle=blender` to the local viewer URL to see seven procedural arms and one original, agent-authored Blender arm imported as a GLB. If the GLB fails to load, the procedural scene stays active. The concept image is used for visual comparison. Both modes run locally without API keys or paid services.
 
 ## Quick start
 
 Requires Node.js 20.19+ or 22.12+.
 
 ```bash
-npm install
+npm ci
 npm run dev
 # open the Vite URL printed in the terminal, normally http://localhost:5173
 ```
 
-**Controls:** drag to orbit; scroll/pinch to zoom; pause/resume the tentacles; reset the camera. Reduced-motion preferences start paused. A debug hook `window.__OCTO_DEBUG__.freezeAt(3.4)` makes screenshot comparisons reproducible.
+**Controls:** drag to orbit; scroll/pinch to zoom; pause/resume the tentacles; reset the camera. Reduced-motion preferences start paused. For deterministic screenshots, add `?octo-qa` in development and use `window.__OCTO_DEBUG__.freezeAt(3.4)`. Use `?tentacle=blender&octo-qa` to inspect the hybrid mode.
 
 ## Validation
 
@@ -20,12 +20,13 @@ npm run dev
 npm run check
 ```
 
-`npm run check` runs unit tests for the procedural tentacle math and compiles the web app. It **does not** prove visual fidelity, smooth frame rates, accessibility, or cross-device compatibility; those require browser inspection and measurements.
+`npm run check` runs the Node tests for geometry, framing and GLB parsing and compiles the web app. It **does not** prove visual fidelity, smooth frame rates, accessibility, or cross-device compatibility; those require browser inspection and measurements.
 
 ## Architecture
 
 - `src/tentacleMath.js`: 8 independent math-driven tentacle curves and taper formulas, unit tested.
-- `src/octopus.js`: all 3D meshes, mechanical head, transparent dome, reactors, 160 articulated links drawn with four instanced meshes, emissive cups and chrome collars.
+- `src/octopus.js`, `src/mantle.js`, and `src/sculptedTentacles.js` assemble the mantle, reactor, swept arms and instanced emitters.
+- `src/blenderTentacle.js` loads and deforms the optional original GLB along the existing procedural arm path. The [Study A report](docs/STUDY-A-ASSET-INTEGRATION.md) documents its Blender source and export.
 - `src/main.js`: scene, camera, live lighting, reflections, star field, orbit rings, floor, bloom postprocessing, interaction and FPS indicator.
 - `src/style.css`: responsive typography and glass-panel UI. The UI is HTML/CSS, not geometry.
 - `reference/octopus-concept.png`: original target concept for screenshot evaluation.
@@ -36,7 +37,9 @@ The visual target is a **procedural interpretation**, not a pixel-identical reco
 
 This is a deliberately isolated Vite experiment. It does not connect to any user data, paid model APIs, GitHub automation, robotics or trading systems. It downloads ordinary npm dependencies during installation; runtime fonts use local system fonts. No deployment is included.
 
-## Original archive validation notes
+## Original v0.1 archive validation notes
+
+These are historical instructions for the code-only baseline. The approved Stage 7 experiment adds the optional GLB described above.
 
 1. Run `npm install`, `npm run check`, then `npm run dev`.
 2. Use Playwright or a real browser to capture 1440×900 and 390×844 screenshots with `window.__OCTO_DEBUG__.freezeAt(3.4)`.
@@ -46,7 +49,7 @@ This is a deliberately isolated Vite experiment. It does not connect to any user
 
 ## OCTO Studio planning draft
 
-v0.1 is the current procedural baseline. The planning documents propose future work for review.
+v0.1 is the historical procedural baseline. These planning documents record the early project scope and review process.
 
 - [Stack, compatibility and roadmap](docs/OCTO-STUDIO-STACK.md)
 - [Cinematic reference and visual rubric](docs/VISUAL-TARGET.md)
@@ -55,4 +58,8 @@ v0.1 is the current procedural baseline. The planning documents propose future w
 
 ## Stage 2 browser validation
 
-With the approved dev tooling installed, run `npm run qa:install` once, then `npm run qa:browser` for smoke and screenshot checks. Run `npm run qa:perf` separately in an active graphical session. See [validation commands, baseline and limitations](docs/STAGE-2-VALIDATION.md) and the [iteration ledger](docs/ITERATION-LEDGER.md).
+With the approved dev tooling installed, run `npm run qa:install` once. Use the [Study A candidate commands](docs/STUDY-A-ASSET-INTEGRATION.md#reproduce) for the current scene. Plain `npm run qa:browser` includes the strict v0.1 reference comparison, which differs intentionally from later scenes. Run `npm run qa:perf` separately in an active graphical session. See [validation commands, baseline and limitations](docs/STAGE-2-VALIDATION.md) and the [iteration ledger](docs/ITERATION-LEDGER.md).
+
+## Implementation case study
+
+[2:36 captioned walkthrough](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/2c15c0b5568e8a30094e716d436f0ac27512a988/walkthrough.mp4) · [WebVTT captions](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/2c15c0b5568e8a30094e716d436f0ac27512a988/walkthrough.vtt) · [Case study](docs/AGENT-OPERATED-3D-CASE-STUDY.md) · [Evidence index](docs/EVIDENCE-INDEX.md)
