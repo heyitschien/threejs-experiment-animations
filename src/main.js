@@ -25,7 +25,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 renderer.setSize(mount.clientWidth, mount.clientHeight);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 0.94;
+renderer.toneMappingExposure = 0.98;
 mount.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
@@ -57,14 +57,15 @@ controls.update();
 
 const pmrem = new THREE.PMREMGenerator(renderer);
 const environment = new THREE.Scene();
-environment.background = new THREE.Color(0x222e4d);
+environment.background = new THREE.Color(0x272b34);
 const panelGeometry = new THREE.PlaneGeometry();
+// Broad silver key and fill, with narrow warm and violet separation at the edges.
 const reflectors = [
-  [0xd4e5ff, 3.2, -3, 6, 3, 5, 1.25],
-  [0x8d75ff, 1.8, -5, 0, 2, 1.1, 5.5],
-  [0xffbe7c, 2.0, 5, 1, 2, 1.6, 4.6],
-  [0x59b2ff, 3.4, 2, 4, -5, 3.8, 2.3],
-  [0xcddeff, 0.65, 0, -2, 6, 5.3, 2.4],
+  [0xfff1e1, 3.0, -3, 5, 4, 6.0, 2.2],
+  [0xb5a4ed, 1.35, -5, 1, -1, 1.1, 5.8],
+  [0xffc487, 2.5, 5, 1.8, 0.3, 1.15, 5.5],
+  [0xc6ddff, 2.7, 1, 4.2, -5, 4.4, 1.4],
+  [0xf3f5f9, 0.87, 1, -2, 5, 6.2, 3.0],
 ];
 for (const [color, intensity, x, y, z, width, height] of reflectors) {
   const material = new THREE.MeshBasicMaterial({
@@ -77,17 +78,17 @@ for (const [color, intensity, x, y, z, width, height] of reflectors) {
   panel.lookAt(0, 0, 0);
   environment.add(panel);
 }
-scene.environment = pmrem.fromScene(environment, 0.025).texture;
+scene.environment = pmrem.fromScene(environment, 0.035).texture;
 environment.children.forEach(panel => panel.material.dispose());
 panelGeometry.dispose();
 pmrem.dispose();
 
-scene.add(new THREE.HemisphereLight(0x9ab1ff, 0x25102b, 0.9));
+scene.add(new THREE.HemisphereLight(0xd1dcf4, 0x2b223a, 0.62));
 const lights = [
-  [0xa084ff, 42, -4.8, 2.6, 3.5],
-  [0xffbf87, 44, 3.8, 1.8, 4.2],
-  [0x72baff, 65, 1.5, 3.8, -3.4],
-  [0xffcf9c, 19, -1.4, -2.8, 4.7],
+  [0xc3b2ff, 25, -5.6, 2.8, 2.4],
+  [0xffca93, 34, 4.9, 2.2, 3.8],
+  [0xb3d4ff, 48, 1.5, 4.5, -4.1],
+  [0xffe9cf, 13, -1.4, -2.8, 5.2],
 ];
 lights.forEach(([color, intensity, x, y, z]) => {
   const light = new THREE.PointLight(color, intensity, 18, 2);
@@ -106,7 +107,7 @@ for (let i = 0; i < 3; i++) {
   const ring = new THREE.Mesh(
     new THREE.TorusGeometry(radius, i === 1 ? 0.014 : 0.011, 5, 180, Math.PI * (i === 0 ? 1.65 : 1.93)),
     new THREE.MeshBasicMaterial({
-      color: orbitColors[i], transparent: true, opacity: i === 1 ? 0.36 : 0.21,
+      color: orbitColors[i], transparent: true, opacity: i === 1 ? 0.30 : 0.16,
       blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false,
     }),
   );
@@ -136,7 +137,7 @@ scene.add(starField);
 // A subtle reflective-looking floor disc and rings, without texture downloads.
 const floor = new THREE.Mesh(
   new THREE.CircleGeometry(8.1, 112),
-  new THREE.MeshStandardMaterial({color: 0x090e23, metalness: 0.58, roughness: 0.48, envMapIntensity: 0.34, side: THREE.DoubleSide}),
+  new THREE.MeshStandardMaterial({color: 0x101424, metalness: 0.61, roughness: 0.42, envMapIntensity: 0.40, side: THREE.DoubleSide}),
 );
 floor.rotation.x = -Math.PI / 2;
 floor.position.y = -4.45;
@@ -152,7 +153,7 @@ for (let i = 0; i < 4; i++) {
 const composer = new EffectComposer(renderer);
 composer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
 composer.addPass(new RenderPass(scene, camera));
-const bloom = new UnrealBloomPass(new THREE.Vector2(mount.clientWidth, mount.clientHeight), 0.24, 0.31, 1.35);
+const bloom = new UnrealBloomPass(new THREE.Vector2(mount.clientWidth, mount.clientHeight), 0.17, 0.27, 1.48);
 composer.addPass(bloom);
 composer.addPass(new OutputPass());
 
@@ -260,6 +261,7 @@ if (qa) Object.assign(window.__OCTO_DEBUG__, {
       composerDpr: composer.renderTarget1.width / mount.clientWidth,
     };
   },
+  setBloom(enabled) { bloom.enabled = enabled; },
   enableFrameMetrics() { renderer.info.autoReset = false; },
   getFrameMetrics() {
     return {...renderer.info.render, ...renderer.info.memory};

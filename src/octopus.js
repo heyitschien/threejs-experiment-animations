@@ -23,28 +23,27 @@ export class Octopus {
 
   _buildMaterials() {
     this.chrome = new THREE.MeshPhysicalMaterial({
-      color: 0xc9d4ee, metalness: 0.96, roughness: 0.16,
-      clearcoat: 0.32, clearcoatRoughness: 0.14,
-      envMapIntensity: 1.6,
+      color: 0xe0e1e2, metalness: 0.97, roughness: 0.20,
+      clearcoat: 0.24, clearcoatRoughness: 0.17,
+      envMapIntensity: 1.7,
     });
     this.darkChrome = new THREE.MeshPhysicalMaterial({
-      color: 0x293551, metalness: 0.91, roughness: 0.25,
-      clearcoat: 0.3, envMapIntensity: 1.7,
+      color: 0x272f3d, metalness: 0.91, roughness: 0.29,
+      clearcoat: 0.22, envMapIntensity: 1.55,
     });
     this.gold = new THREE.MeshPhysicalMaterial({
       color: 0xeab77d, metalness: 0.89, roughness: 0.22,
       clearcoat: 1, envMapIntensity: 1.55,
     });
     this.glass = new THREE.MeshPhysicalMaterial({
-      color: 0x6575cb, metalness: 0.37, roughness: 0.08,
-      clearcoat: 1, clearcoatRoughness: 0.04,
-      transparent: true, opacity: 0.46,
-      depthWrite: false, envMapIntensity: 1.15,
+      color: 0xb2b8be, metalness: 0, roughness: 0.12,
+      specularIntensity: 0.85, clearcoat: 0.18, clearcoatRoughness: 0.11,
+      transparent: true, opacity: 0.14, depthWrite: false, envMapIntensity: 0.8,
     });
-    this.glow = new THREE.MeshBasicMaterial({color: new THREE.Color(0xffac58).multiplyScalar(1.55), toneMapped: false});
+    this.glow = new THREE.MeshBasicMaterial({color: new THREE.Color(0xffae62).multiplyScalar(1.47), toneMapped: false});
     this.purple = new THREE.MeshBasicMaterial({color: 0x9a7aff, toneMapped: false});
     this.blue = new THREE.MeshBasicMaterial({color: 0x4dbbff, toneMapped: false});
-    this.core = new THREE.MeshBasicMaterial({color: new THREE.Color(0xffe9c4).multiplyScalar(2.2), toneMapped: false});
+    this.core = new THREE.MeshBasicMaterial({color: new THREE.Color(0xffc987).multiplyScalar(1.62), toneMapped: false});
   }
 
   _buildHead() {
