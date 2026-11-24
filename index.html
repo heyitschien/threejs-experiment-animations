@@ -21,7 +21,7 @@
         <section class="hero">
           <p class="eyebrow">ARTIFICIAL LIFE / PROCEDURAL GEOMETRY</p>
           <h1>Intelligence<br />in <em>motion.</em></h1>
-          <p class="lede">Eight mechanical limbs. One living system.<br />No imported 3D assets. Just geometry, light &amp; code.</p>
+          <p class="lede">Eight mechanical limbs. One living system.<br /><span id="asset-description">No imported 3D assets. Just geometry, light &amp; code.</span></p>
           <div class="actions"><button id="motion-toggle">⏸&nbsp; PAUSE MOTION</button><button id="reset-view" class="ghost">↺&nbsp; RESET VIEW</button></div>
         </section>
         <aside class="data-panel" aria-label="Scene telemetry">
@@ -29,12 +29,12 @@
           <div class="data-divider"></div>
           <div class="metric"><span>CLASS</span><strong>OCTOPOD / SYNTHETIC</strong></div>
           <div class="metric"><span>APPENDAGES</span><strong>08 ARTICULATED</strong></div>
-          <div class="metric"><span>CONSTRUCTION</span><strong>100% PROCEDURAL</strong></div>
+          <div class="metric"><span>CONSTRUCTION</span><strong id="construction">100% PROCEDURAL</strong></div>
           <div class="metric"><span>RENDER ENGINE</span><strong>THREE.JS / WEBGL</strong></div>
           <div class="data-divider"></div>
           <div class="metric"><span>FRAME RATE</span><strong id="fps">— FPS</strong></div>
           <div class="metric"><span>STATE</span><strong id="motion-state">ACTIVE</strong></div>
-          <p class="panel-foot">LOCAL RENDER · NO MODEL API · NO EXTERNAL ASSETS</p>
+          <p class="panel-foot" id="asset-footnote">LOCAL RENDER · NO MODEL API · NO EXTERNAL ASSETS</p>
         </aside>
       </main>
       <footer class="bottombar"><span>DRAG TO ORBIT &nbsp; / &nbsp; SCROLL TO ZOOM</span><span>ENGINEERED WITH MATHEMATICS <span class="foot-spark">✳</span></span></footer>

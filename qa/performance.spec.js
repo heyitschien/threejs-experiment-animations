@@ -69,7 +69,7 @@ for (const [lane, profile] of Object.entries({desktop, 'mobile-emulation': mobil
         : null;
       const report = {
         commit: execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(),
-        lane, profile, headed: true, browser: browser.version(), graphics: health.graphics,
+        lane, profile, variant: health.variant, headed: true, browser: browser.version(), graphics: health.graphics,
         ...data, estimatedAttachmentBytes, trials,
       };
       await writeFile(info.outputPath('performance.json'), JSON.stringify(report, null, 2) + '\n');
