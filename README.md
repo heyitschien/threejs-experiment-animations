@@ -68,4 +68,4 @@ With the approved dev tooling installed, run `npm run qa:install` once. Playwrig
 
 ## Future research (not part of OCTO v1.0)
 
-[OCTO Invention Lab proposal](docs/INVENTION-LAB-PROPOSAL.md) · [Research scope and approval gate (#19)](https://github.com/heyitschien/threejs-experiment-animations/issues/19). This is a parked, documentation-only exploration of agent-assisted parametric CAD → Blender → Three.js workflows for nature-inspired and everyday-object designs. It is **not** implemented, and it does not alter the released demo.
+[Invention Lab proposal](docs/INVENTION-LAB-PROPOSAL.md) · [Dated open-source landscape and reuse decision](docs/INVENTION-LAB-TOOL-LANDSCAPE.md) · [Integration session and acceptance playbook](docs/INVENTION-LAB-SESSION-PLAN.md) · [Tracking issue #19](https://github.com/heyitschien/threejs-experiment-animations/issues/19). The recommended **Leaf to Light** tabletop shade-panel pilot explores agent-assisted parametric CAD → Blender → Three.js, with measured geometry/visualization handoffs. This is a **documentation-only, unimplemented** research track requiring separate approval; it does not alter the released demo.
