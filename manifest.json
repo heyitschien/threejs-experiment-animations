@@ -3122,11 +3122,11 @@
       "procedural",
       "blender"
     ],
-    "sha256": "2017e31ef8ef9589f3ba227c63bd5b07e9efeaa55b858e42879a0540e3769c94",
+    "sha256": "9097e03f242c5634cf69be702ce0ab70053e414329a1b9e0875d513e4061b530",
     "timing": "pose = frame index / fps",
     "viewport": {
-      "height": 500,
-      "width": 800
+      "height": 640,
+      "width": 1024
     }
   },
   "performance": {
