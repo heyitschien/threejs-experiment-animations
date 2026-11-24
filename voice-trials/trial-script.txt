@@ -1,0 +1,1 @@
+OCTO started as a procedural robotic octopus in Three.js. Blender’s bundled Python generated the geometry and exported a GLB. Playwright checked the moving mesh in WebGL. The translucent material study used the same geometry, camera, and lighting for both renders.

@@ -1,0 +1,119 @@
+1
+00:00:00,300 --> 00:00:04,673
+OCTO started as a procedural robotic octopus in Three.js.
+
+2
+00:00:04,863 --> 00:00:08,085
+This case study tests a specific engineering workflow.
+
+3
+00:00:08,275 --> 00:00:18,323
+Can a coding agent use professional authoring software, produce a reproducible asset, bring it into a browser, and leave enough evidence for someone else to evaluate it?
+
+4
+00:00:18,513 --> 00:00:20,987
+The concept image is the visual reference.
+
+5
+00:00:21,967 --> 00:00:27,812
+The first study kept the existing scene and replaced one foreground arm behind a URL option.
+
+6
+00:00:28,002 --> 00:00:32,930
+Blender's bundled Python generated the geometry and exported a GLB.
+
+7
+00:00:33,120 --> 00:00:37,813
+From a clean checkout, the regenerated file matched the original byte for byte.
+
+8
+00:00:38,003 --> 00:00:41,907
+The browser runs Three.js and loads the model file locally.
+
+9
+00:00:42,883 --> 00:00:47,214
+The browser moves the imported mesh along the original procedural path.
+
+10
+00:00:47,404 --> 00:00:51,372
+Here the left arm is the original and the right is Blender authored.
+
+11
+00:00:51,562 --> 00:00:56,597
+The revised Playwright test reads the actual positions and normals at three poses.
+
+12
+00:00:56,787 --> 00:01:05,128
+It also checks that the root stays attached, that the readable label matches the active mode, and that a malformed file preserves the default.
+
+13
+00:01:06,133 --> 00:01:11,915
+The Blender variant adds three draw calls and just over six thousand scene triangles in this test.
+
+14
+00:01:12,105 --> 00:01:14,942
+The extra armor reads most clearly in close-up.
+
+15
+00:01:15,132 --> 00:01:22,556
+Mobile emulation uses the same desktop hardware, so the frame timing does not tell us how a real phone would behave.
+
+16
+00:01:22,746 --> 00:01:27,119
+The Blender arm stays optional, which limits the impact of those unknowns.
+
+17
+00:01:28,092 --> 00:01:31,505
+The second study evaluates material design separately.
+
+18
+00:01:31,695 --> 00:01:38,351
+A static section has fitted metal plates, suckers recessed into the surface, internal ribs, and light channels.
+
+19
+00:01:38,541 --> 00:01:43,320
+Both Cycles renders show the same geometry under the same camera and lighting.
+
+20
+00:01:43,510 --> 00:01:45,451
+Only the shell material changes.
+
+21
+00:01:45,641 --> 00:01:48,756
+On the left, light and visible internals reveal depth.
+
+22
+00:01:48,946 --> 00:01:51,228
+The opaque control on the right hides them.
+
+23
+00:01:52,217 --> 00:01:58,083
+The WebGL version also shows the layers, with a simpler reflection and transmission treatment.
+
+24
+00:01:58,273 --> 00:02:01,943
+That demonstrates an inspectable three dimensional material sample.
+
+25
+00:02:02,133 --> 00:02:05,205
+The Blender camera orbit moves around the static piece.
+
+26
+00:02:05,395 --> 00:02:13,629
+There is no evidence yet that this transparent construction bends convincingly, or that it is practical in a full animated browser scene.
+
+27
+00:02:14,633 --> 00:02:21,417
+The draft case study links the original concept, Python scripts, exact commits, captures, and test reports.
+
+28
+00:02:21,607 --> 00:02:27,986
+A reviewer can reproduce the integration and decide whether the visible results justify keeping the option.
+
+29
+00:02:28,176 --> 00:02:30,565
+The repository stack remains in draft.
+
+30
+00:02:30,755 --> 00:02:35,001
+Integration, release, and issue closure are separate approval decisions.

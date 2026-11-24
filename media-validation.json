@@ -1,0 +1,22 @@
+{
+  "durationSeconds": 155.708333,
+  "fileBytes": 4852838,
+  "audioCodec": "aac",
+  "sampleRate": 48000,
+  "videoCodec": "h264",
+  "videoFrames": 3737,
+  "audioVideoDifferenceSeconds": 0.0003330000000119071,
+  "chapters": 7,
+  "captionCues": 30,
+  "decodedCaptionMidpoints": 30,
+  "integratedLUFS": -16.24,
+  "truePeakDBTP": -1.38,
+  "fullDecodePassed": true,
+  "chromiumPlayback": {
+    "duration": 155.708333,
+    "time": 155.708333,
+    "ended": true,
+    "decoded": 3737
+  },
+  "sha256": "e7124b0da2f76bd9028ece49cc245bf68c76b81b720df8ac622183e60da94f62"
+}
