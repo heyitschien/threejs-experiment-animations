@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
 
-export async function openScene(page) {
+export async function openScene(page, {blender = process.env.OCTO_BLENDER === '1', fallback = false} = {}) {
   const issues = [];
   page.on('pageerror', error => issues.push(error.message));
   page.on('console', message => {
@@ -14,7 +14,10 @@ export async function openScene(page) {
     window.octoContextLost = false;
     document.addEventListener('webglcontextlost', () => { window.octoContextLost = true; }, true);
   });
-  await page.goto('/?octo-qa');
+  await page.goto(blender ? '/?octo-qa&tentacle=blender' : '/?octo-qa');
+  const mode = blender ? (fallback ? 'fallback' : 'blender') : 'procedural';
+  await page.waitForFunction(mode => window.__OCTO_DEBUG__?.getTentacleVariant().mode === mode, mode);
+  const variant = await page.evaluate(() => window.__OCTO_DEBUG__.getTentacleVariant());
   await page.waitForFunction(() => window.__OCTO_DEBUG__?.getFrame()?.number > 0);
   const graphics = await page.locator('canvas').evaluate(canvas => {
     const gl = canvas.getContext('webgl2');
@@ -24,7 +27,7 @@ export async function openScene(page) {
   });
   expect(graphics).not.toBeNull();
   return {
-    graphics,
+    graphics, variant,
     async expectHealthy() {
       expect(await page.evaluate(() => window.octoContextLost)).toBe(false);
       expect(issues).toEqual([]);

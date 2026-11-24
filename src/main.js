@@ -97,6 +97,8 @@ lights.forEach(([color, intensity, x, y, z]) => {
 });
 
 const octopus = new Octopus(scene);
+const query = new URLSearchParams(location.search);
+if (query.get('tentacle') === 'blender') octopus.sculpted.enableBlender();
 
 // Radiant orbit rings and atmospheric specks: all generated in code.
 const ambientGroup = new THREE.Group();
@@ -173,7 +175,7 @@ document.getElementById('reset-view').addEventListener('click', resetView);
 let frame = 0;
 let fpsElapsed = 0;
 let drawnTime;
-const qa = import.meta.env.DEV && new URLSearchParams(location.search).has('octo-qa');
+const qa = import.meta.env.DEV && query.has('octo-qa');
 let renderedFrames = 0;
 function animate(now) {
   requestAnimationFrame(animate);
@@ -249,6 +251,7 @@ if (qa) Object.assign(window.__OCTO_DEBUG__, {
       composerDpr: composer.renderTarget1.width / mount.clientWidth,
     };
   },
+  getTentacleVariant() { return octopus.sculpted.variant; },
   setBloom(enabled) { bloom.enabled = enabled; },
   enableFrameMetrics() { renderer.info.autoReset = false; },
   getFrameMetrics() {

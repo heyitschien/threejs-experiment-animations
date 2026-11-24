@@ -7,7 +7,7 @@ export const SIDES = 12;
 const CENTER_SAMPLES = 144;
 const RING_VERTICES = (RING_STEPS + 1) * SIDES;
 const UNDER = new THREE.Vector3(0, 0, 1);
-const PANEL_SPACING = [0, 0.46, 1.6, 2.73, 4.02];
+export const PANEL_SPACING = [0, 0.46, 1.6, 2.73, 4.02];
 const GROOVES = [0.94, 1, 1.025, 1.01, 0.98];
 
 const vecs = count => Array.from({length: count}, () => new THREE.Vector3());

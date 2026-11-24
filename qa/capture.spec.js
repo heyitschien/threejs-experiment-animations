@@ -50,7 +50,12 @@ const extraShots = process.env.OCTO_REVISION_VIEWS === '1' && candidate
   ])
   : [];
 
-for (const shot of [...shots, ...extraShots]) {
+const armDetail = process.env.OCTO_ARM_DETAIL === '1' && candidate ? [{
+  name: 'tentacle-detail', pose: 3.4,
+  camera: {position: [2.8, -2.3, 7.2], target: [1.9, -2.1, 1.3], up: [0, 1, 0], fov: 28},
+}] : [];
+
+for (const shot of [...shots, ...extraShots, ...armDetail]) {
   test(shot.name, async ({ browser, baseURL }, info) => {
     const profile = shot.mobile ? mobile : desktop;
     const context = await browser.newContext({
@@ -84,7 +89,7 @@ for (const shot of [...shots, ...extraShots]) {
       const record = {
         commit: execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(),
         lockSha256: createHash('sha256').update(readFileSync('package-lock.json')).digest('hex'),
-        browser: browser.version(), graphics: health.graphics, profile: {...profile, viewport: page.viewportSize()}, ...frame,
+        browser: browser.version(), variant: health.variant, graphics: health.graphics, profile: {...profile, viewport: page.viewportSize()}, ...frame,
         stability, pngSha256: createHash('sha256').update(first).digest('hex'),
       };
       await writeFile(info.outputPath('capture.json'), JSON.stringify(record, null, 2) + '\n');
