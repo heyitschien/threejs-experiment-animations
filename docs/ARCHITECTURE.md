@@ -8,7 +8,7 @@ flowchart LR
     P --> G["glTF binary · GLB"]
     G --> T["Three.js · optional asset loader"]
     T --> Q["Playwright · geometry, UI and render evidence"]
-    Q --> H["GitHub · draft PR and pinned evidence"]
+    Q --> H["GitHub · reviewed PR stack and pinned evidence"]
     H --> R["Human · independent review and approval"]
     T --> F["Procedural arm · default and load fallback"]
     P --> S["Cycles · static material evidence"]
