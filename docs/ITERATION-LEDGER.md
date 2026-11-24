@@ -69,3 +69,9 @@ Independent visual verdict and rationale / keep, iterate or revert / next step
 - Issue #14. Verified Stage 6 base `27c2c5c9c7bc3876f20a42d26770dceb857c557f` → Stage 7 runtime and capture source `e7325344801997cacc4e96c92a0dee2c341a35c3`. Blender 5.2.4 LTS and bundled Python 3.13.13 passed signed-package and headless exporter validation. Two exports of the generated GLB matched byte-for-byte.
 - Optional `?tentacle=blender` replaces foreground arm index 3 with swept layered armor and amber insets on the existing animation path. The default replays the Stage 6 captures exactly. Node/build and both A/B candidate Playwright suites passed. [Setup, matched visual evidence and benchmarks](STAGE-7-BLENDER-PILOT.md).
 - Close-up chrome armor scored **2 → 3**. Mobile legibility and visible socket detail remain **2 → 2**. The asset adds 194,652 bytes, three draws and 6,220 scene triangles. Keep the procedural default and hold the Blender pilot for independent review. Drop the optional query to restore A.
+
+### Stage 7 · Closure review corrections
+
+- Stage 7 draft review head `f2b4a4306374fc074c732d5a72a4cd57266c08c5` → tested correction `a92477920108285dd8903e7f8c7083090dc89204`. The opt-in UI changes after successful binding. Browser QA checks live position and normal buffers and socket attachment at three fixed poses. The asset and historical goldens are unchanged.
+- A clean worktree reproduced the GLB byte for byte. Seventeen Node tests, the Vite build, 25 browser cases per variant, and two headed benchmark profiles per variant passed. The nine legacy comparisons still differ from v0.1. [Study A results](STUDY-A-ASSET-INTEGRATION.md) · [Release and rollback](IMPLEMENTATION-PLAYBOOK.md).
+- The separate [static material study](STUDY-B-MATERIAL-EVALUATION.md) is evidence for design and export. Independent validation of the correction and explicit integration approval remain pending.
