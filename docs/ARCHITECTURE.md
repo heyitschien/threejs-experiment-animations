@@ -15,7 +15,7 @@ flowchart LR
     S --> H
 ```
 
-Study A binds one local GLB mesh assembly to the existing arm centerline. Three.js updates vertex positions and normals on the CPU. The other seven arms, interaction controls, and default display remain procedural. The development-only QA hook reads the live mesh at fixed poses.
+Study A binds one local GLB mesh assembly to the existing arm centerline. Three.js updates vertex positions and normals on the CPU. The other seven arms remain procedural. Both modes use the same interaction controls, and the default loads eight procedural arms. The development-only QA hook reads the live mesh at fixed poses.
 
 Study B exports a separate static GLB and renders the editable Blender scene with Cycles. Three.js loads that separate model for material inspection. Neither Study B asset is a dependency of OCTO.
 

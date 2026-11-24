@@ -1,5 +1,7 @@
 # Agent-operated 3D implementation case study
 
+[2:36 captioned walkthrough](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/2c15c0b5568e8a30094e716d436f0ac27512a988/walkthrough.mp4) · [WebVTT captions](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/2c15c0b5568e8a30094e716d436f0ac27512a988/walkthrough.vtt) · [Transcript](https://github.com/heyitschien/threejs-experiment-animations/blob/2c15c0b5568e8a30094e716d436f0ac27512a988/walkthrough-transcript.md)
+
 OCTO began as a procedural Three.js octopus. The engineering question was whether an agent could work across a professional authoring tool and a live browser, then leave a result somebody else could reproduce and review. The evaluation ended with two bounded experiments.
 
 | Study | What was delivered | Decision |
@@ -7,7 +9,7 @@ OCTO began as a procedural Three.js octopus. The engineering question was whethe
 | [A · Asset integration](STUDY-A-ASSET-INTEGRATION.md) | A reproducible Blender GLB for one foreground arm, animated in Three.js and isolated behind a URL flag. | Keep it optional. The close-up benefit is real in the published renders, while phone-scale detail is limited. |
 | [B · Material evaluation](STUDY-B-MATERIAL-EVALUATION.md) | A static metal-and-translucent section, matched material renders, browser inspection and editable source. | Keep it as evidence of material design and export. |
 
-The chain starts with an approved brief and ends at independent review. Blender produces the asset, Three.js gives it a runtime, Playwright checks behavior and captures views, and GitHub gives reviewers immutable evidence. [Architecture](ARCHITECTURE.md) · [Evidence and short demo](EVIDENCE-INDEX.md) · [Implementation and release playbook](IMPLEMENTATION-PLAYBOOK.md)
+The chain starts with an approved brief and ends at independent review. Blender produces the asset, Three.js gives it a runtime, Playwright checks behavior and captures views, and GitHub gives reviewers immutable evidence. [Architecture](ARCHITECTURE.md) · [Evidence index](EVIDENCE-INDEX.md) · [Implementation and release playbook](IMPLEMENTATION-PLAYBOOK.md)
 
 ## What the evidence supports
 
