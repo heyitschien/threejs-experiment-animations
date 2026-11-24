@@ -65,3 +65,7 @@ With the approved dev tooling installed, run `npm run qa:install` once. Playwrig
 ## Implementation case study
 
 [2:36 captioned walkthrough](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/2c15c0b5568e8a30094e716d436f0ac27512a988/walkthrough.mp4) · [WebVTT captions](https://raw.githubusercontent.com/heyitschien/threejs-experiment-animations/2c15c0b5568e8a30094e716d436f0ac27512a988/walkthrough.vtt) · [Case study](docs/AGENT-OPERATED-3D-CASE-STUDY.md) · [Evidence index](docs/EVIDENCE-INDEX.md)
+
+## Future research (not part of OCTO v1.0)
+
+[OCTO Invention Lab proposal](docs/INVENTION-LAB-PROPOSAL.md) · [Research scope and approval gate (#19)](https://github.com/heyitschien/threejs-experiment-animations/issues/19). This is a parked, documentation-only exploration of agent-assisted parametric CAD → Blender → Three.js workflows for nature-inspired and everyday-object designs. It is **not** implemented, and it does not alter the released demo.
