@@ -1,72 +1,87 @@
-# OCTO Invention Lab — proposed research lane
+# OCTO Invention Lab — design-to-evidence research proposal
 
-> **Status: parking-lot proposal only.** The completed, non-production [OCTO Study v1.0](https://github.com/heyitschien/threejs-experiment-animations/releases/tag/octo-study-v1.0) remains the released case study. This document creates **no implementation authorization**, new dependencies, services, deployments, hardware purchases, or modifications to the OCTO runtime. Track future approval under [#19](https://github.com/heyitschien/threejs-experiment-animations/issues/19).
+> **Status: draft planning document, researched 2026-11-24.** This extends [Issue #19](https://github.com/heyitschien/threejs-experiment-animations/issues/19) and does not authorize setup, execution, procurement, fabrication, publication, or changes to the released OCTO runtime. [OCTO Study v1.0](https://github.com/heyitschien/threejs-experiment-animations/releases/tag/octo-study-v1.0) remains a separate, completed non-production case study.
 
-## Purpose
+**Decision requested at the next lab session:** approve or revise one bounded pilot and its explicit time/cost ceiling. The recommended pilot is **Leaf to Light**, a non-load-bearing, 300 × 300 mm tabletop architectural shading-panel study. A bamboo connector is retained as an optional geometry calibration exercise, **not** the flagship invention.
 
-Explore how software agents and programmable design tools can carry a human idea from **nature-inspired observation → precise parametric geometry → visual storytelling → interactive inspection → bounded verification → evidence-backed review**.
+Read alongside the [current open-source landscape](INVENTION-LAB-TOOL-LANDSCAPE.md) and the [integration session and acceptance playbook](INVENTION-LAB-SESSION-PLAN.md).
 
-The opportunity is not to become a 3D art studio. It is to investigate where agent-operated, interoperable design tools can reduce friction between imagination and models that people can understand, measure, challenge and—after appropriate real-world validation—potentially fabricate.
+## The question
 
-This is independent of any other autonomous-systems laboratory. Reuse the **principles** (clear contracts, reproducibility, validation and human approval), not shared runtime infrastructure, data or execution authority.
+Can a coding agent turn a nature-inspired brief into **one dimensionally authoritative parametric CAD model**, produce mechanically faithful derived meshes for Blender and Three.js, run controlled numerical and visual checks, and package honest evidence another person can reproduce?
 
-## Tool boundaries: never confuse a pretty image with a verified part
+The objective is **integration, workflow design, validation, and reusable knowledge**—not becoming a 3D art studio, building a general-purpose CAD agent from scratch, or implying a render is a certified design.
 
-| Layer | Primary tool | Owned artifact | What it does / does not validate |
-| --- | --- | --- | --- |
-| Brief and constraints | Human + research agent | Units, dimensions, functional intent, safety boundaries, acceptance criteria | Captures requirements, not proof of feasibility |
-| Precise parametric design | **CadQuery / Python** | **CAD-authoritative script + STEP**, optional STL | Defines editable dimensions and solid geometry using OpenCascade; does not establish strength, safety, manufacturing fit or building-code compliance |
-| Optional CAD inspection | **FreeCAD** | Imported STEP or explicit edited CAD version | Human-readable dimensional inspection / CAD review; not mandatory for the first pilot |
-| Visual presentation | **Blender** | Material scene, tessellated meshes, cameras, GLB | Makes form, materials and environment legible; **must not silently alter CAD dimensions** |
-| Interactive inspection | **Three.js** | Browser GLB viewer | Orbit, inspect and compare variants; WebGL appearance is not an engineering simulation |
-| Automated verification | Python tests + browser checks | Machine-readable test receipts, fixed screenshots | Check units, bounds, shape validity, data handoffs and controls; only prove the checks actually performed |
-| Review / provenance | GitHub + human reviewer | Draft, exact SHA, before/after evidence, limitations | Records accountable decisions; no automatic certification or production release |
+## Current OCTO evidence versus the unproven leap
 
-### Why two geometry tools?
-
-- **CadQuery is for "will this dimensioned solid fit?"** Maintain the parameterized CAD source and STEP master. This is where diameter, thickness, offsets, hole size and mechanical relationships belong.
-- **Blender is for "can a person see and understand this design?"** Add credible textures, lighting, context, visual storytelling or organic detail to a *derived* mesh. Use explicit unit/scale checks when translating from STEP or CAD mesh to Blender and GLB.
-- **FreeCAD is optional, not another engine to synchronize by default.** Use it when an interactive CAD inspection or an interchange check adds genuine value.
-- **Three.js lets others inspect the derivative without installing CAD or Blender.** Share lightweight browser results, but never infer mechanical safety from rendering quality.
-
-One authoritative CAD model flows **one way** into visualization. A modified GLB must not be treated as an updated STEP design. The tessellation/interchange step needs an explicit traceable conversion, unit definition, and geometric comparison.
-
-## Candidate themes (choose one per experiment)
-
-1. **Bamboo / biomimetic architecture** — explore nature-inspired geometry and modular connection details. Make small **non-load-bearing** demonstrators, not building plans, structural specifications or construction recommendations.
-2. **Everyday-object redesign** — repairable hinges, modular trash-bin mechanisms, replaceable parts, accessible interfaces and material-use exploration.
-3. **Biologically inspired mechanisms** — borrow a *functional principle* from leaves, joints or shells rather than merely copying natural aesthetics.
-
-Architecture is compelling because nature provides forms to study; engineering introduces constraints that challenge those forms. Actual bamboo variability, moisture, load ratings, code, anchorage and construction safety require specialist review and physical testing.
-
-## Proposed first pilot — *not approved for execution*
-
-**One small bamboo-inspired modular connector**, with two dimensional configurations. Select the exact design and parameter values only at kickoff.
-
-| Stage | Required output | Pass criterion |
+| Claim | Evidence status | Reference |
 | --- | --- | --- |
-| Brief | Tube diameter, connector angle, wall thickness, fastener clearance, mm units, intended use | One bounded non-load-bearing question and explicit tolerances/assumptions |
-| CadQuery | Python script, STEP, tessellated output, measured properties for both variants | Both outputs are reproducible; solids are valid; units, dimensions, volumes/bounds and designated clearances pass numerical checks |
-| Blender | Two matched render views and GLB(s) from exported CAD geometry | Appearance improves clarity; dimensional scale is checked against CAD source |
-| Three.js | Simple standalone model inspector, variant switch, mm scale readout | Browser loads both, shows correct geometry/scale, controls work, failed model load is handled |
-| Report | Source + generated assets + exact SHAs + tests + failure evidence + conclusion | Clear **PROVEN / REPORTED / INFERRED / UNVALIDATED** distinctions and a go/no-go decision |
+| Blender/Python can author an asset, export a GLB, and integrate an opt-in arm in Three.js with fallback | **Demonstrated within OCTO**; same-agent tests, not an independent lab replication | [Study A](STUDY-A-ASSET-INTEGRATION.md), [final validation](FINAL-VALIDATION.md) |
+| Controlled Blender material study can reveal internal structures, with browser representations of the same static scene | **Demonstrated static visual comparison**, not physical material behavior | [Study B](STUDY-B-MATERIAL-EVALUATION.md) |
+| Exact CAD-to-mesh handoff, engineering units and dimensions, FreeCAD round trip | **Not tested in OCTO** | This proposed pilot |
+| Physical manufacturability, prototype fit, daylight/thermal performance, structural safety | **Not tested** | Separate future evidence gates |
 
-Keep this a **separate path/branch** with no change to the released octopus. No unnecessary agent framework, online CAD SaaS account, AI model benchmark, new 3D sculpture or autonomous background worker. An agent comparison (Codex vs Claude Code) is **optional future research**, and if run must use matched tool access, budget and rubric.
+The next study therefore targets **CAD authority and cross-tool verification**, not additional chrome armor or a complete octopus redesign.
 
-## Gatekeeping and stopping
+## Technical ownership and the one-way source of truth
 
-**Now:** preserve this proposal and [issue #19](https://github.com/heyitschien/threejs-experiment-animations/issues/19), then **stop**. Do not begin installation or implementation.
+| Layer | Default choice | Authoritative artifact | Rule |
+| --- | --- | --- | --- |
+| Specification | Human-reviewed Markdown + structured parameters | Brief with dimensions in **mm**, use case, limits, test thresholds | Resolve ambiguities before generating geometry |
+| Parametric geometry | **CadQuery + Python** | `.py` model and STEP (`.step`) | Exact geometry and parameters belong here; STL/GLB are derivatives |
+| CAD inspection | **FreeCAD**, optional at first | Imported STEP + inspection receipt | Verify validity/dimensions; if edited, explicitly version and re-export |
+| Presentation | **Blender Python** | `.blend`, images, derived mesh | Lighting/materials only; dimensional changes need CAD regeneration |
+| Browser inspection | **Three.js** | GLB scene + version/units overlay | Viewer for comprehension, not the authority for engineering dimensions |
+| Repeatability | Python tests + browser QA | JSON/CSV measurements, images, logs, SHAs | State exactly what passed and what was not tested |
+| Independent assessment | Human reviewer | Review decision + unresolved issues | No automatic structural/fabrication certification |
 
-**At future approval:** name one intended user, one physical question, dimensions/units, safety assumptions, available resources, a capped effort budget, and a reviewer. Confirm compatible software licenses and environment. Build one pipeline **vertical slice**, not an extensible platform.
+CadQuery and alternative **build123d** both rely on Open Cascade. Pick **one** as the pilot's source-code CAD dialect; benchmark the other only if concrete friction justifies switching. Evaluate an existing orchestration package such as **agentcad** before adding our own MCP server or agent framework. Do not introduce FreeCAD as a mandatory second modeling engine without a verified need.
 
-**Done when:** parameter changes regenerate a valid CAD solid; STEP and browser mesh consistently reflect the stated units and dimensions; tests and evidence are repeatable; limitations and human approvals are recorded. A successful render or simulation alone does **not** certify manufacturability, strength, environmental performance or code compliance.
+**Interop contract:** source `.py` → STEP solid → explicitly tessellated mesh → Blender scene → GLB → Three.js. STEP carries precise geometry for CAD interchange, but **not** the editable Python feature history. The GLB is a visual mesh, not an exact CAD master. Record unit conversions (CAD mm; explicit viewer/GLB convention), mesh tolerance, geometry bounds, and derivative provenance.
 
-**Reject expansion when:** there is no measurable question, the plan is primarily art polish, toolchain costs are escalating, or it displaces existing priorities.
+## Recommended pilot: Leaf to Light
 
-## References
+**What we will design:** three variants of one **300 × 300 mm, non-load-bearing tabletop architectural shade-screen panel** under the same nominal material thickness and visual conditions:
 
-- [CadQuery documentation](https://cadquery.readthedocs.io/en/stable/)
-- [FreeCAD features and file interchange](https://www.freecad.org/features.php)
-- [Blender Python API](https://docs.blender.org/api/current/)
-- [OCTO Study v1.0 baseline](https://github.com/heyitschien/threejs-experiment-animations/releases/tag/octo-study-v1.0)
-- [Proposed research issue #19](https://github.com/heyitschien/threejs-experiment-animations/issues/19)
+1. **A — ordinary straight slats:** the simple baseline.
+2. **B — leaf-venation-inspired branching pattern:** biological form translated into adjustable geometry.
+3. **C — bamboo-rhythm-inspired repeated members:** natural spacing and modularity, without claiming literal bamboo structural behavior.
+
+**Scope:** abstract, accessible tabletop design study. No wall anchoring, building envelope, roof, occupied structure, wind-load rating, seismic design, public installation, or permit-ready drawing. A full-sized facade or pavilion is a later, separately approved discipline.
+
+**Proposed model parameters** (values except outer dimensions resolved at kickoff): `panel_width_mm`, `panel_height_mm`, `panel_thickness_mm`, `frame_width_mm`, `pattern_density`, `minimum_web_mm`, `opening_rule`, and `variant`. Record manufacturing method and its minimum feature/clearance assumptions before selecting final dimensions.
+
+**Useful test questions:**
+
+- Can one agent generate **three comparable valid solids** from one documented specification and revise them without manual sculpting?
+- Does the STEP → mesh → Blender → GLB handoff preserve panel bounding dimensions and orientation within a declared tolerance?
+- Compared at identical light angle and geometry envelope, how do projected shadow/open-area ratios differ? (This is **not** an energy-savings estimate.)
+- How does solid volume / approximate material usage differ between designs given the same material assumption?
+- Can a second person inspect the models in a browser, understand constraints, and reproduce the measurements?
+
+**Differentiation:** the invention is **not** a claim that leaf-pattern panels do not already exist. It is a documented, agent-operable design-to-evidence loop that makes visual/physical tradeoffs inspectable and repeatable.
+
+## Why not start with the bamboo connector?
+
+The literature already documents clamps, caps, custom parametric connectors, and experimentally tested 3D-printed bio-composite bamboo joints ([2024 connection review](https://www.mdpi.com/2075-5309/14/4/1126); [2021 experimental paper](https://infoscience.epfl.ch/entities/publication/e5a0be91-347d-4224-9d01-98696efa671c)). It is a **good low-complexity precision smoke test**, but limited differentiation as an invention. Use a connector only if the shading pilot's model complexity blocks the CAD export/validation learning goal.
+
+Other future, **unapproved** themes: an everyday repairable mechanism (e.g. bin hinge), lightweight furniture, a non-load-bearing bamboo pavilion *concept*, and a botanically inspired adaptive screen. Each needs a new brief and its own go/no-go gate.
+
+## Gates, boundaries, and finish line
+
+1. **Research gate:** verify licenses, current tool compatibility, project maturity, security and API changes; prefer existing open-source components. Document which projects were **read** vs **actually installed/tested**.
+2. **Environment gate:** approval of one pilot, explicit model parameter schema, safe execution environment, version pins and a capped time/cost budget. No private credentials in CAD agents or public outputs.
+3. **Digital evidence gate:** three regenerable parameter sets, valid STEP solids, controlled geometry/scale comparisons, matched Blender renders, working browser viewer, machine-readable check results, and at least one documented failure/recovery scenario.
+4. **Real-world gate:** **separately approved** prototype fabrication and measurement, material assumptions, safe-use classification. Engineering simulation or a print alone does not establish safety.
+5. **Communication gate:** publish a factual technical case study and then draft a LinkedIn summary only after results are verified; never substitute conceptual images for measured evidence.
+
+**Stop** if the first integration session becomes a new orchestration framework, introduces uncontrolled SaaS cost, needs major changes to the released OCTO app, or cannot answer a measurable question. A failed experiment with clear boundary diagnostics is a valid case-study result.
+
+## Approval needed before implementation
+
+- [ ] Approve Leaf to Light or choose the alternate one-part calibration pilot.
+- [ ] Choose a specific fabrication assumption (e.g. tabletop printed test piece vs laser-cut sheet); physical work remains separately approved.
+- [ ] Confirm available computer, installed versions, maximum setup time and any allowable API budget.
+- [ ] Assign human reviewer, acceptance thresholds and stop conditions from the [session playbook](INVENTION-LAB-SESSION-PLAN.md).
+
+No dependencies, CAD files, media, remote services or runtime changes are included in this planning PR.
