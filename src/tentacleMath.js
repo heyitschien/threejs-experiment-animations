@@ -21,26 +21,69 @@ export function smoothstep(a, b, value) {
 }
 
 export function armPoint(index, t, time = 0) {
-  const i = ((index % ARM_COUNT) + ARM_COUNT) % ARM_COUNT;
-  const [angle, sweep, reach, depth] = arms[i];
-  const p = Math.max(0, Math.min(1, t));
-  const sign = i < 3 || i === 7 ? -1 : 1;
-  const phase = time * (0.68 + i * 0.036) + i * 1.37 - p * 6;
-  const travel = Math.sin(phase);
-  const curl = smoothstep(0.49, 1, p);
-  const theta = angle + sweep * smoothstep(0.04, 0.66, p) + travel * p * 0.12;
-  const radius = 0.49 + reach * Math.sin(p * 1.58) - 0.48 * curl;
-  const loop = Math.PI * (1.32 + 0.14 * Math.sin(phase - 0.7)) * curl;
-  const loopRadius = (0.72 - 0.25 * p) * smoothstep(0.34, 0.69, p);
-  const along = radius + loopRadius * Math.sin(loop);
-  const across = sign * loopRadius * (1 - Math.cos(loop));
-  return [
-    along * Math.cos(theta) - across * Math.sin(theta),
-    -0.31 + along * Math.sin(theta) + across * Math.cos(theta) + travel * p * 0.09,
-    depth * Math.sin(p * 2.2) + 0.23 * p * Math.cos(phase),
-  ];
+  const path = new ArmPath();
+  path.begin(((index % ARM_COUNT) + ARM_COUNT) % ARM_COUNT, time);
+  return path.sample({set(x, y, z) { return [x, y, z === 0 ? 0 : z]; }}, Math.max(0, Math.min(1, t)));
 }
 
-export function armRadius(t) {
-  return 0.255 * Math.pow(1 - Math.max(0, Math.min(1, t)), 0.87) + 0.027;
+export function armRadius(t, index) {
+  const u = Math.max(0, Math.min(1, t));
+  // Lower-left and upper-right tips retain a little more silhouette at phone scale.
+  const tip = index === 2 || index === 5 ? 0.014 * smoothstep(0.86, 1, u) : 0;
+  return 0.027 + 0.269 * (1 - u) ** 0.85 + tip;
+}
+
+const CURL_START = 0.59;
+const curlAngles = [3.55, 3.87, 3.76, 3.82, 3.43, 3.16, 3.45, 3.36];
+
+// Cache the moving transition point and tangent once per arm per pose.
+export class ArmPath {
+  constructor() {
+    this.join = {x: 0, y: 0, set(x, y) { this.x = x; this.y = y; }};
+    this.near = {x: 0, y: 0, set: this.join.set};
+  }
+
+  begin(index, time) {
+    const [angle, sweep, reach, depth] = arms[index];
+    this.angle = angle;
+    this.sweep = sweep;
+    this.reach = reach;
+    this.depth = depth;
+    this.phase = time * (0.68 + index * 0.036) + index * 1.37;
+    this.sign = index < 3 || index === 7 ? -1 : 1;
+    this.stem(this.join, CURL_START);
+    this.stem(this.near, CURL_START - 0.001);
+    const dx = this.join.x - this.near.x;
+    const dy = this.join.y - this.near.y;
+    const length = Math.hypot(dx, dy);
+    this.tx = dx / length;
+    this.ty = dy / length;
+    // Open the lower-right foreground tip away from the neighboring curl.
+    this.terminalOffset = index === 3 ? -0.55 : 0;
+    this.curlAngle = curlAngles[index] + 0.27 * Math.sin(this.phase - 6.2);
+    this.curlRadius = 0.67 + 0.08 * Math.sin(this.phase - 4.8);
+  }
+
+  depthAt(p) {
+    return this.depth * Math.sin(p * 2.2)
+      + 0.20 * smoothstep(0, 0.78, p) * Math.cos(this.phase - 6 * p)
+      + 0.10 * smoothstep(0.5, 1, p) * Math.sin(this.phase - 6.65 * p);
+  }
+
+  stem(out, p) {
+    const wave = Math.sin(this.phase - 6 * p) * smoothstep(0, 0.55, p);
+    const theta = this.angle + this.sweep * smoothstep(0.04, 0.66, p) + wave * p * 0.10;
+    const radius = 0.49 + this.reach * Math.sin(p * 1.5);
+    return out.set(radius * Math.cos(theta), -0.31 + radius * Math.sin(theta) + wave * p * 0.08, this.depthAt(p));
+  }
+
+  sample(out, p) {
+    if (p <= CURL_START) return this.stem(out, p);
+    const u = (p - CURL_START) / (1 - CURL_START);
+    const angle = this.curlAngle * u + this.terminalOffset * smoothstep(0.28, 1, u);
+    const along = this.curlRadius * Math.sin(angle) + 0.21 * (1 - Math.exp(-6 * u));
+    const side = this.sign * this.curlRadius * (1 - Math.cos(angle));
+    return out.set(this.join.x + along * this.tx - side * this.ty,
+      this.join.y + along * this.ty + side * this.tx, this.depthAt(p));
+  }
 }

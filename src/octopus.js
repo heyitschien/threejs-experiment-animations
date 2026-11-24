@@ -1,15 +1,6 @@
 import * as THREE from 'three';
-import { ARM_COUNT, ARM_SEGMENTS, armPoint, armRadius, TAU } from './tentacleMath.js';
-
-const A = new THREE.Vector3();
-const B = new THREE.Vector3();
-const D = new THREE.Vector3();
-const MID = new THREE.Vector3();
-const FRONT = new THREE.Vector3(0, 0, 1);
-const RIGHT = new THREE.Vector3();
-const FACING = new THREE.Vector3();
-const BASIS = new THREE.Matrix4();
-const PLACEMENT = new THREE.Matrix4();
+import { ARM_COUNT, armPoint, TAU } from './tentacleMath.js';
+import { SculptedTentacles } from './sculptedTentacles.js';
 
 function torus(radius, tube, material, segments = 48) {
   return new THREE.Mesh(new THREE.TorusGeometry(radius, tube, 8, segments), material);
@@ -162,43 +153,6 @@ export class Octopus {
   }
 
   _buildArms() {
-    const count = ARM_COUNT * ARM_SEGMENTS;
-    const batch = (geometry, material, size = count) => {
-      const mesh = new THREE.InstancedMesh(geometry, material, size);
-      mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-      mesh.frustumCulled = false;
-      this.root.add(mesh);
-      return mesh;
-    };
-    this.armParts = [
-      batch(new THREE.CylinderGeometry(0.91, 1.03, 1.10, 10), this.darkChrome),
-      batch(new THREE.CylinderGeometry(0.96, 1.14, 0.91, 14), this.chrome),
-      batch(new THREE.TorusGeometry(1, 0.10, 6, 20), this.gold),
-      batch(new THREE.TorusGeometry(1, 0.28, 6, 14), this.glow, count * 2),
-    ];
-    const part = new THREE.Object3D();
-    const rimAngle = Math.PI / 2;
-    this.armPartMatrices = [];
-
-    for (let j = 0; j < ARM_SEGMENTS; j++) {
-      const radius = armRadius((j + 0.5) / ARM_SEGMENTS);
-      const matrix = (x, y, z, sx, sy, sz, rx = 0, ry = 0) => {
-        part.position.set(x, y, z);
-        part.scale.set(sx, sy, sz);
-        part.rotation.set(rx, ry, 0);
-        part.updateMatrix();
-        return part.matrix.clone();
-      };
-      this.armPartMatrices.push([
-        matrix(0, 0, 0, radius, 1, radius),
-        matrix(0, 0.018, 0, radius, 1, radius),
-        matrix(0, -0.43, 0, radius, radius * 2.6, radius, rimAngle),
-        matrix(-radius * 0.44, -0.04, radius * 0.95, radius * 0.29, 0.19, radius * 0.29, 0, -0.40),
-        matrix(radius * 0.44, -0.04, radius * 0.95, radius * 0.29, 0.19, radius * 0.29, 0, 0.40),
-      ]);
-    }
-
-    this.segment = new THREE.Object3D();
     for (let arm = 0; arm < ARM_COUNT; arm++) {
       // Socket that makes the procedural geometry visually connect to the head.
       const mount = new THREE.Group();
@@ -212,6 +166,7 @@ export class Octopus {
       mount.add(bolt);
       this.root.add(mount);
     }
+    this.sculpted = new SculptedTentacles(this.root, this);
     this.update(0);
   }
 
@@ -224,39 +179,7 @@ export class Octopus {
     this.reactor.rotation.z = Math.sin(time * 0.31) * 0.2;
     this.innerFrame.rotation.x = time * 0.09;
 
-    for (let i = 0; i < ARM_COUNT; i++) {
-      A.set(...armPoint(i, 0, time));
-      for (let j = 0; j < ARM_SEGMENTS; j++) {
-        B.set(...armPoint(i, (j + 1) / ARM_SEGMENTS, time));
-        D.subVectors(B, A);
-        const length = D.length();
-        MID.copy(A).lerp(B, 0.5);
-        A.copy(B);
-        if (length < 0.0001) continue;
-
-        // Keep the cup rows facing forward as the links turn through each curl.
-        D.multiplyScalar(1 / length);
-        RIGHT.crossVectors(D, FRONT);
-        if (RIGHT.lengthSq() < 1e-8) RIGHT.set(1, 0, 0);
-        RIGHT.normalize();
-        FACING.crossVectors(RIGHT, D);
-        BASIS.makeBasis(RIGHT, D, FACING);
-        this.segment.position.copy(MID);
-        this.segment.quaternion.setFromRotationMatrix(BASIS);
-        this.segment.scale.y = length;
-        this.segment.updateMatrix();
-
-        const index = i * ARM_SEGMENTS + j;
-        const parts = this.armPartMatrices[j];
-        for (let k = 0; k < 3; k++) {
-          this.armParts[k].setMatrixAt(index, PLACEMENT.multiplyMatrices(this.segment.matrix, parts[k]));
-        }
-        for (let k = 0; k < 2; k++) {
-          this.armParts[3].setMatrixAt(index * 2 + k, PLACEMENT.multiplyMatrices(this.segment.matrix, parts[k + 3]));
-        }
-      }
-    }
-    this.armParts.forEach(mesh => { mesh.instanceMatrix.needsUpdate = true; });
+    this.sculpted.update(time);
   }
 
   dispose() {
@@ -264,7 +187,7 @@ export class Octopus {
     const materials = new Set();
     this.root.traverse(obj => {
       if (obj.geometry) geometries.add(obj.geometry);
-      if (obj.material) materials.add(obj.material);
+      if (obj.material) [obj.material].flat().forEach(material => materials.add(material));
     });
     geometries.forEach(g => g.dispose());
     materials.forEach(m => m.dispose());
