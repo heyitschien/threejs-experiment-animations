@@ -31,6 +31,10 @@ All seven PRs were open drafts with matching base refs and a clean GitHub merge 
 
 The #15 correction revision is `a92477920108285dd8903e7f8c7083090dc89204`. Main at audit was `20283f48f2e6869e1b783652b5c5dec86acca7d0`. All six preceding heads and the reference and golden blobs are preserved.
 
+## Final integration
+
+Integrated `main` is [`84964523946fd81af5195f65df9f9eb5fc982e0d`](https://github.com/heyitschien/threejs-experiment-animations/commit/84964523946fd81af5195f65df9f9eb5fc982e0d) after merging PRs #2, #4, #6, #8, #10, #12, #15 and #17 in order. The full merge-commit list, the validation commands, the golden control and the frame-timing medians are in the [final validation record](FINAL-VALIDATION.md).
+
 ## Closure evidence
 
 | Deliverable | Pinned links |

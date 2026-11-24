@@ -15,10 +15,10 @@ The chain starts with an approved brief and ends at independent review. Blender 
 
 | Status | Meaning and outcome |
 | --- | --- |
-| **PROVEN** | Directly exercised or inspectable here. A clean worktree reproduced the pinned Study A GLB byte for byte. Browser tests checked actual mesh deformation, socket attachment, UI, and malformed-file fallback. Study B's published stills show a same-view material comparison. |
-| **REPORTED** | Prior observations with traceable records. The original Stage 7 report documents installation checks, local load timing, and a benchmark with blank-page controls. Study B's original browser run reported successful drag and material-toggle checks. |
+| **PROVEN** | Directly exercised or inspectable here. A clean worktree reproduced the pinned Study A GLB byte for byte. The integrated `main` tree matched the rehearsed stack, 17 Node tests and the Vite build passed, and browser tests checked actual mesh deformation, socket attachment, UI, and malformed-file fallback. Both candidate lanes passed 25 of 25 cases. Study B's published stills show a same-view material comparison. |
+| **REPORTED** | Prior observations with traceable records. The original Stage 7 report documents installation checks, local load timing, and a benchmark with blank-page controls. Study B's original browser run reported successful drag and material-toggle checks. The final headed frame-timing run is recorded in the [final validation record](FINAL-VALIDATION.md). |
 | **INFERRED** | An interpretation of the artifacts. The layered Study B shell offers a more convincing sense of depth. Reusable geometry and fixed cameras make further visual comparisons easier to interpret. |
-| **NOT YET VALIDATED** | Independent rerun and final visual approval, physical mobile performance, GPU headroom, sustained production behavior, and animation of the translucent Study B design. |
+| **NOT YET VALIDATED** | Independent review by a second person or host, physical mobile performance, cross-browser timing, GPU headroom, sustained production behavior, rig continuity and collision, and animation of the translucent Study B design. The final run was performed by the same agent on one workstation. |
 
 ## Implementation lessons
 
@@ -28,4 +28,6 @@ The chain starts with an approved brief and ends at independent review. Blender 
 - **Keep a recoverable default.** A failed optional import leaves the procedural arm and its copy in place. Keep the authoring tool outside the browser dependency chain and keep large review media on evidence refs.
 - **Measure the tradeoff you actually tested.** The optional arm adds geometry, draw calls, asset transfer and runtime deformation work. Reproduction and local QA were automated using an existing verified Blender installation. There is no measurement of human hours, labor savings, setup cost, unattended reliability, customer adoption or production readiness.
 
-The technical evaluation is ready for independent review. Integration, release and issue closure remain approval gates.
+## Integration outcome
+
+The eight stacked PRs were merged into `main` parent-first, #2 through #17, with merge commits that preserve ancestry. Each step verified the pinned head, a patch identical to the reviewed stage, and reachability from `main`. The integrated default is the eight procedural arms. The optional Blender arm stays behind `?tentacle=blender`. Study B remains on its static evidence branch. The [final validation record](FINAL-VALIDATION.md) lists the commands, results, merged SHAs and remaining gaps. The non-production `octo-study-v1.0` release points to this case study, the captioned walkthrough and the pinned evidence.

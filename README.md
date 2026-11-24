@@ -1,6 +1,8 @@
 # OCTO / Procedural Intelligence · Three.js visual prototype
 
-OCTO v0.1 is a code-only animated robotic octopus inspired by the [concept image](reference/octopus-concept.png). The case-study branch still defaults to eight procedural arms. Add `?tentacle=blender` to the local viewer URL to see seven procedural arms and one original, agent-authored Blender arm imported as a GLB. If the GLB fails to load, the procedural scene stays active. The concept image is used for visual comparison. Both modes run locally without API keys or paid services.
+OCTO v0.1 is a code-only animated robotic octopus inspired by the [concept image](reference/octopus-concept.png). The integrated `main` branch defaults to eight procedural arms. Add `?tentacle=blender` to the local viewer URL to see seven procedural arms and one original, agent-authored Blender arm imported as a GLB. If the GLB fails to load, the procedural scene stays active. The concept image is used for visual comparison. Both modes run locally without API keys or paid services.
+
+**Status:** `octo-study-v1.0` is a non-production case-study release. It is not deployed. See the [final validation record](docs/FINAL-VALIDATION.md) for the integrated commit, merged stack and test results.
 
 ## Quick start
 
@@ -58,7 +60,7 @@ v0.1 is the historical procedural baseline. These planning documents record the 
 
 ## Stage 2 browser validation
 
-With the approved dev tooling installed, run `npm run qa:install` once. Use the [Study A candidate commands](docs/STUDY-A-ASSET-INTEGRATION.md#reproduce) for the current scene. Plain `npm run qa:browser` includes the strict v0.1 reference comparison, which differs intentionally from later scenes. Run `npm run qa:perf` separately in an active graphical session. See [validation commands, baseline and limitations](docs/STAGE-2-VALIDATION.md) and the [iteration ledger](docs/ITERATION-LEDGER.md).
+With the approved dev tooling installed, run `npm run qa:install` once. Playwright starts and stops its own localhost Vite server on `127.0.0.1:5199`. Use the [Study A candidate commands](docs/STUDY-A-ASSET-INTEGRATION.md#reproduce) for the current scene. Plain `npm run qa:browser` includes the strict v0.1 reference comparison. On integrated `main`, its nine golden cases fail by design because later stages changed the scene; the goldens are preserved unchanged. Run `npm run qa:perf` separately in an active graphical session. See [validation commands, baseline and limitations](docs/STAGE-2-VALIDATION.md), the [final validation record](docs/FINAL-VALIDATION.md) and the [iteration ledger](docs/ITERATION-LEDGER.md).
 
 ## Implementation case study
 

@@ -33,3 +33,7 @@ Use merge commits to retain ancestry if repository policy permits them. Before e
 - Keep v0.1 labeled as the historical baseline. Expected v0.1 pixel differences arise after scene changes. Publish fresh release baselines only by separate visual approval. Label the Blender variant experimental and the material study static.
 - For an immediate session fallback, remove `?tentacle=blender`. For a source rollback after integration, revert the offending merge using its mainline parent on a reviewed branch. If later stages depend on that merge, revert those stages in reverse order and rerun the full gate. Keep the previous known-good main SHA and reference/evidence commits available.
 - Record independent review, integration authorization and the intended release label before any merge. Deployment, tagging and issue closure require their own approval.
+
+## Execution record
+
+The owner authorized the parent-first integration, the non-production `octo-study-v1.0` release, and closure of issue #16 on 2026-11-23. The owner also authorized a Playwright-managed localhost server for the validation run on 2026-11-24. Each merge verified the pinned head, the retargeted patch and reachability from `main`. The results and the integrated SHAs are in the [final validation record](FINAL-VALIDATION.md). The strict v0.1 golden lane fails on integrated `main` by design. Replacing those baselines needs a separate visual approval.
