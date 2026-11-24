@@ -46,7 +46,7 @@ export async function loadBlenderTentacle() {
         rings[i] = ring;
         blends[i] = Math.max(0, Math.min(1, (offset - ringOffsets[ring]) / (ringOffsets[ring + 1] - ringOffsets[ring])));
       }
-      meshes.push({position, normal, rest, restNormals, rings, blends});
+      meshes.push({mesh, position, normal, rest, restNormals, rings, blends});
     });
     if (meshes.length !== 5) throw new Error('Incomplete tentacle asset');
   } catch (error) {
@@ -57,7 +57,23 @@ export async function loadBlenderTentacle() {
   return {
     scene, dispose,
     metrics: {bytes: bytes.byteLength, fetchMs: fetched - start, parseAndBindMs: performance.now() - fetched},
-    update({centers, tangents, sides, undersides}) {
+    inspectGeometry() {
+      const spine = meshes.find(({mesh}) => mesh.name === 'Recessed_mechanical_spine');
+      const rootVertices = [];
+      const vertex = new Vector3();
+      for (let i = 0; i < spine.position.count; i++) {
+        if (spine.rest[i * 3 + 1] !== 0) continue;
+        vertex.fromBufferAttribute(spine.position, i);
+        rootVertices.push(scene.parent.worldToLocal(spine.mesh.localToWorld(vertex)).toArray());
+      }
+      return {
+        rootVertices,
+        meshes: meshes.map(({position, normal}) => ({
+          positions: Array.from(position.array), normals: Array.from(normal.array),
+        })),
+      };
+    },
+    update({centers, sides, undersides}) {
       for (const {position, normal, rest, restNormals, rings, blends} of meshes) {
         const p = position.array;
         const n = normal.array;

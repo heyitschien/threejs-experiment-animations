@@ -98,7 +98,17 @@ lights.forEach(([color, intensity, x, y, z]) => {
 
 const octopus = new Octopus(scene);
 const query = new URLSearchParams(location.search);
-if (query.get('tentacle') === 'blender') octopus.sculpted.enableBlender();
+if (query.get('tentacle') === 'blender') {
+  octopus.sculpted.enableBlender().then(() => {
+    if (octopus.sculpted.variant.mode !== 'blender') return;
+    document.getElementById('asset-description').textContent =
+      'Seven procedural arms and one Blender-authored arm.';
+    document.getElementById('construction').textContent = '7 PROCEDURAL + 1 GLB';
+    document.getElementById('asset-footnote').textContent = 'LOCAL RENDER · ORIGINAL BLENDER GLB · NO MODEL API';
+    document.querySelector('meta[name="description"]').content =
+      'An interactive robotic octopus with seven procedural arms and one Blender-authored GLB.';
+  });
+}
 
 // Radiant orbit rings and atmospheric specks: all generated in code.
 const ambientGroup = new THREE.Group();
@@ -252,6 +262,7 @@ if (qa) Object.assign(window.__OCTO_DEBUG__, {
     };
   },
   getTentacleVariant() { return octopus.sculpted.variant; },
+  getBlenderGeometry() { return octopus.sculpted.blenderArm?.inspectGeometry(); },
   setBloom(enabled) { bloom.enabled = enabled; },
   enableFrameMetrics() { renderer.info.autoReset = false; },
   getFrameMetrics() {
