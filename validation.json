@@ -1,0 +1,3317 @@
+{
+  "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+  "environment": {
+    "os": "macOS 26.6.2 arm64",
+    "blender": "5.2.4 LTS cd5dc428cce1",
+    "python": "3.13.13",
+    "node": "26.13.0",
+    "npm": "11.20.0",
+    "playwright": "1.65.1"
+  },
+  "glb": {
+    "bytes": 194652,
+    "sha256": "cd0eaaeedac44f0ff6ed273b14a9be3b7ebc29209214ec134cd8b65d27d8d305",
+    "byteIdentical": true
+  },
+  "nodeTests": [
+    "Blender GLB is compact, self-contained and uses the runtime bind span (7.123375ms)",
+    "hero framing keeps the animated arm shells inside desktop and phone viewports (469.439791ms)",
+    "the mantle has one aperture, with a consistently wound shell and end caps (11.094584ms)",
+    "aperture surfaces and a seam-crossing armor strip have finite normals and valid topology (3.266625ms)",
+    "the animated mantle neck and all eight sockets remain seated in the bearing (150.448542ms)",
+    "the lens, rotor and bulkhead stay ordered from the review cameras (17.461833ms)",
+    "studio glazing keeps alpha compositing without a transmission prepass (8.490292ms)",
+    "eight articulated arms with adequate geometry resolution (0.433292ms)",
+    "arm coordinates remain finite throughout animation (4.457584ms)",
+    "arms extend away from their mounting positions (0.09725ms)",
+    "tip shells taper and have no negative radius (0.07125ms)",
+    "smoothstep clamps at endpoints (0.057ms)",
+    "arm roots stay seated and adjacent links remain separated through motion (5.584084ms)",
+    "the two visibility adjustments affect only the final fourteen percent of taper (0.157416ms)",
+    "the indexed sweep is closed, with opposite winding on shared edges (2.925583ms)",
+    "all eight sweeps maintain seated roots, finite outward normals and smooth taper through motion (158.369166ms)",
+    "sampled nonlocal curls and separate arms clear their swept envelopes outside the root cluster (82.570875ms)"
+  ],
+  "productionBuildPassed": true,
+  "legacyGoldens": {
+    "unchanged": true,
+    "strictMismatchCount": 9,
+    "baselineCommit": "b742d7dae92cd9788d705731fc58cff9e44adb2e"
+  },
+  "dependencyAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "captured": {
+    "a-front.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          -0.08,
+          -0.32999999999999924,
+          13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "8397cb48d1b851087effb1584def83d5750fca2da33dff5973fe5e18df40c0f0"
+    },
+    "a-front-pose-0.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 0,
+      "camera": {
+        "position": [
+          -0.08,
+          -0.32999999999999924,
+          13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "c7025e61efbb2c0847e7fc5cd0efb1eebcf9eed951b8eeaf8f7f13672916cc77"
+    },
+    "a-front-pose-6-8.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 6.8,
+      "camera": {
+        "position": [
+          -0.08,
+          -0.32999999999999924,
+          13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "3bbf5b7c486e1f0cf7b56fc58b8fccbad291e3170b3009037fc613f2676e22ae"
+    },
+    "a-hero-desktop.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.46,
+          0.7900000000000005,
+          12.273197624629333
+        ],
+        "target": [
+          -0.32,
+          -0.47000000000000003,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "2890f434721b8f1f98e14720a69f77d8c9592b1ee57031b7e4796c2379dae19a"
+    },
+    "a-hero-desktop-0.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 0,
+      "camera": {
+        "position": [
+          0.46,
+          0.7900000000000005,
+          12.273197624629333
+        ],
+        "target": [
+          -0.32,
+          -0.47000000000000003,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "3d78695c3490ba8ccd28afa8068fcc3386d2a0fc7a80d6c57483cb95fd0ec829"
+    },
+    "a-hero-desktop-3.4.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.46,
+          0.7900000000000005,
+          12.273197624629333
+        ],
+        "target": [
+          -0.32,
+          -0.47000000000000003,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "2890f434721b8f1f98e14720a69f77d8c9592b1ee57031b7e4796c2379dae19a"
+    },
+    "a-hero-desktop-6.8.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 6.8,
+      "camera": {
+        "position": [
+          0.46,
+          0.7900000000000005,
+          12.273197624629333
+        ],
+        "target": [
+          -0.32,
+          -0.47000000000000003,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "3770442a56f9683653c974ae071d1208768c2e5d2aa7d309c1cac95d75bc6392"
+    },
+    "a-hero-mobile.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.8100000000000008,
+          0.6200000000000022,
+          15.145161563006157
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.8108108108108109
+      },
+      "canvas": [
+        585,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "38f6668c4ba8f1c03779c58a4b3cff75375e468e4a82405287acfdb5b8396748"
+    },
+    "a-hero-mobile-360-0.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 360,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 0,
+      "camera": {
+        "position": [
+          0.8099999999999986,
+          0.6199999999999976,
+          16.30746669325663
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.7484407484407485
+      },
+      "canvas": [
+        540,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "2b5690a7f9cefc841d4ef083dbb70677995ca9519fdd07ad087f54a29fc64042"
+    },
+    "a-hero-mobile-360-3.4.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 360,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.8099999999999986,
+          0.6199999999999976,
+          16.30746669325663
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.7484407484407485
+      },
+      "canvas": [
+        540,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "cf5049002f3111284deb0d6c9979113dfce659df847aa07fe29329867c54c9a7"
+    },
+    "a-hero-mobile-360-6.8.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 360,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 6.8,
+      "camera": {
+        "position": [
+          0.8099999999999986,
+          0.6199999999999976,
+          16.30746669325663
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.7484407484407485
+      },
+      "canvas": [
+        540,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "d0ec83c7064365abd8c5fbcca44a8f83ac1549607c6ff01578e6b36de07fa007"
+    },
+    "a-hero-mobile-390-0.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 0,
+      "camera": {
+        "position": [
+          0.8100000000000008,
+          0.6200000000000022,
+          15.145161563006157
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.8108108108108109
+      },
+      "canvas": [
+        585,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "e35ca183f54f53acd298ebde51a40db48f0eb04ec617764e10387443c6f98314"
+    },
+    "a-hero-mobile-390-3.4.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.8100000000000008,
+          0.6200000000000022,
+          15.145161563006157
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.8108108108108109
+      },
+      "canvas": [
+        585,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "38f6668c4ba8f1c03779c58a4b3cff75375e468e4a82405287acfdb5b8396748"
+    },
+    "a-hero-mobile-390-6.8.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 6.8,
+      "camera": {
+        "position": [
+          0.8100000000000008,
+          0.6200000000000022,
+          15.145161563006157
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.8108108108108109
+      },
+      "canvas": [
+        585,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "058b4e1339aff7aca81c3f7a1add1c35f64dd2dbdb53b0a820ecad8bc13f812c"
+    },
+    "a-mantle-detail.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          1.35,
+          1.4499999999999997,
+          6.1
+        ],
+        "target": [
+          0.2,
+          0.75,
+          0.18
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 27,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "f63ec41408bb87aac90afb9631ef51ebec98e1fa3134c38611b9da98665c0448"
+    },
+    "a-rear.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          -0.07999999999999834,
+          0.6499999999999997,
+          -13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "dfb2a1ce428e1be323dde2dc080d79eaee6d9899c8ca6845fffd59c72f61ab74"
+    },
+    "a-side.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          13.5,
+          -0.32999999999999924,
+          8.315351766210528e-16
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "f43d2eabb1e068251adcc3b9c9abdea927d260155a38907175d38bc990f7fa28"
+    },
+    "a-tentacle-detail.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          2.7999999999999994,
+          -2.3000000000000003,
+          7.199999999999999
+        ],
+        "target": [
+          1.8999999999999997,
+          -2.1,
+          1.3
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 28,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "417f25e769ab247c27556e7c236d8456e5da107b8ff944504a440b8f6a88a09b"
+    },
+    "a-three-quarter.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "procedural"
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          7.499999999999999,
+          1.599999999999999,
+          11.5
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "df7554a7ad997b8785ad8a80213c23d490476ecf5a7bafb19dfd8d0ee44e6999"
+    },
+    "b-front.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.1999999284744263,
+        "parseAndBindMs": 4.300000071525574
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          -0.08,
+          -0.32999999999999924,
+          13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "9c14294a8df452c66e38d131afdbb4cc44aab0d881b0871ab6c248fd5b96c787"
+    },
+    "b-front-pose-0.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.100000023841858,
+        "parseAndBindMs": 4.300000071525574
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 0,
+      "camera": {
+        "position": [
+          -0.08,
+          -0.32999999999999924,
+          13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "a806dc4b957d789dde728fec77407abfe41307d88ce2f314ff45443ea5af847d"
+    },
+    "b-front-pose-6-8.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.100000023841858,
+        "parseAndBindMs": 4.599999904632568
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 6.8,
+      "camera": {
+        "position": [
+          -0.08,
+          -0.32999999999999924,
+          13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "82dc5d93bd5bad627e8298ce768cdbb636ac3fe7f10de4e08737262b418e9d63"
+    },
+    "b-hero-desktop.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 5.099999904632568,
+        "parseAndBindMs": 4.400000095367432
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.46,
+          0.7900000000000005,
+          12.273197624629333
+        ],
+        "target": [
+          -0.32,
+          -0.47000000000000003,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "8e09b0cb73c915023023234f85a6706062ac91f89982dc34ace861a53d9b0cd2"
+    },
+    "b-hero-desktop-0.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2,
+        "parseAndBindMs": 4.399999976158142
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 0,
+      "camera": {
+        "position": [
+          0.46,
+          0.7900000000000005,
+          12.273197624629333
+        ],
+        "target": [
+          -0.32,
+          -0.47000000000000003,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "938caacada024c3e84272e1dae7621160d50040af8c912ea901845c1d58a6ac8"
+    },
+    "b-hero-desktop-3.4.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2,
+        "parseAndBindMs": 4.299999952316284
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.46,
+          0.7900000000000005,
+          12.273197624629333
+        ],
+        "target": [
+          -0.32,
+          -0.47000000000000003,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "8e09b0cb73c915023023234f85a6706062ac91f89982dc34ace861a53d9b0cd2"
+    },
+    "b-hero-desktop-6.8.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2,
+        "parseAndBindMs": 4.399999976158142
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 6.8,
+      "camera": {
+        "position": [
+          0.46,
+          0.7900000000000005,
+          12.273197624629333
+        ],
+        "target": [
+          -0.32,
+          -0.47000000000000003,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "880e1fa7102797e8db3f4c7dc7b8bfeef9b47be4693e9532f16c7ad7bb70bd5b"
+    },
+    "b-hero-mobile.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.1999999284744263,
+        "parseAndBindMs": 4.200000047683716
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.8100000000000008,
+          0.6200000000000022,
+          15.145161563006157
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.8108108108108109
+      },
+      "canvas": [
+        585,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "02bd9426ca12c5fb5cf314707dd8f7994c906d1859460c9b372a101f8c9a8d0e"
+    },
+    "b-hero-mobile-360-0.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.100000023841858,
+        "parseAndBindMs": 4.5
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 360,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 0,
+      "camera": {
+        "position": [
+          0.8099999999999986,
+          0.6199999999999976,
+          16.30746669325663
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.7484407484407485
+      },
+      "canvas": [
+        540,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "282c16d417f4eff7de9bcfd984e0ed22d939f674391acabb6c2b1fb59a84f1cb"
+    },
+    "b-hero-mobile-360-3.4.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.200000047683716,
+        "parseAndBindMs": 4.099999904632568
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 360,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.8099999999999986,
+          0.6199999999999976,
+          16.30746669325663
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.7484407484407485
+      },
+      "canvas": [
+        540,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "58886d85bb571a745c6fd44a58c243cdc54db9b5e382d46792fa92fec88669b2"
+    },
+    "b-hero-mobile-360-6.8.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 4.700000047683716,
+        "parseAndBindMs": 4.299999952316284
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 360,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 6.8,
+      "camera": {
+        "position": [
+          0.8099999999999986,
+          0.6199999999999976,
+          16.30746669325663
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.7484407484407485
+      },
+      "canvas": [
+        540,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "1f8f9f1598b6dc5ba19d509e3d770044668aa78138c96957a41890e62bfa98d6"
+    },
+    "b-hero-mobile-390-0.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 1.899999976158142,
+        "parseAndBindMs": 4.300000071525574
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 0,
+      "camera": {
+        "position": [
+          0.8100000000000008,
+          0.6200000000000022,
+          15.145161563006157
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.8108108108108109
+      },
+      "canvas": [
+        585,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "0d9fb858c5d4c9c7aa952e8b38a127ac5ce65917deac9317819baf474d552ba3"
+    },
+    "b-hero-mobile-390-3.4.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 4,
+        "parseAndBindMs": 4
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          0.8100000000000008,
+          0.6200000000000022,
+          15.145161563006157
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.8108108108108109
+      },
+      "canvas": [
+        585,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "02bd9426ca12c5fb5cf314707dd8f7994c906d1859460c9b372a101f8c9a8d0e"
+    },
+    "b-hero-mobile-390-6.8.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.200000047683716,
+        "parseAndBindMs": 4.299999952316284
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "pose": 6.8,
+      "camera": {
+        "position": [
+          0.8100000000000008,
+          0.6200000000000022,
+          15.145161563006157
+        ],
+        "target": [
+          0.03,
+          -0.42000000000000004,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 0.8108108108108109
+      },
+      "canvas": [
+        585,
+        721
+      ],
+      "rendererDpr": 1.5,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "5635f182e213948b321de7541c51a231b5318426d6efb471e617ef1da51132ad"
+    },
+    "b-mantle-detail.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2,
+        "parseAndBindMs": 4.099999904632568
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          1.35,
+          1.4499999999999997,
+          6.1
+        ],
+        "target": [
+          0.2,
+          0.75,
+          0.18
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 27,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "c094711b2feef68812bdb0ebf94c020709ca1fbd87859e5ae8c5ddbefaca8fd2"
+    },
+    "b-rear.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.299999952316284,
+        "parseAndBindMs": 4
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          -0.07999999999999834,
+          0.6499999999999997,
+          -13.6
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "0cdb0d0d2d18e8ca84f1bba86cf62cc7f818e7c93ba7c7136f1be369abacd196"
+    },
+    "b-side.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.1999999284744263,
+        "parseAndBindMs": 3.899999976158142
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          13.5,
+          -0.32999999999999924,
+          8.315351766210528e-16
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "03b51822e62b646899f213e8e7f9857a4f6f8a2c47227947e4e104cc69cfcdd1"
+    },
+    "b-tentacle-detail.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2.399999976158142,
+        "parseAndBindMs": 4.300000071525574
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          2.7999999999999994,
+          -2.3000000000000003,
+          7.199999999999999
+        ],
+        "target": [
+          1.8999999999999997,
+          -2.1,
+          1.3
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 28,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "f33ed7da70f6bb366f64fc06d776968bff65b6a86119a607f4b6d301015672f9"
+    },
+    "b-three-quarter.png": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lockSha256": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+      "browser": "159.0.8154.6",
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 2,
+        "parseAndBindMs": 4.100000023841858
+      },
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "pose": 3.4,
+      "camera": {
+        "position": [
+          7.499999999999999,
+          1.599999999999999,
+          11.5
+        ],
+        "target": [
+          -0.08,
+          -0.33000000000000007,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 43,
+        "aspect": 1.6
+      },
+      "canvas": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "composerDpr": 1,
+      "stability": {
+        "changedPixels": 0,
+        "maxDelta": 0
+      },
+      "pngSha256": "11fc71a64ee76f28f00fd60206e9796d4be7a16f0e086fdfa6e9586d487e8c80"
+    }
+  },
+  "proceduralReplay": {
+    "front.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "front-pose-0.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "front-pose-6-8.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-desktop.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-desktop-0.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-desktop-3.4.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-desktop-6.8.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-mobile.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-mobile-360-0.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-mobile-360-3.4.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-mobile-360-6.8.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-mobile-390-0.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-mobile-390-3.4.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "hero-mobile-390-6.8.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "mantle-detail.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "rear.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "side.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "tentacle-detail.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    },
+    "three-quarter.png": {
+      "changedPixels": 0,
+      "maximumChannelDelta": 0
+    }
+  },
+  "performance": {
+    "a-desktop": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lane": "desktop",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "variant": {
+        "mode": "procedural"
+      },
+      "headed": true,
+      "browser": "159.0.8154.6",
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "frame": {
+        "number": 8,
+        "pose": 0.12540000000000004,
+        "camera": {
+          "position": [
+            0.46,
+            0.7900000000000007,
+            12.273197624629335
+          ],
+          "target": [
+            -0.32,
+            -0.47000000000000003,
+            0
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "fov": 43,
+          "aspect": 1.6
+        },
+        "canvas": [
+          1440,
+          900
+        ],
+        "rendererDpr": 1,
+        "composerDpr": 1
+      },
+      "targets": [
+        {
+          "width": 1440,
+          "height": 900,
+          "depth": true,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "depth": true,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 720,
+          "height": 450,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 720,
+          "height": 450,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 360,
+          "height": 225,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 180,
+          "height": 113,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 90,
+          "height": 57,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 45,
+          "height": 29,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 720,
+          "height": 450,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 360,
+          "height": 225,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 180,
+          "height": 113,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 90,
+          "height": 57,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 45,
+          "height": 29,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        }
+      ],
+      "navigationToProbeMs": 310.5,
+      "navigation": {
+        "responseStart": 3.299999952316284,
+        "domContentLoadedEventEnd": 179.70000004768372,
+        "loadEventEnd": 239.5
+      },
+      "estimatedAttachmentBytes": 40604400,
+      "trials": [
+        {
+          "frames": 1800,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 83,
+            "triangles": 73250,
+            "textures": 15,
+            "geometries": 62
+          }
+        },
+        {
+          "frames": 1801,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 83,
+            "triangles": 73250,
+            "textures": 15,
+            "geometries": 62
+          }
+        },
+        {
+          "frames": 1800,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 83,
+            "triangles": 73250,
+            "textures": 15,
+            "geometries": 62
+          }
+        }
+      ]
+    },
+    "a-mobile-emulation": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lane": "mobile-emulation",
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "variant": {
+        "mode": "procedural"
+      },
+      "headed": true,
+      "browser": "159.0.8154.6",
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "frame": {
+        "number": 7,
+        "pose": 0.09170000000000003,
+        "camera": {
+          "position": [
+            0.8099999999999999,
+            0.6200000000000011,
+            15.14516156300614
+          ],
+          "target": [
+            0.03,
+            -0.42000000000000004,
+            0
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "fov": 43,
+          "aspect": 0.8108108108108109
+        },
+        "canvas": [
+          585,
+          721
+        ],
+        "rendererDpr": 1.5,
+        "composerDpr": 1
+      },
+      "targets": [
+        {
+          "width": 390,
+          "height": 481,
+          "depth": true,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 390,
+          "height": 481,
+          "depth": true,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 195,
+          "height": 241,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 195,
+          "height": 241,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 98,
+          "height": 121,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 49,
+          "height": 61,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 25,
+          "height": 31,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 13,
+          "height": 16,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 195,
+          "height": 241,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 98,
+          "height": 121,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 49,
+          "height": 61,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 25,
+          "height": 31,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 13,
+          "height": 16,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        }
+      ],
+      "navigationToProbeMs": 262.89999997615814,
+      "navigation": {
+        "responseStart": 2.799999952316284,
+        "domContentLoadedEventEnd": 166.19999992847443,
+        "loadEventEnd": 219.19999992847443
+      },
+      "estimatedAttachmentBytes": 5883320,
+      "trials": [
+        {
+          "frames": 1800,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 83,
+            "triangles": 73250,
+            "textures": 15,
+            "geometries": 62
+          }
+        },
+        {
+          "frames": 1800,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 83,
+            "triangles": 73250,
+            "textures": 15,
+            "geometries": 62
+          }
+        },
+        {
+          "frames": 1800,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.4,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 83,
+            "triangles": 73250,
+            "textures": 15,
+            "geometries": 62
+          }
+        }
+      ]
+    },
+    "b-desktop": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lane": "desktop",
+      "profile": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "deviceScaleFactor": 1
+      },
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 5.299999952316284,
+        "parseAndBindMs": 3.799999952316284
+      },
+      "headed": true,
+      "browser": "159.0.8154.6",
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "frame": {
+        "number": 10,
+        "pose": 0.1578,
+        "camera": {
+          "position": [
+            0.46,
+            0.7900000000000007,
+            12.273197624629335
+          ],
+          "target": [
+            -0.32,
+            -0.47000000000000003,
+            0
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "fov": 43,
+          "aspect": 1.6
+        },
+        "canvas": [
+          1440,
+          900
+        ],
+        "rendererDpr": 1,
+        "composerDpr": 1
+      },
+      "targets": [
+        {
+          "width": 1440,
+          "height": 900,
+          "depth": true,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "depth": true,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 720,
+          "height": 450,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 720,
+          "height": 450,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 360,
+          "height": 225,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 180,
+          "height": 113,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 90,
+          "height": 57,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 45,
+          "height": 29,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 720,
+          "height": 450,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 360,
+          "height": 225,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 180,
+          "height": 113,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 90,
+          "height": 57,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 45,
+          "height": 29,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        }
+      ],
+      "navigationToProbeMs": 327.60000002384186,
+      "navigation": {
+        "responseStart": 3.799999952316284,
+        "domContentLoadedEventEnd": 165.70000004768372,
+        "loadEventEnd": 224.60000002384186
+      },
+      "estimatedAttachmentBytes": 40604400,
+      "trials": [
+        {
+          "frames": 1800,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 86,
+            "triangles": 79470,
+            "textures": 15,
+            "geometries": 67
+          }
+        },
+        {
+          "frames": 1800,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 86,
+            "triangles": 79470,
+            "textures": 15,
+            "geometries": 67
+          }
+        },
+        {
+          "frames": 1800,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 86,
+            "triangles": 79470,
+            "textures": 15,
+            "geometries": 67
+          }
+        }
+      ]
+    },
+    "b-mobile-emulation": {
+      "commit": "a92477920108285dd8903e7f8c7083090dc89204",
+      "lane": "mobile-emulation",
+      "profile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "variant": {
+        "mode": "blender",
+        "arm": 3,
+        "bytes": 194652,
+        "fetchMs": 4.600000023841858,
+        "parseAndBindMs": 4.100000023841858
+      },
+      "headed": true,
+      "browser": "159.0.8154.6",
+      "graphics": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)"
+      },
+      "frame": {
+        "number": 8,
+        "pose": 0.1084,
+        "camera": {
+          "position": [
+            0.8099999999999999,
+            0.6200000000000011,
+            15.14516156300614
+          ],
+          "target": [
+            0.03,
+            -0.42000000000000004,
+            0
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "fov": 43,
+          "aspect": 0.8108108108108109
+        },
+        "canvas": [
+          585,
+          721
+        ],
+        "rendererDpr": 1.5,
+        "composerDpr": 1
+      },
+      "targets": [
+        {
+          "width": 390,
+          "height": 481,
+          "depth": true,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 390,
+          "height": 481,
+          "depth": true,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 195,
+          "height": 241,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 195,
+          "height": 241,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 98,
+          "height": 121,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 49,
+          "height": 61,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 25,
+          "height": 31,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 13,
+          "height": 16,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 195,
+          "height": 241,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 98,
+          "height": 121,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 49,
+          "height": 61,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 25,
+          "height": 31,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        },
+        {
+          "width": 13,
+          "height": 16,
+          "depth": false,
+          "stencil": false,
+          "mipmaps": false,
+          "samples": 0,
+          "colorFormat": "RGBA16F"
+        }
+      ],
+      "navigationToProbeMs": 276.1999999284744,
+      "navigation": {
+        "responseStart": 2.5,
+        "domContentLoadedEventEnd": 161,
+        "loadEventEnd": 212
+      },
+      "estimatedAttachmentBytes": 5883320,
+      "trials": [
+        {
+          "frames": 1801,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.3,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 86,
+            "triangles": 79470,
+            "textures": 15,
+            "geometries": 67
+          }
+        },
+        {
+          "frames": 1800,
+          "fps": 120,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.4,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 86,
+            "triangles": 79470,
+            "textures": 15,
+            "geometries": 67
+          }
+        },
+        {
+          "frames": 1800,
+          "fps": 119.99,
+          "p50Ms": 8.3,
+          "p95Ms": 9.2,
+          "p99Ms": 9.3,
+          "above16_7Ms": 0,
+          "above33_3Ms": 0,
+          "peak": {
+            "calls": 86,
+            "triangles": 79470,
+            "textures": 15,
+            "geometries": 67
+          }
+        }
+      ]
+    }
+  },
+  "browserTests": {
+    "a": {
+      "blender.spec.js \u00b7 Blender is opt-in and the original still renders when its GLB fails": {
+        "status": "passed",
+        "durationMs": 3399
+      },
+      "blender.spec.js \u00b7 Blender arm deforms at fixed poses and under ordinary playback": {
+        "status": "passed",
+        "durationMs": 1198
+      },
+      "capture.spec.js \u00b7 hero-desktop": {
+        "status": "passed",
+        "durationMs": 837
+      },
+      "capture.spec.js \u00b7 hero-mobile": {
+        "status": "passed",
+        "durationMs": 596
+      },
+      "capture.spec.js \u00b7 front": {
+        "status": "passed",
+        "durationMs": 721
+      },
+      "capture.spec.js \u00b7 three-quarter": {
+        "status": "passed",
+        "durationMs": 729
+      },
+      "capture.spec.js \u00b7 side": {
+        "status": "passed",
+        "durationMs": 691
+      },
+      "capture.spec.js \u00b7 rear": {
+        "status": "passed",
+        "durationMs": 709
+      },
+      "capture.spec.js \u00b7 mantle-detail": {
+        "status": "passed",
+        "durationMs": 875
+      },
+      "capture.spec.js \u00b7 front-pose-0": {
+        "status": "passed",
+        "durationMs": 712
+      },
+      "capture.spec.js \u00b7 front-pose-6-8": {
+        "status": "passed",
+        "durationMs": 711
+      },
+      "capture.spec.js \u00b7 hero-mobile-360-0": {
+        "status": "passed",
+        "durationMs": 525
+      },
+      "capture.spec.js \u00b7 hero-mobile-390-0": {
+        "status": "passed",
+        "durationMs": 548
+      },
+      "capture.spec.js \u00b7 hero-desktop-0": {
+        "status": "passed",
+        "durationMs": 752
+      },
+      "capture.spec.js \u00b7 hero-mobile-360-3.4": {
+        "status": "passed",
+        "durationMs": 529
+      },
+      "capture.spec.js \u00b7 hero-mobile-390-3.4": {
+        "status": "passed",
+        "durationMs": 548
+      },
+      "capture.spec.js \u00b7 hero-desktop-3.4": {
+        "status": "passed",
+        "durationMs": 765
+      },
+      "capture.spec.js \u00b7 hero-mobile-360-6.8": {
+        "status": "passed",
+        "durationMs": 550
+      },
+      "capture.spec.js \u00b7 hero-mobile-390-6.8": {
+        "status": "passed",
+        "durationMs": 536
+      },
+      "capture.spec.js \u00b7 hero-desktop-6.8": {
+        "status": "passed",
+        "durationMs": 726
+      },
+      "capture.spec.js \u00b7 tentacle-detail": {
+        "status": "passed",
+        "durationMs": 791
+      },
+      "smoke.spec.js \u00b7 pause, resume, orbit, wheel zoom, reset and resize": {
+        "status": "passed",
+        "durationMs": 966
+      },
+      "smoke.spec.js \u00b7 reduced motion starts paused": {
+        "status": "passed",
+        "durationMs": 301
+      },
+      "smoke.spec.js \u00b7 WebGL unavailable shows the fallback, with no rendered canvas": {
+        "status": "passed",
+        "durationMs": 196
+      },
+      "smoke.spec.js \u00b7 touch orbit, pinch, reset and orientation resize": {
+        "status": "passed",
+        "durationMs": 711
+      }
+    },
+    "b": {
+      "blender.spec.js \u00b7 Blender is opt-in and the original still renders when its GLB fails": {
+        "status": "passed",
+        "durationMs": 707
+      },
+      "blender.spec.js \u00b7 Blender arm deforms at fixed poses and under ordinary playback": {
+        "status": "passed",
+        "durationMs": 835
+      },
+      "capture.spec.js \u00b7 hero-desktop": {
+        "status": "passed",
+        "durationMs": 783
+      },
+      "capture.spec.js \u00b7 hero-mobile": {
+        "status": "passed",
+        "durationMs": 557
+      },
+      "capture.spec.js \u00b7 front": {
+        "status": "passed",
+        "durationMs": 720
+      },
+      "capture.spec.js \u00b7 three-quarter": {
+        "status": "passed",
+        "durationMs": 742
+      },
+      "capture.spec.js \u00b7 side": {
+        "status": "passed",
+        "durationMs": 713
+      },
+      "capture.spec.js \u00b7 rear": {
+        "status": "passed",
+        "durationMs": 736
+      },
+      "capture.spec.js \u00b7 mantle-detail": {
+        "status": "passed",
+        "durationMs": 883
+      },
+      "capture.spec.js \u00b7 front-pose-0": {
+        "status": "passed",
+        "durationMs": 764
+      },
+      "capture.spec.js \u00b7 front-pose-6-8": {
+        "status": "passed",
+        "durationMs": 733
+      },
+      "capture.spec.js \u00b7 hero-mobile-360-0": {
+        "status": "passed",
+        "durationMs": 512
+      },
+      "capture.spec.js \u00b7 hero-mobile-390-0": {
+        "status": "passed",
+        "durationMs": 563
+      },
+      "capture.spec.js \u00b7 hero-desktop-0": {
+        "status": "passed",
+        "durationMs": 783
+      },
+      "capture.spec.js \u00b7 hero-mobile-360-3.4": {
+        "status": "passed",
+        "durationMs": 575
+      },
+      "capture.spec.js \u00b7 hero-mobile-390-3.4": {
+        "status": "passed",
+        "durationMs": 561
+      },
+      "capture.spec.js \u00b7 hero-desktop-3.4": {
+        "status": "passed",
+        "durationMs": 776
+      },
+      "capture.spec.js \u00b7 hero-mobile-360-6.8": {
+        "status": "passed",
+        "durationMs": 574
+      },
+      "capture.spec.js \u00b7 hero-mobile-390-6.8": {
+        "status": "passed",
+        "durationMs": 560
+      },
+      "capture.spec.js \u00b7 hero-desktop-6.8": {
+        "status": "passed",
+        "durationMs": 756
+      },
+      "capture.spec.js \u00b7 tentacle-detail": {
+        "status": "passed",
+        "durationMs": 825
+      },
+      "smoke.spec.js \u00b7 pause, resume, orbit, wheel zoom, reset and resize": {
+        "status": "passed",
+        "durationMs": 1005
+      },
+      "smoke.spec.js \u00b7 reduced motion starts paused": {
+        "status": "passed",
+        "durationMs": 332
+      },
+      "smoke.spec.js \u00b7 WebGL unavailable shows the fallback, with no rendered canvas": {
+        "status": "passed",
+        "durationMs": 190
+      },
+      "smoke.spec.js \u00b7 touch orbit, pinch, reset and orientation resize": {
+        "status": "passed",
+        "durationMs": 729
+      }
+    }
+  },
+  "deformation": {
+    "a": {
+      "poses": [
+        0,
+        3.4,
+        6.8
+      ],
+      "rootErrors": [
+        1.7390008179438151e-09,
+        1.542662512532826e-09,
+        4.613254097392243e-09
+      ],
+      "changes": [
+        [
+          {
+            "movedCoordinates": 2592,
+            "changedNormalCoordinates": 2588
+          },
+          {
+            "movedCoordinates": 2591,
+            "changedNormalCoordinates": 2591
+          },
+          {
+            "movedCoordinates": 5346,
+            "changedNormalCoordinates": 5335
+          },
+          {
+            "movedCoordinates": 3201,
+            "changedNormalCoordinates": 3226
+          },
+          {
+            "movedCoordinates": 2968,
+            "changedNormalCoordinates": 2965
+          }
+        ],
+        [
+          {
+            "movedCoordinates": 2592,
+            "changedNormalCoordinates": 2592
+          },
+          {
+            "movedCoordinates": 2592,
+            "changedNormalCoordinates": 2592
+          },
+          {
+            "movedCoordinates": 5345,
+            "changedNormalCoordinates": 5329
+          },
+          {
+            "movedCoordinates": 3208,
+            "changedNormalCoordinates": 3223
+          },
+          {
+            "movedCoordinates": 2970,
+            "changedNormalCoordinates": 2961
+          }
+        ]
+      ]
+    },
+    "b": {
+      "poses": [
+        0,
+        3.4,
+        6.8
+      ],
+      "rootErrors": [
+        1.7390008179438151e-09,
+        1.542662512532826e-09,
+        4.613254097392243e-09
+      ],
+      "changes": [
+        [
+          {
+            "movedCoordinates": 2592,
+            "changedNormalCoordinates": 2588
+          },
+          {
+            "movedCoordinates": 2591,
+            "changedNormalCoordinates": 2591
+          },
+          {
+            "movedCoordinates": 5346,
+            "changedNormalCoordinates": 5335
+          },
+          {
+            "movedCoordinates": 3201,
+            "changedNormalCoordinates": 3226
+          },
+          {
+            "movedCoordinates": 2968,
+            "changedNormalCoordinates": 2965
+          }
+        ],
+        [
+          {
+            "movedCoordinates": 2592,
+            "changedNormalCoordinates": 2592
+          },
+          {
+            "movedCoordinates": 2592,
+            "changedNormalCoordinates": 2592
+          },
+          {
+            "movedCoordinates": 5345,
+            "changedNormalCoordinates": 5329
+          },
+          {
+            "movedCoordinates": 3208,
+            "changedNormalCoordinates": 3223
+          },
+          {
+            "movedCoordinates": 2970,
+            "changedNormalCoordinates": 2961
+          }
+        ]
+      ]
+    }
+  }
+}
