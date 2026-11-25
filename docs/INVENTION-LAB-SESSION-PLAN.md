@@ -1,6 +1,6 @@
 # OCTO Invention Lab — integration session and verification playbook
 
-> **Status: Session 0 executed on 2026-11-24; later sessions remain proposals.** The measured calibration receipt, pinned environment and reusable commands are in [Session 0 setup evidence](../experiments/invention-lab/session-0/README.md). This does not authorize Phase E/F, fabrication, deployment or changes to [OCTO Study v1.0](FINAL-VALIDATION.md).
+> **Historical planning playbook.** Sessions 0, 0.1 and 0.3A have executed; Session 0.2 research is complete. For the current evidence, outstanding owner gates and next-agent instructions, read the [November 25 handoff](INVENTION-LAB-HANDOFF-2026-11-25.md). Leaf to Light remains a proposed pilot; physical-prototype suggestions below are historical and superseded by the digital-only scope. This document does not authorize any new work, fabrication, deployment or OCTO changes.
 
 [Pilot and decision](INVENTION-LAB-PROPOSAL.md) · [Tool reuse landscape](INVENTION-LAB-TOOL-LANDSCAPE.md) · [Study A](STUDY-A-ASSET-INTEGRATION.md) · [Study B](STUDY-B-MATERIAL-EVALUATION.md)
 
