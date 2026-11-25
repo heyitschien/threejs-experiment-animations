@@ -1,5 +1,7 @@
 # OCTO / Procedural Intelligence · Three.js visual prototype
 
+> **Invention Lab — start here:** [Technology adoption & validation protocol](docs/INVENTION-LAB-TECHNOLOGY-ADOPTION.md) · [Agent runbook](docs/INVENTION-LAB-AGENT-RUNBOOK.md) · [Manifesto](docs/INVENTION-LAB-MANIFESTO.md) · [Research assignment #22](https://github.com/heyitschien/threejs-experiment-animations/issues/22) · [Engineering tracker #19](https://github.com/heyitschien/threejs-experiment-animations/issues/19). Reuse before building; preserve the tested baseline. Session 0.1 calibration evidence is ready for owner review; Phase E/F and new dependencies remain gated.
+
 OCTO v0.1 is a code-only animated robotic octopus inspired by the [concept image](reference/octopus-concept.png). The integrated `main` branch defaults to eight procedural arms. Add `?tentacle=blender` to the local viewer URL to see seven procedural arms and one original, agent-authored Blender arm imported as a GLB. If the GLB fails to load, the procedural scene stays active. The concept image is used for visual comparison. Both modes run locally without API keys or paid services.
 
 **Status:** `octo-study-v1.0` is a non-production case-study release. It is not deployed. See the [final validation record](docs/FINAL-VALIDATION.md) for the integrated commit, merged stack and test results.
