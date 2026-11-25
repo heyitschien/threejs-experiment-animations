@@ -12,6 +12,8 @@ An evolving digital garden of beautiful machines, mechanisms and systems inspire
 
 ## 1. A vocabulary of mechanical intelligence
 
+See the [Mechanical Intelligence — a living vocabulary](INVENTION-LAB-MECHANICAL-VOCABULARY.md) companion for the reuse-first acquisition strategy, discovery resources, proposed entry contract and visual documentation practice.
+
 HNG-001, our first two-component hinge, is a modest but meaningful starting point. Two named parts, a defined axis and controlled movement become a lesson in relationships, geometry and fit. The [recorded digital experiment](../experiments/invention-lab/hng-001/evidence/README.md) supports its bounded geometry and sampled interference checks, not physical performance.
 
 Imagine growing a library of reusable mechanisms:
