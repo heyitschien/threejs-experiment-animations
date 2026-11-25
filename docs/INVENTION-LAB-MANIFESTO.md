@@ -4,6 +4,15 @@
 
 **Imagine freely. Learn deeply. Build thoughtfully. Share responsibly.**
 
+## Our guiding spirit
+
+**Dream with curiosity.**  
+**Create with intelligence.**  
+**Build with humility.**  
+**Contribute with love.**
+
+*November 25, 2026 — an expression of our aspiration to help people live better, healthier, happier lives, while preserving the freedom to play and discover.*
+
 ## Our purpose
 
 The Invention Lab is a digital space for curiosity, play, invention and discovery. We reimagine everyday technologies to improve human life, respect nature and expand our understanding of the world.
