@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1200" viewBox="0 0 1920 1200" role="img" aria-label="Leaf to Light reference drawing with 300 mm square leaf-inspired screen front view, 6 mm section and three visual variants. Concept only, not fabrication drawing.">
+  <defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #23303a; }
+      .headline { font-size: 45px; font-weight: 700; }
+      .sub { font-size: 23px; fill: #556773; }
+      .card-title { font-size: 27px; font-weight: 700; }
+      .small { font-size: 20px; }
+      .label { font-size: 22px; font-weight: 700; }
+      .dim { stroke: #2d7783; stroke-width: 2.5; fill: none; marker-start: url(#arr); marker-end: url(#arr); }
+      .leader { stroke: #2d7783; stroke-width: 2; fill: none; }
+      .muted { fill: #6e7d89; }
+    </style>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto-start-reverse"><path d="M0 0 L9 4.5 L0 9Z" fill="#2d7783"/></marker>
+    <g id="leaf-panel">
+      <rect width="300" height="300" rx="12" fill="#d8af78" stroke="#8d663b" stroke-width="1.3"/>
+      <g fill="#fff" stroke="#996f44" stroke-width="0.7">
+        <path d="M25 29 Q71 17 131 31 Q118 62 59 75 Q32 71 25 29Z"/>
+        <path d="M25 90 Q76 73 138 112 Q106 145 56 144 Q36 130 25 90Z"/>
+        <path d="M25 158 Q78 143 139 187 Q110 221 57 219 Q34 200 25 158Z"/>
+        <path d="M26 234 Q76 220 138 276 L33 276 Q23 270 26 234Z"/>
+        <g transform="translate(300 0) scale(-1 1)">
+          <path d="M25 29 Q71 17 131 31 Q118 62 59 75 Q32 71 25 29Z"/>
+          <path d="M25 90 Q76 73 138 112 Q106 145 56 144 Q36 130 25 90Z"/>
+          <path d="M25 158 Q78 143 139 187 Q110 221 57 219 Q34 200 25 158Z"/>
+          <path d="M26 234 Q76 220 138 276 L33 276 Q23 270 26 234Z"/>
+        </g>
+      </g>
+      <path d="M150 27 L150 278" stroke="#aa7a44" stroke-width="1.1" stroke-dasharray="3 7"/>
+    </g>
+    <g id="slat-panel">
+      <rect width="300" height="300" rx="12" fill="#d8af78" stroke="#8d663b" stroke-width="1.3"/>
+      <g fill="#fff" stroke="#996f44" stroke-width="0.6">
+        <rect x="25" y="26" width="15" height="248" rx="5"/><rect x="51" y="26" width="15" height="248" rx="5"/>
+        <rect x="77" y="26" width="15" height="248" rx="5"/><rect x="103" y="26" width="15" height="248" rx="5"/>
+        <rect x="129" y="26" width="15" height="248" rx="5"/><rect x="155" y="26" width="15" height="248" rx="5"/>
+        <rect x="181" y="26" width="15" height="248" rx="5"/><rect x="207" y="26" width="15" height="248" rx="5"/>
+        <rect x="233" y="26" width="15" height="248" rx="5"/><rect x="259" y="26" width="15" height="248" rx="5"/>
+      </g>
+    </g>
+    <g id="bamboo-panel">
+      <rect width="300" height="300" rx="12" fill="#d8af78" stroke="#8d663b" stroke-width="1.3"/>
+      <g fill="#fff" stroke="#996f44" stroke-width="0.6">
+        <path d="M27 27 H40 Q32 151 42 273 H27Z"/><path d="M52 27 H66 Q59 157 66 273 H54Z"/>
+        <path d="M81 27 H95 Q90 150 96 273 H82Z"/><path d="M108 27 H121 Q115 160 122 273 H109Z"/>
+        <path d="M136 27 H153 Q141 140 153 273 H135Z"/><path d="M166 27 H179 Q173 143 180 273 H166Z"/>
+        <path d="M192 27 H206 Q200 158 206 273 H193Z"/><path d="M220 27 H235 Q227 152 235 273 H220Z"/>
+        <path d="M250 27 H272 Q264 150 272 273 H254Z"/>
+      </g>
+      <path d="M20 131 Q94 109 151 147 T280 137 M20 210 Q92 225 149 198 T280 201" stroke="#9b713f" stroke-width="4.3" fill="none"/>
+    </g>
+  </defs>
+
+  <rect width="1920" height="1200" fill="#f3f6f5"/>
+  <rect x="0" y="0" width="1920" height="105" fill="#123541"/>
+  <text x="60" y="65" class="headline" fill="#fff" style="fill:#fff">LEAF TO LIGHT</text>
+  <text x="565" y="62" font-size="25" fill="#d5e5e4" style="fill:#d5e5e4">OCTO INVENTION LAB  /  VISUAL DESIGN REFERENCE</text>
+  <text x="1470" y="63" font-size="19" fill="#f0d2a1" style="fill:#f0d2a1">REV 01  ·  CONCEPT ONLY</text>
+
+  <rect x="52" y="132" width="870" height="1015" rx="22" fill="#fff" stroke="#d9e1df" stroke-width="2"/>
+  <text x="84" y="189" class="card-title">01  /  FRONT ORTHOGRAPHIC REFERENCE</text>
+  <text x="84" y="224" class="small muted">Nominal full-size 1:1 CAD envelope; diagram not to scale on screen</text>
+
+  <g transform="translate(265 330) scale(1.5)"><use href="#leaf-panel"/></g>
+  <path d="M265 320 V267 M715 320 V267" class="leader"/>
+  <path d="M265 280 H715" class="dim"/>
+  <rect x="424" y="256" width="132" height="42" rx="8" fill="#fff"/>
+  <text x="490" y="285" class="label" text-anchor="middle" fill="#2d7783">300 mm</text>
+  <path d="M255 330 H202 M255 780 H202" class="leader"/>
+  <path d="M217 330 V780" class="dim"/>
+  <rect x="157" y="533" width="122" height="44" rx="8" fill="#fff"/>
+  <text x="218" y="561" class="label" text-anchor="middle">300 mm</text>
+  <path d="M291 384 L131 362" class="leader"/>
+  <text x="87" y="348" class="small">18 mm</text>
+  <text x="87" y="374" class="small">frame zone</text>
+  <path d="M692 350 L774 340" class="leader"/>
+  <text x="781" y="335" class="small">R12</text>
+  <text x="781" y="359" class="small">corners</text>
+
+  <rect x="86" y="826" width="799" height="273" rx="14" fill="#edf3f1"/>
+  <text x="117" y="871" class="card-title">GEOMETRY DESIGN ENVELOPE</text>
+  <text x="117" y="920" class="small">L1  Overall width / height ........ 300 × 300 mm</text>
+  <text x="117" y="954" class="small">L2  Nominal sheet thickness ....... 6 mm</text>
+  <text x="117" y="988" class="small">L3  Solid perimeter frame .......... 18 mm</text>
+  <text x="117" y="1022" class="small">L4  Minimum ligament / web ...... ≥ 6 mm (verify in CAD)</text>
+  <text x="117" y="1056" class="small">L5  Central leaf spine ................. ≥ 12 mm (verify in CAD)</text>
+  <text x="117" y="1083" font-size="17" fill="#7e5541" style="fill:#7e5541">Aperture curves are inspirational, not approved manufacturing paths.</text>
+
+  <rect x="946" y="132" width="922" height="420" rx="22" fill="#fff" stroke="#d9e1df" stroke-width="2"/>
+  <text x="984" y="189" class="card-title">02  /  SIDE ELEVATION + EDGE SECTION</text>
+  <text x="984" y="224" class="small muted">Flat single-piece cut sheet; no fasteners or support included</text>
+  <rect x="1024" y="294" width="568" height="11.4" fill="#d8af78" stroke="#8d663b" stroke-width="1.4"/>
+  <path d="M1024 274 V251 M1592 274 V251" class="leader"/>
+  <path d="M1024 260 H1592" class="dim"/>
+  <rect x="1240" y="244" width="137" height="32" fill="#fff"/>
+  <text x="1308" y="265" class="small" text-anchor="middle">300 mm</text>
+  <path d="M1613 294 H1662 M1613 305.4 H1662" class="leader"/>
+  <path d="M1648 294 V305.4" class="dim"/>
+  <path d="M1648 316 L1689 352" class="leader"/>
+  <rect x="1440" y="380" width="205" height="91" rx="12" fill="#edf3f1"/>
+  <rect x="1490" y="396" width="113" height="36" fill="#d8af78" stroke="#8d663b" stroke-width="1.5"/>
+  <text x="1547" y="457" font-size="18" text-anchor="middle">6 mm nominal</text>
+  <text x="985" y="391" class="small">Single continuous panel</text>
+  <text x="985" y="421" class="small">No backer / no adhesive assumed</text>
+  <text x="985" y="452" class="small">Kerf + machining allowances: TBD</text>
+
+  <rect x="946" y="572" width="922" height="575" rx="22" fill="#fff" stroke="#d9e1df" stroke-width="2"/>
+  <text x="984" y="632" class="card-title">03  /  DESIGN FAMILY COMPARISON</text>
+  <text x="984" y="665" class="small muted">Same 300 × 300 × 6 mm nominal outer envelope for all variants</text>
+  <g transform="translate(1007 715) scale(.78)"><use href="#slat-panel"/></g>
+  <g transform="translate(1286 715) scale(.78)"><use href="#leaf-panel"/></g>
+  <g transform="translate(1564 715) scale(.78)"><use href="#bamboo-panel"/></g>
+  <text x="1124" y="984" font-size="22" font-weight="700" text-anchor="middle">A  /  SLAT CONTROL</text>
+  <text x="1403" y="984" font-size="22" font-weight="700" text-anchor="middle">B  /  LEAF VEINS</text>
+  <text x="1681" y="984" font-size="22" font-weight="700" text-anchor="middle">C  /  BAMBOO RHYTHM</text>
+  <text x="987" y="1039" class="small">Compare identical lighting, bounding dimensions, nominal thickness,</text>
+  <text x="987" y="1071" class="small">and target aperture ratio: 40% ± 5 percentage points of inner field.</text>
+  <text x="987" y="1113" font-size="18" fill="#925c45" style="fill:#925c45">NO load rating, daylight savings, fabrication tolerance or code compliance implied.</text>
+
+  <text x="55" y="1180" font-size="18" fill="#576977" style="fill:#576977">REFERENCE / CONCEPT GEOMETRY ONLY — THE PARAMETRIC CAD MODEL, GEOMETRIC TESTS AND PHYSICAL PROTOTYPE MUST ESTABLISH ACTUAL VALIDITY.</text>
+</svg>

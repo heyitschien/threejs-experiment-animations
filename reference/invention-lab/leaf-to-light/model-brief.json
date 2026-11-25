@@ -1,0 +1,69 @@
+{
+  "project": "OCTO Invention Lab / Leaf to Light",
+  "revision": "concept-reference-r01",
+  "status": "design-input-not-engineering-validation",
+  "scope": "non-load-bearing tabletop shade-screen prototype; no public installation",
+  "units": "mm",
+  "source_of_truth": "parameterized_CadQuery_Python_to_STEP",
+  "envelope": {
+    "width_mm": 300,
+    "height_mm": 300,
+    "nominal_thickness_mm": 6,
+    "minimum_perimeter_frame_mm": 18,
+    "outer_corner_radius_mm": 12,
+    "minimum_remaining_web_mm": 6,
+    "minimum_leaf_spine_mm": 12,
+    "mounting_holes": false
+  },
+  "comparison_constraints": {
+    "inner_field_width_mm": 264,
+    "inner_field_height_mm": 264,
+    "target_open_fraction_of_inner_field": 0.4,
+    "allowed_open_fraction_absolute_deviation": 0.05,
+    "same_nominal_material": true,
+    "same_light_direction": true,
+    "same_orientation_and_camera": true,
+    "glb_step_bbox_max_absolute_deviation_mm_proposed": 0.5
+  },
+  "material_visual_assumption": "bamboo-look laminated plywood; physical species, adhesive, kerf, density, tolerances, safety and sourcing not established",
+  "variants": {
+    "A": {
+      "name": "Straight-slat control",
+      "construction": "Repeated vertical obround/capsule cutouts; adjusted to common aperture target; no false decorative structure"
+    },
+    "B": {
+      "name": "Leaf venation",
+      "construction": "Symmetric central stem, tapered branching ribs, individually enclosed organic openings; preserve minimum webs and continuous load path within tabletop plane"
+    },
+    "C": {
+      "name": "Bamboo rhythm",
+      "construction": "Repeated longitudinal slender members with alternating grouping and simple connecting ties; no loose islands"
+    }
+  },
+  "required_outputs_after_approval": [
+    "source_model.py",
+    "three_parameter_sets",
+    "valid_step_per_variant",
+    "tessellated_mesh_per_variant",
+    "blender_scene_and_matched_renders",
+    "threejs_glb_inspector",
+    "bounding_box_and_solid_validity_report",
+    "open_fraction_and_shadow_area_table",
+    "one_failure_case_and_recovery",
+    "reproduction_instructions_and_provenance"
+  ],
+  "acceptance": {
+    "solid_geometry": "nonempty valid STEP solid(s), finite positive volume, no isolated scrap islands",
+    "geometry": "design stays inside 300x300x6 mm nominal envelope; min frame/web verified numerically",
+    "visualization": "GLB and CAD dimensions agree within approved tolerance; no silent Blender dimensional alterations",
+    "comparison": "40 percent +/- 5 percentage points aperture target of same 264x264 inner field, or record inability to reach target and why",
+    "rendering": "matched front, side, rear and 3/4 views and controlled material A/B",
+    "physical": "not_required_for_digital_gate; separate explicit approval before making/fabricating a prototype"
+  },
+  "safety": [
+    "reference artwork is not CAD evidence",
+    "no structural or load-bearing claims",
+    "no fabricated performance metrics",
+    "no installs, purchases, deploys or public posting without separate approval"
+  ]
+}
