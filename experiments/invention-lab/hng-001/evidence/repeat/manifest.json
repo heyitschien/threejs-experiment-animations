@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "run_id": "80738f73-f7e4-447a-85d3-3fa67cb0ed30",
+  "passed": true,
+  "files": {
+    "blender.json": "e71b002455ac306a3f51bd9b65b1351b48a70c355447325e49ff39a29ab7648d",
+    "browser.json": "b421f2816733c6bbdaedc84076649101af69a0c66fd9c64a3ac3dc4bef976c58",
+    "cad.json": "74599d6eec84d99da227f10b4f6c34fbd647ce0c4382f7371cc0a9f8b7a825a1",
+    "closed_000.glb": "787565b4e32b08c6ddd1b4a3001b6d347e5b2f16e9dda4490b254ccde36e9b7b",
+    "closed_000.png": "2a4ca47646a50a3e63eed3a54a48d846f63ab3bef4dc59ddf53f50d63e4080e2",
+    "closed_000.step": "194e9f3df6e12b76dfda522a271173a3066a8eaf0850d4d695d0f9e93d65fa53",
+    "fixture.json": "edf75a20d444e57a10f940ffd5d8371ee0c1f7458053e51f6d210397349d1fa2",
+    "geometry.json": "cdbe3effa93f2efae7bdd195e0be8b28fb2a6af31d9e5c742d2d0b59e5b71a40",
+    "half_045.glb": "ef002ff1bf060e14f583d0d46c6276a1b595a5f1c9a622bdbaf34bf0fe12c2d1",
+    "half_045.png": "5832c54db41818110afa5bdac90b03f5ae6715947454e8b7d85ee46ca7644b48",
+    "half_045.step": "56cfe9d5e95ce39e56623576547b379f1d9e9f101315fddf8132d347ba1a3ae8",
+    "hinge.fixed_leaf.step": "f6db59a8779502c4600f10fc7b9b8b333c471845c4ae3b250835fdd6e0d92ea0",
+    "hinge.fixed_leaf.stl": "5fd834022dc9a1c24ba1bc77caee99c18b2770689a3972fbd9caebd036c0776d",
+    "hinge.moving_leaf.step": "ce725173511e74aaa197c47e8b8453e3278d63fb9d67147718bfebaab6d5186c",
+    "hinge.moving_leaf.stl": "550f84e113c5b12f7e04fb739f0c759ee8725a315d969de6310991eaae460660",
+    "missing.png": "b8b58852942a5bce23b15ae7b26da00620b9dd1f732fe22ee6ff29680979a95f",
+    "moving_edited.step": "1120a96223e7723c6b2a90c57e138e8f7bdef1247bd0688b3072c8fae33dd3a2",
+    "moving_edited.stl": "b630dc435f04c98a6ad1f376d45d74536e66bf76cd5b6c1b82819810f636c1c3",
+    "negative.json": "30b719f672d8986eb5357245c6ea3253518fb4ff443669a2343daecaf9de0f9b",
+    "open_090.glb": "ec425b799eaa22c705832cbe439578a3a06c1abf531c018b0feb0f164fac1dc5",
+    "open_090.png": "86cc2536fa56420b7ff9518a0b0c0c64a10f48b7d0c3e792b11259bcbd562406",
+    "open_090.step": "7fa937a8750c8c6374f142494f4b7df7daeedfefd2b77860f9cb28b2fa0cf3d4",
+    "run.json": "6005a8f3418a33805b579da29cbfe11182ec2f43bb5bf399f510f321c0dde85a"
+  }
+}
