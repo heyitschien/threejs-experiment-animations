@@ -1,6 +1,6 @@
 # OCTO Invention Lab — integration session and verification playbook
 
-> **Status: prepared, not executed.** No tools are installed by this document; commands, directories and measurements below are **proposals**. Begin only after approval under [Issue #19](https://github.com/heyitschien/threejs-experiment-animations/issues/19). Use an isolated branch/worktree and preserve [OCTO Study v1.0](FINAL-VALIDATION.md) unchanged.
+> **Status: Session 0 executed on 2026-11-24; later sessions remain proposals.** The measured calibration receipt, pinned environment and reusable commands are in [Session 0 setup evidence](../experiments/invention-lab/session-0/README.md). This does not authorize Phase E/F, fabrication, deployment or changes to [OCTO Study v1.0](FINAL-VALIDATION.md).
 
 [Pilot and decision](INVENTION-LAB-PROPOSAL.md) · [Tool reuse landscape](INVENTION-LAB-TOOL-LANDSCAPE.md) · [Study A](STUDY-A-ASSET-INTEGRATION.md) · [Study B](STUDY-B-MATERIAL-EVALUATION.md)
 

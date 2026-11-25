@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "comparison": "fresh venv restored from the committed 44-package lock",
+  "models": [
+    {
+      "id": "calibration_box",
+      "geometry_metrics_equal": true,
+      "stl_bytes_equal": true,
+      "step_bytes_equal": false,
+      "step_binary_note": "OpenCascade writes generation time in the STEP header; compare imported geometry metrics, not raw STEP bytes.",
+      "passed": true
+    },
+    {
+      "id": "calibration_box_variant",
+      "geometry_metrics_equal": true,
+      "stl_bytes_equal": true,
+      "step_bytes_equal": false,
+      "step_binary_note": "OpenCascade writes generation time in the STEP header; compare imported geometry metrics, not raw STEP bytes.",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

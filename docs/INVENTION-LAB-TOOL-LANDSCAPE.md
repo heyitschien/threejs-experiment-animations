@@ -2,6 +2,8 @@
 
 > **Research inventory, not an integration test.** Links below were reviewed from primary project documentation, source repositories or published research. Availability, versions, licenses, costs and tool interfaces can change; recheck and pin at kickoff. A project's advertised capability is **not** a capability proven in OCTO.
 
+> **2026-11-24 Session 0 update:** direct CadQuery 2.8.0 and an isolated agentcad 0.8.1 CadQuery-mode smoke test were run. Direct CadQuery was selected for the calibration pipeline; see the [measured setup receipt](../experiments/invention-lab/session-0/README.md). Other projects in this landscape remain research-only.
+
 [Decision and pilot](INVENTION-LAB-PROPOSAL.md) · [Lab session playbook](INVENTION-LAB-SESSION-PLAN.md) · [OCTO evidence](EVIDENCE-INDEX.md)
 
 ## Our buy/adopt/build decision

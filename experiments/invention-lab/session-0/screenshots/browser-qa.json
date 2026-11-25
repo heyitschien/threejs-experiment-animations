@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "browser": "159.0.8154.6",
+  "initial_model": "calibration_box",
+  "initial_ready": true,
+  "orbit_pointer_drag_executed": true,
+  "orbit_changed_camera": true,
+  "camera_before": [
+    0.21999999999999997,
+    0.16,
+    0.22000000000000003
+  ],
+  "camera_after": [
+    -0.1588862160152161,
+    0.04452200535409421,
+    0.29899675862343544
+  ],
+  "variant_model": "calibration_box_variant",
+  "variant_ready": true,
+  "missing_file_error_visible": true,
+  "recovered_model": "calibration_box",
+  "recovered_ready": true,
+  "page_errors": [],
+  "console_messages": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "expected_console_errors": 1,
+  "unexpected_console_errors": [],
+  "passed": true
+}

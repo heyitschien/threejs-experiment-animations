@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>Session 0 CAD Pipeline Inspector</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">OCTO Invention Lab · Session 0</p>
+        <h1>CAD → Blender → Three.js inspector</h1>
+        <p>Measured calibration geometry. CAD source units: millimetres. GLB scene units: metres.</p>
+      </header>
+      <section class="toolbar" aria-label="Viewer controls">
+        <label>
+          Model
+          <select id="model-select">
+            <option value="calibration_box">100 × 60 × 20 mm</option>
+            <option value="calibration_box_variant">120 × 70 × 15 mm</option>
+          </select>
+        </label>
+        <button id="reset-camera" type="button">Reset view</button>
+        <button id="test-missing" type="button">Test missing file</button>
+      </section>
+      <section class="viewer-shell">
+        <canvas id="viewer" aria-label="Interactive 3D calibration model"></canvas>
+        <aside aria-live="polite">
+          <h2>Handoff check</h2>
+          <dl>
+            <div><dt>Status</dt><dd id="status">Loading…</dd></div>
+            <div><dt>CAD dimensions</dt><dd id="cad-dimensions">—</dd></div>
+            <div><dt>Three.js axes</dt><dd id="three-dimensions">—</dd></div>
+            <div><dt>Max error</dt><dd id="max-error">—</dd></div>
+            <div><dt>Mapping</dt><dd>CAD X/Y/Z → Three X/Z/Y</dd></div>
+          </dl>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

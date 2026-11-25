@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "source_units": "mm",
+  "integration_threshold_mm": 0.5,
+  "coordinate_contract": {
+    "cad": "millimetres, right-handed, Z-up",
+    "stl": "unitless numeric coordinates interpreted as millimetres",
+    "blender": "metres, right-handed, Z-up",
+    "glb_threejs": "metres, right-handed, Y-up"
+  },
+  "models": [
+    {
+      "id": "calibration_box",
+      "label": "Calibration box 100 \u00d7 60 \u00d7 20 mm",
+      "expected_dimensions_mm": [
+        100.0,
+        60.0,
+        20.0
+      ],
+      "expected_volume_mm3": 120000.0,
+      "cad": {
+        "valid": true,
+        "solid_count": 1,
+        "volume_mm3": 120000.0,
+        "bounds": {
+          "min_mm": [
+            -50.0000001,
+            -30.000000100000005,
+            -1.0000000355271367e-07
+          ],
+          "max_mm": [
+            50.0000001,
+            30.000000100000005,
+            20.000000100000005
+          ],
+          "dimensions_mm": [
+            100.0000002,
+            60.00000020000001,
+            20.00000020000001
+          ]
+        },
+        "max_dimension_error_mm": 2.0000000944264684e-07
+      },
+      "step_reimport": {
+        "valid": true,
+        "volume_mm3": 120000.0,
+        "volume_error_mm3": 0.0,
+        "bounds": {
+          "min_mm": [
+            -50.0000001,
+            -30.000000100000005,
+            -1.0000000355271367e-07
+          ],
+          "max_mm": [
+            50.0000001,
+            30.000000100000005,
+            20.000000100000005
+          ],
+          "dimensions_mm": [
+            100.0000002,
+            60.00000020000001,
+            20.00000020000001
+          ]
+        },
+        "max_dimension_error_mm": 2.0000000944264684e-07
+      },
+      "mesh": {
+        "linear_tolerance_mm": 0.05,
+        "angular_tolerance_radians": 0.1,
+        "vertex_count": 24,
+        "triangle_count": 12,
+        "bounds": {
+          "min_mm": [
+            -50.0,
+            -30.0,
+            0.0
+          ],
+          "max_mm": [
+            50.0,
+            30.0,
+            20.0
+          ],
+          "dimensions_mm": [
+            100.0,
+            60.0,
+            20.0
+          ]
+        },
+        "max_dimension_error_mm": 0.0
+      },
+      "artifacts": {
+        "step": "calibration_box.step",
+        "step_sha256": "4ebf2347382b123cda87d9b4cd6fb1597cb1f1d154a2a2e8361ecb56e2d21e4d",
+        "stl": "calibration_box.stl",
+        "stl_sha256": "52f716d07b9333dbba0e2eaaf098772053f014c781435a9ac4e4d1aedc1d9c66"
+      },
+      "passed": true
+    },
+    {
+      "id": "calibration_box_variant",
+      "label": "Calibration box variant 120 \u00d7 70 \u00d7 15 mm",
+      "expected_dimensions_mm": [
+        120.0,
+        70.0,
+        15.0
+      ],
+      "expected_volume_mm3": 126000.0,
+      "cad": {
+        "valid": true,
+        "solid_count": 1,
+        "volume_mm3": 126000.0,
+        "bounds": {
+          "min_mm": [
+            -60.0000001,
+            -35.0000001,
+            -1.0000000177635683e-07
+          ],
+          "max_mm": [
+            60.0000001,
+            35.0000001,
+            15.000000100000001
+          ],
+          "dimensions_mm": [
+            120.0000002,
+            70.0000002,
+            15.000000200000002
+          ]
+        },
+        "max_dimension_error_mm": 2.0000000233721948e-07
+      },
+      "step_reimport": {
+        "valid": true,
+        "volume_mm3": 126000.0,
+        "volume_error_mm3": 0.0,
+        "bounds": {
+          "min_mm": [
+            -60.0000001,
+            -35.0000001,
+            -1.0000000177635683e-07
+          ],
+          "max_mm": [
+            60.0000001,
+            35.0000001,
+            15.000000100000001
+          ],
+          "dimensions_mm": [
+            120.0000002,
+            70.0000002,
+            15.000000200000002
+          ]
+        },
+        "max_dimension_error_mm": 2.0000000233721948e-07
+      },
+      "mesh": {
+        "linear_tolerance_mm": 0.05,
+        "angular_tolerance_radians": 0.1,
+        "vertex_count": 24,
+        "triangle_count": 12,
+        "bounds": {
+          "min_mm": [
+            -60.0,
+            -35.0,
+            0.0
+          ],
+          "max_mm": [
+            60.0,
+            35.0,
+            15.0
+          ],
+          "dimensions_mm": [
+            120.0,
+            70.0,
+            15.0
+          ]
+        },
+        "max_dimension_error_mm": 0.0
+      },
+      "artifacts": {
+        "step": "calibration_box_variant.step",
+        "step_sha256": "81c4f8b32efe29c30fbddaa956f08e1e696019ce1c8fc6471ed5f65c15282db6",
+        "stl": "calibration_box_variant.stl",
+        "stl_sha256": "5aa4bf0c375f89e2b8d4ea3ed46d55b29a74067b55b903488a9ccdf07f7e4a2c"
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}
