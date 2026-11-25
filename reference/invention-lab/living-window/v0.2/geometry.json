@@ -1,0 +1,892 @@
+{
+  "units": "mm",
+  "axes": "x width, y + indoor, z up",
+  "status": "concept envelope; not manufacturing CAD",
+  "parts": [
+    {
+      "name": "left_jamb",
+      "center": [
+        30.0,
+        -7.5,
+        750.0
+      ],
+      "size": [
+        60,
+        85,
+        1500
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "left_jamb_interior_trim",
+      "center": [
+        30.0,
+        42.5,
+        750.0
+      ],
+      "size": [
+        60,
+        15,
+        1500
+      ],
+      "material": "timber",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "right_jamb",
+      "center": [
+        1170.0,
+        -7.5,
+        750.0
+      ],
+      "size": [
+        60,
+        85,
+        1500
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "right_jamb_interior_trim",
+      "center": [
+        1170.0,
+        42.5,
+        750.0
+      ],
+      "size": [
+        60,
+        15,
+        1500
+      ],
+      "material": "timber",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "sill",
+      "center": [
+        600.0,
+        -7.5,
+        30.0
+      ],
+      "size": [
+        1080,
+        85,
+        60
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "sill_interior_trim",
+      "center": [
+        600.0,
+        42.5,
+        30.0
+      ],
+      "size": [
+        1080,
+        15,
+        60
+      ],
+      "material": "timber",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "head",
+      "center": [
+        600.0,
+        -7.5,
+        1470.0
+      ],
+      "size": [
+        1080,
+        85,
+        60
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "head_interior_trim",
+      "center": [
+        600.0,
+        42.5,
+        1470.0
+      ],
+      "size": [
+        1080,
+        15,
+        60
+      ],
+      "material": "timber",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_rail",
+      "center": [
+        600.0,
+        -7.5,
+        200.0
+      ],
+      "size": [
+        1080,
+        85,
+        40
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_rail_interior_trim",
+      "center": [
+        600.0,
+        42.5,
+        200.0
+      ],
+      "size": [
+        1080,
+        15,
+        40
+      ],
+      "material": "timber",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_rail",
+      "center": [
+        600.0,
+        -7.5,
+        1300.0
+      ],
+      "size": [
+        1080,
+        85,
+        40
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_rail_interior_trim",
+      "center": [
+        600.0,
+        42.5,
+        1300.0
+      ],
+      "size": [
+        1080,
+        15,
+        40
+      ],
+      "material": "timber",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "glazing_outer",
+      "center": [
+        600.0,
+        -9.0,
+        750.0
+      ],
+      "size": [
+        1080,
+        6,
+        1060
+      ],
+      "material": "glass",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "glazing_inner",
+      "center": [
+        600.0,
+        9.0,
+        750.0
+      ],
+      "size": [
+        1080,
+        6,
+        1060
+      ],
+      "material": "glass",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "spacer_bottom",
+      "center": [
+        600.0,
+        0.0,
+        225.0
+      ],
+      "size": [
+        1080,
+        12,
+        10
+      ],
+      "material": "gasket",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "spacer_top",
+      "center": [
+        600.0,
+        0.0,
+        1275.0
+      ],
+      "size": [
+        1080,
+        12,
+        10
+      ],
+      "material": "gasket",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "spacer_left",
+      "center": [
+        65.0,
+        0.0,
+        750.0
+      ],
+      "size": [
+        10,
+        12,
+        1040
+      ],
+      "material": "gasket",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "spacer_right",
+      "center": [
+        1135.0,
+        0.0,
+        750.0
+      ],
+      "size": [
+        10,
+        12,
+        1040
+      ],
+      "material": "gasket",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_outside_left",
+      "center": [
+        130.0,
+        -48.0,
+        120.0
+      ],
+      "size": [
+        140,
+        4,
+        120
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_outside_right",
+      "center": [
+        1070.0,
+        -48.0,
+        120.0
+      ],
+      "size": [
+        140,
+        4,
+        120
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_outside_below",
+      "center": [
+        600.0,
+        -48.0,
+        72.5
+      ],
+      "size": [
+        800,
+        4,
+        25
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_outside_above",
+      "center": [
+        600.0,
+        -48.0,
+        142.5
+      ],
+      "size": [
+        800,
+        4,
+        75
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_inside_left",
+      "center": [
+        130.0,
+        48.0,
+        120.0
+      ],
+      "size": [
+        140,
+        4,
+        120
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_inside_right",
+      "center": [
+        1070.0,
+        48.0,
+        120.0
+      ],
+      "size": [
+        140,
+        4,
+        120
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_inside_below",
+      "center": [
+        600.0,
+        48.0,
+        97.5
+      ],
+      "size": [
+        800,
+        4,
+        75
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_inside_above",
+      "center": [
+        600.0,
+        48.0,
+        167.5
+      ],
+      "size": [
+        800,
+        4,
+        25
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_baffle_A",
+      "center": [
+        600.0,
+        -19.0,
+        87.5
+      ],
+      "size": [
+        800,
+        4,
+        55
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_baffle_B",
+      "center": [
+        600.0,
+        15.0,
+        152.5
+      ],
+      "size": [
+        800,
+        4,
+        55
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_screen_envelope",
+      "center": [
+        600.0,
+        -42.5,
+        95.0
+      ],
+      "size": [
+        800,
+        1,
+        20
+      ],
+      "material": "screen",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_damper_open",
+      "center": [
+        600.0,
+        41.0,
+        169.0
+      ],
+      "size": [
+        800,
+        4,
+        20
+      ],
+      "material": "gasket",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "lower_canopy",
+      "center": [
+        600.0,
+        -62.5,
+        114.0
+      ],
+      "size": [
+        840,
+        25,
+        8
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_outside_left",
+      "center": [
+        130.0,
+        -48.0,
+        1380.0
+      ],
+      "size": [
+        140,
+        4,
+        120
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_outside_right",
+      "center": [
+        1070.0,
+        -48.0,
+        1380.0
+      ],
+      "size": [
+        140,
+        4,
+        120
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_outside_below",
+      "center": [
+        600.0,
+        -48.0,
+        1332.5
+      ],
+      "size": [
+        800,
+        4,
+        25
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_outside_above",
+      "center": [
+        600.0,
+        -48.0,
+        1402.5
+      ],
+      "size": [
+        800,
+        4,
+        75
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_inside_left",
+      "center": [
+        130.0,
+        48.0,
+        1380.0
+      ],
+      "size": [
+        140,
+        4,
+        120
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_inside_right",
+      "center": [
+        1070.0,
+        48.0,
+        1380.0
+      ],
+      "size": [
+        140,
+        4,
+        120
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_inside_below",
+      "center": [
+        600.0,
+        48.0,
+        1357.5
+      ],
+      "size": [
+        800,
+        4,
+        75
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_inside_above",
+      "center": [
+        600.0,
+        48.0,
+        1427.5
+      ],
+      "size": [
+        800,
+        4,
+        25
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_baffle_A",
+      "center": [
+        600.0,
+        -19.0,
+        1347.5
+      ],
+      "size": [
+        800,
+        4,
+        55
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_baffle_B",
+      "center": [
+        600.0,
+        15.0,
+        1412.5
+      ],
+      "size": [
+        800,
+        4,
+        55
+      ],
+      "material": "vent",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_screen_envelope",
+      "center": [
+        600.0,
+        -42.5,
+        1355.0
+      ],
+      "size": [
+        800,
+        1,
+        20
+      ],
+      "material": "screen",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_damper_open",
+      "center": [
+        600.0,
+        41.0,
+        1429.0
+      ],
+      "size": [
+        800,
+        4,
+        20
+      ],
+      "material": "gasket",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "upper_canopy",
+      "center": [
+        600.0,
+        -62.5,
+        1374.0
+      ],
+      "size": [
+        840,
+        25,
+        8
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "shade_guide_left",
+      "center": [
+        77.5,
+        -97.5,
+        750.0
+      ],
+      "size": [
+        15,
+        15,
+        1040
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "shade_guide_right",
+      "center": [
+        1122.5,
+        -97.5,
+        750.0
+      ],
+      "size": [
+        15,
+        15,
+        1040
+      ],
+      "material": "frame",
+      "rotation_x_deg": 0
+    },
+    {
+      "name": "shade_slat_01",
+      "center": [
+        600.0,
+        -98.0,
+        260.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_02",
+      "center": [
+        600.0,
+        -98.0,
+        340.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_03",
+      "center": [
+        600.0,
+        -98.0,
+        420.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_04",
+      "center": [
+        600.0,
+        -98.0,
+        500.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_05",
+      "center": [
+        600.0,
+        -98.0,
+        580.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_06",
+      "center": [
+        600.0,
+        -98.0,
+        660.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_07",
+      "center": [
+        600.0,
+        -98.0,
+        740.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_08",
+      "center": [
+        600.0,
+        -98.0,
+        820.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_09",
+      "center": [
+        600.0,
+        -98.0,
+        900.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_10",
+      "center": [
+        600.0,
+        -98.0,
+        980.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_11",
+      "center": [
+        600.0,
+        -98.0,
+        1060.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_12",
+      "center": [
+        600.0,
+        -98.0,
+        1140.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    },
+    {
+      "name": "shade_slat_13",
+      "center": [
+        600.0,
+        -98.0,
+        1220.0
+      ],
+      "size": [
+        1030,
+        60,
+        4
+      ],
+      "material": "shade",
+      "rotation_x_deg": -25
+    }
+  ]
+}
