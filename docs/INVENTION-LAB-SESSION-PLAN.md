@@ -4,6 +4,8 @@
 
 [Pilot and decision](INVENTION-LAB-PROPOSAL.md) · [Tool reuse landscape](INVENTION-LAB-TOOL-LANDSCAPE.md) · [Study A](STUDY-A-ASSET-INTEGRATION.md) · [Study B](STUDY-B-MATERIAL-EVALUATION.md)
 
+**Prepared concept references:** [four-view mock, variant comparison, nominal dimensional sheet, and machine-readable brief](../reference/invention-lab/leaf-to-light/README.md). Read the numerical limits from `model-brief.json`, **not** from pixel measurements of the generated photos. Revalidate all dimensions/feature clearances from the CAD solids.
+
 ## Session objective and expected result
 
 **Pilot:** **Leaf to Light**, a 300 × 300 mm tabletop, non-load-bearing shading-screen comparison (A straight slats, B leaf branching, C bamboo-rhythm geometry). Test the **agent-operated engineering handoff** from source CAD to STEP, tessellation, Blender, and browser, with simple, clearly bounded sunlight/shadow metrics.
