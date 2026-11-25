@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/style.css">
+  <title>Invention Lab calibration inspector</title>
+  <script type="importmap">
+    {"imports":{"three":"/three/build/three.module.js","three/addons/":"/three/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Calibration inspector</h1>
+      <p>CAD dimensions in millimetres. The GLB uses metres and Y-up.</p>
+    </header>
+    <div class="toolbar">
+      <label>Model <select id="model"></select></label>
+      <button id="reset">Reset view</button>
+      <button id="missing">Test missing file</button>
+    </div>
+    <div class="viewer-shell">
+      <canvas id="viewer" aria-label="Orbitable calibration model"></canvas>
+      <aside>
+        <h2>Geometry checks</h2>
+        <dl>
+          <div><dt>Status</dt><dd id="status" role="status">Loading</dd></div>
+          <div><dt>Current asset</dt><dd id="current">—</dd></div>
+          <div><dt>CAD dimensions (X, Y, Z)</dt><dd id="cad">—</dd></div>
+          <div><dt>Measured GLB (X, Y, Z)</dt><dd id="measured">—</dd></div>
+          <div><dt>Signed pocket corner</dt><dd id="corner">—</dd></div>
+          <div><dt>Maximum axis error</dt><dd id="error">—</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </main>
+  <script type="module" src="/viewer.mjs"></script>
+</body>
+</html>
