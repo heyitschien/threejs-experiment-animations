@@ -4,6 +4,8 @@
 
 [Manifesto](INVENTION-LAB-MANIFESTO.md) · [Tool landscape](INVENTION-LAB-TOOL-LANDSCAPE.md) · [Agent runbook](INVENTION-LAB-AGENT-RUNBOOK.md) · [Engineering tracker #19](https://github.com/heyitschien/threejs-experiment-animations/issues/19)
 
+Current decisions: [ADR-001](INVENTION-LAB-ADR-001-OPEN-SOURCE-INTEGRATION.md). Current evidence, priorities and gates: [November 25 handoff](INVENTION-LAB-HANDOFF-2026-11-25.md). The initial research register below is a dated snapshot; read the ADR and Session 0.2 report for later findings.
+
 ## 1. Technology adoption pipeline
 
 | Stage | Required output / gate |
