@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>HNG-001 Mechanical Assembly</title>
+  <link rel="stylesheet" href="/viewer.css">
+  <script type="importmap">
+    {"imports":{"three":"/three/build/three.module.js","three/addons/":"/three/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <main>
+    <header><h1>HNG-001 hinge</h1><p>Two-component mechanical assembly calibration</p></header>
+    <section class="workspace">
+      <div class="viewport">
+        <canvas id="model" aria-label="Orbitable HNG-001 hinge"></canvas>
+        <div class="legend"><span class="fixed">Fixed leaf</span><span class="moving">Moving leaf</span><span class="axis">Pin axis</span></div>
+      </div>
+      <aside>
+        <h2>Joint motion</h2>
+        <p id="status" role="status">Loading assembly</p>
+        <label for="angle">Opening angle <output id="angle-value" for="angle">0°</output></label>
+        <input id="angle" type="range" min="0" max="90" step="0.1" value="0" disabled>
+        <div id="poses" class="controls"></div>
+        <div class="controls secondary">
+          <button id="play" disabled>Play motion</button>
+          <button id="reset">Reset view</button>
+          <button id="missing" disabled>Test missing asset</button>
+        </div>
+        <dl>
+          <dt>Joint</dt><dd id="joint">—</dd>
+          <dt>Components</dt><dd id="components">—</dd>
+          <dt>Moving witness · CAD XYZ</dt><dd id="witness">—</dd>
+          <dt>Radial / axial clearance</dt><dd id="clearance">—</dd>
+        </dl>
+        <p class="note">The slider interpolates the joint angle. The CAD interference check sampled every 5°.</p>
+      </aside>
+    </section>
+  </main>
+  <script type="module" src="/hng/viewer.mjs"></script>
+</body>
+</html>

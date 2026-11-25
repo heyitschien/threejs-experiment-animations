@@ -1,5 +1,7 @@
 # Invention Lab agent runbook
 
+The approved HNG-001 two-component assembly uses this same pinned environment. See the [HNG-001 assembly runbook](INVENTION-LAB-HNG-001-RUNBOOK.md) for its separate commands and evidence.
+
 Session 0.1 is a calibration of CadQuery → STEP/STL → Blender → GLB → Three.js. Start with [AGENTS.md](../AGENTS.md) and [Issue #19](https://github.com/heyitschien/threejs-experiment-animations/issues/19). Use an isolated worktree and record its starting commit. The original [Session 0 evidence](../experiments/invention-lab/session-0/README.md) stays at calibration commit `e59fc23f6ca14f96225037bb828c43f247efc478`. Use the commands below for new calibrations.
 
 ## Supported host and tools
