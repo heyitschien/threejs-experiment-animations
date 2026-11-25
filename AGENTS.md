@@ -7,6 +7,8 @@
 
 ## Invention Lab
 
+- Before proposing or adding any new technology, follow the [technology adoption and validation protocol](docs/INVENTION-LAB-TECHNOLOGY-ADOPTION.md). Research first; compare against the baseline; do not install or execute new third-party tools without owner approval. Current research assignment: [#22](https://github.com/heyitschien/threejs-experiment-animations/issues/22).
+
 - Read [Issue #19](https://github.com/heyitschien/threejs-experiment-animations/issues/19) and the [canonical agent runbook](docs/INVENTION-LAB-AGENT-RUNBOOK.md) before running the engineering pipeline.
 - Use the runbook commands and a fresh output directory for each calibration. Treat CAD and STEP as authoritative and keep the original Session 0 evidence intact.
 - Stop at the review gate defined by Issue #19. The calibration harness has its own viewer and evidence; preserve the OCTO app and goldens.
