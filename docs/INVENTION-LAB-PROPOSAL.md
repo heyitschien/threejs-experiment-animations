@@ -6,6 +6,8 @@
 
 Read alongside the [current open-source landscape](INVENTION-LAB-TOOL-LANDSCAPE.md) and the [integration session and acceptance playbook](INVENTION-LAB-SESSION-PLAN.md).
 
+**Visual input now available:** the [Leaf to Light reference package](../reference/invention-lab/leaf-to-light/README.md) includes a four-angle render, A/B/C concept comparison, dimensioned SVG/PNG sheet, and structured `model-brief.json` for a future agent. **These are proposed design inputs, not CAD or physical evidence.**
+
 ## The question
 
 Can a coding agent turn a nature-inspired brief into **one dimensionally authoritative parametric CAD model**, produce mechanically faithful derived meshes for Blender and Three.js, run controlled numerical and visual checks, and package honest evidence another person can reproduce?
