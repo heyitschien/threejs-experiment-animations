@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "run_id": "4ff8f5f0-2516-4cfe-b943-f9c56dce21ca",
+  "passed": true,
+  "three": "0.187.0",
+  "spec": {
+    "schema": 1,
+    "threshold_mm": 0.5,
+    "linear_tolerance_mm": 0.05,
+    "angular_tolerance_rad": 0.1,
+    "cad_units": "mm",
+    "scene_units": "m",
+    "cad_to_scene": "[x,z,-y]",
+    "models": [
+      {
+        "id": "calibration_box",
+        "size": [
+          100,
+          60,
+          20
+        ],
+        "pocket_min": [
+          12,
+          -19,
+          13
+        ],
+        "pocket_size": [
+          11,
+          8,
+          7
+        ]
+      },
+      {
+        "id": "calibration_box_variant",
+        "size": [
+          120,
+          70,
+          15
+        ],
+        "pocket_min": [
+          19,
+          -23,
+          9
+        ],
+        "pocket_size": [
+          14,
+          9,
+          6
+        ]
+      }
+    ]
+  },
+  "models": [
+    {
+      "id": "calibration_box",
+      "size": [
+        100,
+        60,
+        20
+      ],
+      "pocket_min": [
+        12,
+        -19,
+        13
+      ],
+      "pocket_size": [
+        11,
+        8,
+        7
+      ],
+      "glb_sha256": "d6ab4f70a5bbf7e0b325373ddd7ea667129d052afa503289e5b5d3608c2b9b5e",
+      "volume_mm3": 119384,
+      "blender_error_mm": 0.0000014156103134155273,
+      "measured": {
+        "bounds_mm": [
+          [
+            -50.000002374872565,
+            0,
+            -30.00000142492354
+          ],
+          [
+            50.000002374872565,
+            20.000000949949026,
+            30.00000142492354
+          ]
+        ],
+        "corner_mm": [
+          12.000000569969416,
+          13.000000617466867,
+          19.000000902451575
+        ],
+        "max_error_mm": 0.0000023748725652694702,
+        "triangles": 28,
+        "mesh_name": "calibration_box",
+        "matrix_world": [
+          0.0010000000474974513,
+          0,
+          0,
+          0,
+          0,
+          0.0010000000474974513,
+          0,
+          0,
+          0,
+          0,
+          0.0010000000474974513,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "calibration_box_variant",
+      "size": [
+        120,
+        70,
+        15
+      ],
+      "pocket_min": [
+        19,
+        -23,
+        9
+      ],
+      "pocket_size": [
+        14,
+        9,
+        6
+      ],
+      "glb_sha256": "20a8e049e1311f1f0518acee3292dc44298951b69ace0dfaa86e3a7267d82c13",
+      "volume_mm3": 125244,
+      "blender_error_mm": 0.000002384185791015625,
+      "measured": {
+        "bounds_mm": [
+          [
+            -60.00000284984708,
+            0,
+            -35.000001662410796
+          ],
+          [
+            60.00000284984708,
+            15.00000071246177,
+            35.000001662410796
+          ]
+        ],
+        "corner_mm": [
+          19.000000902451575,
+          9.000000427477062,
+          23.00000109244138
+        ],
+        "max_error_mm": 0.0000028498470783233643,
+        "triangles": 28,
+        "mesh_name": "calibration_box_variant",
+        "matrix_world": [
+          0.0010000000474974513,
+          0,
+          0,
+          0,
+          0,
+          0.0010000000474974513,
+          0,
+          0,
+          0,
+          0,
+          0.0010000000474974513,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    }
+  ]
+}

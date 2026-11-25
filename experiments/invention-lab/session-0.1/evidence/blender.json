@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "run_id": "7d91d1ca-a650-4d23-b942-18609659a802",
+  "passed": true,
+  "input_units": "mm",
+  "scene_units": "m",
+  "export_axes": "[x,z,-y]",
+  "cad_sha256": "febf4f7709b7408701e5dbf4c721aeaa2d1e7cd5639e997ddfc7bf3e89353b9d",
+  "blender": "4.4.0",
+  "build": "05377985c527",
+  "python": "3.11.11",
+  "models": [
+    {
+      "id": "calibration_box",
+      "passed": true,
+      "stl_sha256": "c10dec953f5b00c17d63a6118d081c182b68fddb6b0a65fb9a532e3b20ca5122",
+      "glb_sha256": "d6ab4f70a5bbf7e0b325373ddd7ea667129d052afa503289e5b5d3608c2b9b5e",
+      "bounds_mm": [
+        [
+          -50.00000074505806,
+          -30.000001192092896,
+          0.0
+        ],
+        [
+          50.00000074505806,
+          30.000001192092896,
+          20.000001415610313
+        ]
+      ],
+      "pocket_corner_mm": [
+        12.000000104308128,
+        -19.00000125169754,
+        13.000000268220901
+      ],
+      "triangles": 28
+    },
+    {
+      "id": "calibration_box_variant",
+      "passed": true,
+      "stl_sha256": "942c3d621727b64034525757ae7665ca3885531f339c12b7fbb886e3867fcf62",
+      "glb_sha256": "20a8e049e1311f1f0518acee3292dc44298951b69ace0dfaa86e3a7267d82c13",
+      "bounds_mm": [
+        [
+          -60.00000238418579,
+          -35.00000014901161,
+          0.0
+        ],
+        [
+          60.00000238418579,
+          35.00000014901161,
+          15.000000596046448
+        ]
+      ],
+      "pocket_corner_mm": [
+        19.00000125169754,
+        -23.000001907348633,
+        9.000000543892384
+      ],
+      "triangles": 28
+    }
+  ]
+}

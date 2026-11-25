@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "run_id": "7d91d1ca-a650-4d23-b942-18609659a802",
+  "files": {
+    "blender.json": "ea2ca26854478e8d12ceb220a794eba7ddb5d787602bed09b485d6a07a4b87d7",
+    "browser-calibration.png": "fab331ec28e4c1ed7a65c02af5a7ac5c63cbb7ad2c7ad365faf79530b4630ceb",
+    "browser-missing.png": "ff640058c9b5b6f44bbbbd255fbbd225a97a6ba1ce30190ac84d5e2ee3ea5b0d",
+    "browser-variant.png": "3831bffdd63fcc95ce603cc6caf37926c761b9991e4997a042634e1437f22324",
+    "browser.json": "55cefb5af6f93aaa57ef79c960eb30aac19080a5e07595cc215c63278aa813fa",
+    "cad.json": "febf4f7709b7408701e5dbf4c721aeaa2d1e7cd5639e997ddfc7bf3e89353b9d",
+    "calibration_box.glb": "d6ab4f70a5bbf7e0b325373ddd7ea667129d052afa503289e5b5d3608c2b9b5e",
+    "calibration_box.step": "59a666147725b759d3efad0a024da921267046252d11fd953cb70d48317d532c",
+    "calibration_box.stl": "c10dec953f5b00c17d63a6118d081c182b68fddb6b0a65fb9a532e3b20ca5122",
+    "calibration_box_variant.glb": "20a8e049e1311f1f0518acee3292dc44298951b69ace0dfaa86e3a7267d82c13",
+    "calibration_box_variant.step": "9af10d1637c6abd63c4488bf688f92e324d7f517c6908b68a317f3cd527d498b",
+    "calibration_box_variant.stl": "942c3d621727b64034525757ae7665ca3885531f339c12b7fbb886e3867fcf62",
+    "geometry.json": "92d9ce90928315510144578925b90ba1c1c9149f6f5e653d16970cd3316e64fe",
+    "run.json": "e000a298d61277f5a260a6b13aa14e1af4dd877eb18f37b883751b6cb4c272ab",
+    "spec.json": "3f84fc060904506adff76913c0cce95571a9698a61e251e8cce2bb6ce9293f75"
+  }
+}
