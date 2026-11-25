@@ -60,6 +60,32 @@ We use AI not simply as an answer machine, but as an instrument for intellectual
 
 **The inventions become our curriculum. The pipeline becomes our laboratory. Curiosity becomes our teacher.**
 
+## 06 / The deeper opportunity
+
+Imagine spending the next several years building a digital laboratory where every invention expands our understanding of the world.
+
+A refrigerator teaches us thermodynamics. A bicycle teaches us mechanical efficiency. A tree-inspired building teaches us structural engineering. A water-recycling shower teaches us fluid dynamics.
+
+And underneath all of those explorations, we're developing AI integrations, agent orchestration, CI automation, CAD automation, visualization and validation systems.
+
+**The inventions become our curriculum. The pipeline becomes our laboratory. Curiosity becomes our teacher.**
+
+### A living curriculum
+
+| Invention | What it invites us to learn |
+|---|---|
+| Living Window | Heat transfer, natural ventilation, solar shading, materials and modular design |
+| Refrigerator | Thermodynamics, refrigeration cycles, insulation and food preservation |
+| Bicycle | Mechanical efficiency, friction, gearing, ergonomics and lightweight structures |
+| Tree-inspired building | Structural engineering, load paths, branching geometries and material efficiency |
+| Water-recycling shower | Fluid dynamics, heat recovery, filtration and water hygiene |
+
+Each invention begins with a meaningful question about the world, not a technology looking for a problem. Its digital development gives us a reason to learn the underlying science and a concrete challenge for our technical systems.
+
+Across these explorations, we can progressively develop reusable capabilities: AI integration, multi-agent coordination, continuous integration (CI) and automated quality checks, parametric CAD generation, interactive Three.js visualization, specialist simulation integration and evidence-based validation.
+
+The aim is a long-term, self-directed learning laboratory, not a production quota or a commitment to physical fabrication. We preserve the freedom to explore, discover that an idea is wrong, learn from existing solutions and change direction. These are aspirations for the evolving pipeline, not claims that the capabilities or inventions have already been validated.
+
 ## Related work
 
 - [Invention Lab proposal](INVENTION-LAB-PROPOSAL.md)
