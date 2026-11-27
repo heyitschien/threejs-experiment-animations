@@ -153,7 +153,7 @@ async function verify(out) {
     browser.recovery === true && browser.orbit === true && browser.autoplay === true && browser.page_errors?.length === 0,
   'Incomplete or invalid browser evidence');
   demand(negatives.schema === 1 && negatives.run_id === meta.run_id && negatives.passed === true &&
-    negatives.cases?.length === 5 && negatives.cases.every((test) => test.passed === true),
+    negatives.cases?.length === 6 && negatives.cases.every((test) => test.passed === true),
   'Incomplete or invalid fail-closed evidence');
   return geometry;
 }

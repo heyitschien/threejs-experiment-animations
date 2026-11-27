@@ -2,6 +2,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { bytes, digest, json, pins } from '../session-0.1/verify.mjs';
 import { demand, readStl, vectorNear } from '../session-0.1/geometry.mjs';
 import { assemblyNodes, compareSurface, fromCad, measurePose, meshTriangles } from './assembly.mjs';
+import { expectedEditedTriangles, wrongEditedTriangles } from './edit-geometry.mjs';
 
 const keys = (obj, expected, label) => demand(
   obj && JSON.stringify(Object.keys(obj).sort()) === JSON.stringify([...expected].sort()), `${label}: unexpected IDs`);
@@ -50,12 +51,29 @@ export async function verifyGeometry(out, run, fixture) {
   for (const kind of ['step', 'stl']) {
     demand(cad.edit.moving[`${kind}_sha256`] === await digest(out, `moving_edited.${kind}`), 'Edited derivative hash mismatch');
   }
+  const expectedEditedBounds = [moving.bounds[0], [fixture.edit.x_max_mm, ...moving.bounds[1].slice(1)]];
+  const expectedEditedWitness = [fixture.edit.x_max_mm, ...moving.witness.slice(1)];
+  const expectedEditedVolume = moving.volume + fixture.edit.added_volume_mm3;
+  for (const stage of ['cad', 'step']) {
+    const record = cad.edit.moving[stage];
+    demand(record.valid === true && record.solids === 1 && record.closed_shells === 1, 'Invalid edited solid');
+    within(record.volume_mm3, expectedEditedVolume, tolerance.volume_mm3, 'Invalid edited part volume');
+    record.bounds_mm.forEach((v, i) => vectorNear(v, expectedEditedBounds[i], tolerance.cad_mm,
+      'Invalid edited part bounds'));
+    vectorNear(record.witness_mm, expectedEditedWitness, tolerance.witness_mm, 'Invalid edited part witness');
+  }
+  const nominalMoving = readStl(slice(await bytes(out, `${moving.id}.stl`)));
   const edited = readStl(slice(await bytes(out, 'moving_edited.stl')));
-  const editedSurface = compareSurface(edited, edited, tolerance.oriented_triangle_coordinate_mm);
+  const expectedEdited = expectedEditedTriangles(nominalMoving, fixture);
+  const editedSurface = compareSurface(expectedEdited, edited, tolerance.oriented_triangle_coordinate_mm);
   demand(cad.edit.fixed_input_hashes_unchanged === true &&
     cad.edit.fixed_symmetric_difference_mm3 <= tolerance.volume_mm3 &&
     cad.edit.outside_edit_slab_mm3 <= tolerance.volume_mm3, 'Invalid or missing isolated edit result');
   within(cad.edit.added_mm3, fixture.edit.added_volume_mm3, tolerance.volume_mm3, 'Invalid edit volume');
+  within(cad.edit.bore.radius_mm, moving.bore_r, tolerance.cad_mm, 'Invalid edited bore radius');
+  vectorNear(cad.edit.bore.axis_origin_mm, fixture.joint.origin, tolerance.cad_mm, 'Invalid edited bore origin');
+  vectorNear(cad.edit.bore.z_mm, [moving.leaf[0][2], moving.leaf[1][2]], tolerance.cad_mm,
+    'Invalid edited bore shoulders');
   within(cad.fit.radial_gap_mm, fixture.fit.radial_gap, tolerance.cad_mm, 'Invalid radial gap');
   demand(cad.fit.axial_gaps_mm.length === 2 &&
     [cad.fit.keep_in_missing_mm3, cad.fit.keep_out_occupied_mm3].every((v) => v >= 0 && v <= tolerance.volume_mm3),
@@ -78,6 +96,10 @@ export async function verifyGeometry(out, run, fixture) {
     cad.controls.wrong_signed_pose_witness_error_mm > tolerance.witness_mm, 'Invalid or incomplete CAD negative control');
   within(interference.undersize_bore.intersection_mm3, fixture.fit.undersize_overlap_mm3,
     tolerance.control_overlap_mm3, 'Invalid undersized bore overlap');
+  within(interference.offset_x.radial_residual_mm, fixture.fit.offset_gap,
+    tolerance.cad_mm, 'Invalid offset interference residual');
+  within(interference.offset_z.shoulder_overlap_mm, fixture.fit.shoulder_overlap_mm,
+    tolerance.cad_mm, 'Invalid shoulder interference overlap');
   const poses = {};
   for (const pose of fixture.poses) {
     const step = cad.poses[pose.id], blend = blender.poses[pose.id];
@@ -136,6 +158,16 @@ export async function geometryNegatives(out, fixture) {
     demand(/Oriented STL\/GLB triangles differ/.test(error.message), error.message);
     results.push({ name: 'one reversed triangle', passed: true });
   }
-  demand(results.length === 4, 'Not every GLB negative failed closed');
+  const nominal = readStl(slice(await bytes(out, `${fixture.parts.moving.id}.stl`)));
+  const expectedEdited = expectedEditedTriangles(nominal, fixture);
+  const edited = readStl(slice(await bytes(out, 'moving_edited.stl')));
+  try {
+    compareSurface(expectedEdited, wrongEditedTriangles(edited, fixture),
+      fixture.tolerances.oriented_triangle_coordinate_mm);
+  } catch (error) {
+    demand(/corresponding vertex does not match|triangles differ/.test(error.message), error.message);
+    results.push({ name: 'wrong edited X extent', passed: true });
+  }
+  demand(results.length === 5, 'Not every geometry negative failed closed');
   return results;
 }
