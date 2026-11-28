@@ -72,8 +72,9 @@ export async function verifyGeometry(out, run, fixture) {
   within(cad.edit.added_mm3, fixture.edit.added_volume_mm3, tolerance.volume_mm3, 'Invalid edit volume');
   within(cad.edit.bore.radius_mm, moving.bore_r, tolerance.cad_mm, 'Invalid edited bore radius');
   vectorNear(cad.edit.bore.axis_origin_mm, fixture.joint.origin, tolerance.cad_mm, 'Invalid edited bore origin');
-  vectorNear(cad.edit.bore.z_mm, [moving.leaf[0][2], moving.leaf[1][2]], tolerance.cad_mm,
-    'Invalid edited bore shoulders');
+  const expectedBoreZ = [moving.leaf[0][2], moving.leaf[1][2]];
+  demand(Array.isArray(cad.edit.bore.z_mm) && cad.edit.bore.z_mm.length === 2, 'Invalid edited bore shoulders');
+  cad.edit.bore.z_mm.forEach((z, i) => within(z, expectedBoreZ[i], tolerance.cad_mm, 'Invalid edited bore shoulders'));
   within(cad.fit.radial_gap_mm, fixture.fit.radial_gap, tolerance.cad_mm, 'Invalid radial gap');
   demand(cad.fit.axial_gaps_mm.length === 2 &&
     [cad.fit.keep_in_missing_mm3, cad.fit.keep_out_occupied_mm3].every((v) => v >= 0 && v <= tolerance.volume_mm3),
