@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LW-SHADE-001 · synchronized shade</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main id="app" data-state="loading">
+      <section class="copy">
+        <p class="eyebrow">Living Window · digital mechanism study</p>
+        <h1>Two slats.<br />One linked motion.</h1>
+        <p class="lede">A CAD-derived 300 × 60 × 4 mm shade coupon, driven by a 20 / 80 / 20 mm parallelogram.</p>
+        <dl>
+          <div><dt>Angle</dt><dd id="angle-value">25°</dd></div>
+          <div><dt>Clearance</dt><dd>0.20 mm radial</dd></div>
+          <div><dt>Evidence</dt><dd>13 CAD samples</dd></div>
+        </dl>
+        <div class="range-row">
+          <label for="angle">Linked angle</label>
+          <input id="angle" type="range" min="0" max="60" step="0.5" value="25" disabled />
+        </div>
+        <div class="poses" aria-label="Named poses">
+          <button data-angle="0">0°</button><button data-angle="25" aria-pressed="true">25°</button><button data-angle="60">60°</button>
+        </div>
+        <div class="actions">
+          <button id="play" disabled>Autoplay</button>
+          <button id="explode" disabled>Explode</button>
+          <button id="reset" disabled>Reset</button>
+        </div>
+        <p id="status" role="status">Loading verified geometry…</p>
+        <p class="note">Exploded mode is inspection only. Digital geometry evidence does not establish physical fit, loads, durability, or continuous collision.</p>
+      </section>
+      <section class="stage">
+        <canvas id="model" aria-label="Interactive synchronized shade model"></canvas>
+        <a class="drawing" href="./assets/reference.svg" target="_blank" rel="noreferrer">Dimensioned reference ↗</a>
+        <div class="legend"><span>Drag to orbit</span><span>Scroll to zoom</span></div>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

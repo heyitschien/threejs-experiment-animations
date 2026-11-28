@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "id": "LW-SHADE-001",
+  "passed": true,
+  "stage": "cad",
+  "source_commit": "7a0efbf7e3ea93cac6f1b1cd81bdbba5ce7ff56f",
+  "head_at_generation": "7a0efbf7e3ea93cac6f1b1cd81bdbba5ce7ff56f",
+  "candidate": "WORKTREE_UNCOMMITTED",
+  "files": {
+    "cad.json": "e55eaa669a7a4f3ec50b0b0ea47b7d5e78f0e7aedf175c459a73f31e8c19bc35",
+    "closed_000.step": "34a42bc593f96e99f974fabae6f00a3e7da2d3d662458f772e4518ed72e2fab2",
+    "coupler.step": "8c8f53b3a4fd5102f111d6eb17c32b187c08f4b8a47b0c020a419ec6c0233eb5",
+    "coupler.stl": "c833f11a30383903f8470d7c68f8472c00000466a050d001d8627ac4e821ed43",
+    "fixture.step": "12e114bd8b118732977f6febca6ec8bc0eddf6042e7f3d1ade66427fb0d27364",
+    "fixture.stl": "7e8fc4f202945b2af225394cbd5399581a8f976d809ec4c9a691ea923997f484",
+    "lower_slat_rotor.step": "5d617cb136c4541f5ce49bb09a3fd439e0725fe8cf7a56f2bc0a00ca1929291e",
+    "lower_slat_rotor.stl": "4ed063a3da3d548e584f426aca44f1c4158c43b2005f0ec8f45b621620ea584d",
+    "lower_washer.step": "3eb4479f99a78fd0c419f04c611b42f15c31523316670e33523fa179dc902c13",
+    "lower_washer.stl": "21b15330a2cd2334f5cd18b8e275426a867290ac2a97ad8d434dcab57586c597",
+    "nominal_025.step": "d2ec02d4dd3c1baa50b7b27736dd3d3097018e495a0a7f51c13d225b09153025",
+    "open_060.step": "2b5a82936f5622280e3d464bb50e9d839f78c96391a95f405af229bf51cc31a2",
+    "spec.json": "baf088d531529d985cd2dd80c31c019fc71a83343bc6803a426f7874b6cc93f4",
+    "upper_slat_rotor.step": "d092eeefa27cf15cb45ac9b285490f4bc7e2dc8424d51286af9a1150f0dc216c",
+    "upper_slat_rotor.stl": "4ed063a3da3d548e584f426aca44f1c4158c43b2005f0ec8f45b621620ea584d",
+    "upper_washer.step": "c70ee10a0bb2bb0a75a337028d2ba30acb3e413bea47af0e355a31cfa3bd4852",
+    "upper_washer.stl": "21b15330a2cd2334f5cd18b8e275426a867290ac2a97ad8d434dcab57586c597"
+  }
+}

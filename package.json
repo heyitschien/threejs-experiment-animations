@@ -12,7 +12,10 @@
     "check": "npm run test && npm run build",
     "qa:browser": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test",
     "qa:install": "PLAYWRIGHT_BROWSERS_PATH=0 playwright install --no-shell chromium",
-    "qa:perf": "PLAYWRIGHT_BROWSERS_PATH=0 OCTO_BENCHMARK=1 playwright test performance.spec.js"
+    "qa:perf": "PLAYWRIGHT_BROWSERS_PATH=0 OCTO_BENCHMARK=1 playwright test performance.spec.js",
+    "lw-shade:unit": "node --test experiments/invention-lab/lw-shade-001/spec.test.mjs",
+    "lw-shade:build": "vite build --config experiments/invention-lab/lw-shade-001/vite.config.mjs",
+    "lw-shade:test": "node experiments/invention-lab/lw-shade-001/browser.mjs"
   },
   "dependencies": {
     "three": "^0.187.0"
