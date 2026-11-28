@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "id": "LW-SHADE-001",
+  "passed": true,
+  "provenance": {
+    "cad": "CadQuery 2.8.0 / OCP 7.9.3.1",
+    "glb_and_hero": "Blender 4.4.0",
+    "viewer": "Three.js 0.187.0 / Vite 7.1.x",
+    "washer": "original procedural geometry; catalog models excluded for unconfirmed redistribution rights"
+  },
+  "coordinate_mapping": {
+    "cad_to_glb": "[X,Z,-Y]/1000",
+    "glb_units": "m"
+  },
+  "files": {
+    "blender.json": "dbdfefcd737b9f673187b3339d417ef001ac7ec7cd5d170d219a23c1e88bbdf5",
+    "cad.json": "dc726a0cf52edea5cf5948347c12480a9f2fe073c2120b6f1d1e012d6bfebbe6",
+    "closed_000.step": "5dd09ecf3f8ff9ee21129245a88a038ea0e81b3c15d976500841e0d82ae7b920",
+    "coupler.step": "3bc94e490361551624a61643cf2d0be4a9bd8e6b3a42cd999f46eeebc4a249fd",
+    "fixture.step": "a7a36874f994782e6c11e8e30522dd6b54e98c5922b6125342cfcd264d295070",
+    "geometry.json": "736276e9701ac8023dc80c97c2b40ac2f3e3d1048b7f03a902e80310eff212fe",
+    "hero.png": "08889767b9df06d6eee98c2bcba955d86692f9bf6b5191d3999a62328810984a",
+    "lower_slat_rotor.step": "0d1c145ae5cb95545ed54058a68ce10c55137098c9a9fdd1df43faff34cb2bc5",
+    "lower_washer.step": "b51a540f92fc040b74e027fdb6fc562fbe24cbe12a567776ec0248bdd596771e",
+    "nominal_025.step": "4d2fe75fcaab25bd0de50604480e931e1210a0da0adc4fd4a139b6081c0b3fae",
+    "open_060.step": "d09cb62eec8e59170a2bdf2b1c98c7c49e0cc0c90d546adf62fdf1b808cd697c",
+    "reference.svg": "720ed745775af75298b4a0cd815abf1c02562c6ebca4fb6c483cfd5ab6f3adfe",
+    "shade.glb": "32b2bbe524e5599be540789e8f192d5830371b645b559a7563461cdfdfcfbbfd",
+    "spec.json": "baf088d531529d985cd2dd80c31c019fc71a83343bc6803a426f7874b6cc93f4",
+    "upper_slat_rotor.step": "461fb65c88732b9eca3be8c01f1dc7380f982c2cc82fc98c1796de5ad05667d4",
+    "upper_washer.step": "c3d4752a9ed9a8df3f5b2cd2076bb4d3d964043f9f7177cc578dfe54de32bbf5"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "passed": true,
+  "chromium": "159.0.8154.6",
+  "cases": [
+    {
+      "profile": "desktop",
+      "passed": true,
+      "angle_slider": true,
+      "synchronized": true,
+      "autoplay": true,
+      "orbit": true,
+      "explode_reassemble": true,
+      "reset": true,
+      "browser_errors": 0
+    },
+    {
+      "profile": "mobile-emulation",
+      "passed": true,
+      "angle_slider": true,
+      "synchronized": true,
+      "autoplay": true,
+      "orbit": true,
+      "explode_reassemble": true,
+      "reset": true,
+      "browser_errors": 0
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "missing GLB",
+      "passed": true,
+      "http_status": 404
+    }
+  ],
+  "mobile_is_emulation": true
+}

@@ -89,7 +89,8 @@ def point_camera(camera, target):
 
 def render_hero(out, objects):
     pose(objects, 25)
-    floor_mat = material("ground.material", (0.035, 0.05, 0.065))
+    floor_mat = material("ground.material", (0.02, 0.03, 0.04))
+    floor_mat.node_tree.nodes.get("Principled BSDF").inputs["Roughness"].default_value = 0.92
     bpy.ops.mesh.primitive_plane_add(size=2, location=(0, 0, -0.055))
     floor = bpy.context.object
     floor.name = "hero.ground"
@@ -102,11 +103,12 @@ def render_hero(out, objects):
     point_camera(camera, (0.02, 0.0, 0.035))
     bpy.context.scene.camera = camera
     world = bpy.context.scene.world
-    world.color = (0.015, 0.022, 0.03)
+    world.use_nodes = False
+    world.color = (0.012, 0.018, 0.025)
     for name, kind, energy, position, size in [
-        ("key", "AREA", 900, (0.18, -0.25, 0.42), 0.35),
-        ("fill", "AREA", 550, (-0.28, -0.05, 0.18), 0.28),
-        ("rim", "AREA", 700, (0.15, 0.32, 0.30), 0.22),
+        ("key", "AREA", 14, (0.18, -0.25, 0.42), 0.35),
+        ("fill", "AREA", 6, (-0.28, -0.05, 0.18), 0.28),
+        ("rim", "AREA", 10, (0.15, 0.32, 0.30), 0.22),
     ]:
         data = bpy.data.lights.new(name, kind)
         data.energy, data.shape, data.size = energy, "DISK", size
