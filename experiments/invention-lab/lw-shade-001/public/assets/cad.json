@@ -1,0 +1,2400 @@
+{
+  "schema": 1,
+  "id": "LW-SHADE-001",
+  "passed": true,
+  "units": "mm",
+  "spec_sha256": "be23c79a2ef6f9f6166315b786670172857bf910ea54d74caa42a2a6fa048af2",
+  "parts": {
+    "shade.fixture": {
+      "file": "fixture",
+      "cad": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            151.0,
+            -8.0,
+            -8.0
+          ],
+          [
+            154.0,
+            8.0,
+            88.0
+          ]
+        ],
+        "volume_mm3": 4553.524783386754
+      },
+      "step": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            151.0,
+            -8.0,
+            -8.0
+          ],
+          [
+            154.0,
+            8.0,
+            88.0
+          ]
+        ],
+        "volume_mm3": 4553.5247833867525
+      },
+      "step_sha256": "a07df4cbbb6ffea8ba33238094fe4d02398edf3af99f3e7988926b50b0a567bf",
+      "stl_sha256": "7e8fc4f202945b2af225394cbd5399581a8f976d809ec4c9a691ea923997f484"
+    },
+    "shade.lower_slat_rotor": {
+      "file": "lower_slat_rotor",
+      "cad": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            -150.0,
+            -30.0,
+            -5.0
+          ],
+          [
+            164.0,
+            30.0,
+            5.0
+          ]
+        ],
+        "volume_mm3": 72932.22342311712
+      },
+      "step": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            -150.0,
+            -30.0,
+            -5.0
+          ],
+          [
+            164.0,
+            30.0,
+            5.0
+          ]
+        ],
+        "volume_mm3": 72932.22342311715
+      },
+      "step_sha256": "236013e4413762da82b8bfc56fe0875b85856a2d9c08c6c74d1d9c943e8fe4e1",
+      "stl_sha256": "4ed063a3da3d548e584f426aca44f1c4158c43b2005f0ec8f45b621620ea584d"
+    },
+    "shade.upper_slat_rotor": {
+      "file": "upper_slat_rotor",
+      "cad": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            -150.0,
+            -30.0,
+            -5.0
+          ],
+          [
+            164.0,
+            30.0,
+            5.0
+          ]
+        ],
+        "volume_mm3": 72932.22342311712
+      },
+      "step": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            -150.0,
+            -30.0,
+            -5.0
+          ],
+          [
+            164.0,
+            30.0,
+            5.0
+          ]
+        ],
+        "volume_mm3": 72932.22342311715
+      },
+      "step_sha256": "480b1f873863814d1d2909a3a52ca60c85db3c276bd385784a6326b693e0c6bd",
+      "stl_sha256": "4ed063a3da3d548e584f426aca44f1c4158c43b2005f0ec8f45b621620ea584d"
+    },
+    "shade.coupler": {
+      "file": "coupler",
+      "cad": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            158.5,
+            15.0,
+            -5.0
+          ],
+          [
+            161.5,
+            25.0,
+            85.0
+          ]
+        ],
+        "volume_mm3": 2581.1442324059876
+      },
+      "step": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            158.5,
+            15.0,
+            -5.0
+          ],
+          [
+            161.5,
+            25.0,
+            85.0
+          ]
+        ],
+        "volume_mm3": 2581.1442324059713
+      },
+      "step_sha256": "bf8e26a28947b57fe0c375f9eef7098cd913ab4dbe821ce3ab40dee35a3aee7e",
+      "stl_sha256": "c833f11a30383903f8470d7c68f8472c00000466a050d001d8627ac4e821ed43"
+    },
+    "shade.lower_washer": {
+      "file": "lower_washer",
+      "cad": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            162.0,
+            16.5,
+            -3.5
+          ],
+          [
+            162.5,
+            23.5,
+            3.5
+          ]
+        ],
+        "volume_mm3": 15.221016406642551
+      },
+      "step": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            162.0,
+            16.5,
+            -3.5
+          ],
+          [
+            162.5,
+            23.5,
+            3.5
+          ]
+        ],
+        "volume_mm3": 15.221016406642883
+      },
+      "step_sha256": "d6e0926110b3ffcc56ec913cf9705555bf7e1d6414f3cec65476e5a03a82e5b7",
+      "stl_sha256": "21b15330a2cd2334f5cd18b8e275426a867290ac2a97ad8d434dcab57586c597"
+    },
+    "shade.upper_washer": {
+      "file": "upper_washer",
+      "cad": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            162.0,
+            16.5,
+            -3.5
+          ],
+          [
+            162.5,
+            23.5,
+            3.5
+          ]
+        ],
+        "volume_mm3": 15.221016406642551
+      },
+      "step": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            162.0,
+            16.5,
+            -3.5
+          ],
+          [
+            162.5,
+            23.5,
+            3.5
+          ]
+        ],
+        "volume_mm3": 15.221016406642883
+      },
+      "step_sha256": "49f7148998e6ad38618b49c255087a91b7d5ebfac153813437d24a921ecc402c",
+      "stl_sha256": "21b15330a2cd2334f5cd18b8e275426a867290ac2a97ad8d434dcab57586c597"
+    }
+  },
+  "poses": {
+    "closed_000": {
+      "angle_deg": 0,
+      "step_sha256": "c80afd228809eb68316a9b702330a0265d2519ced18548466b16e32de64ff675",
+      "world_from_local_cad": {
+        "shade.fixture": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.lower_slat_rotor": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.upper_slat_rotor": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            80.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.coupler": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.lower_washer": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.upper_washer": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            80.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "nominal_025": {
+      "angle_deg": 25,
+      "step_sha256": "8af247acb95ba3cea732b2118ae2461ac15d097f9cc6664b8c6325b674a5b8a5",
+      "world_from_local_cad": {
+        "shade.fixture": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.lower_slat_rotor": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.9063077870365974,
+            0.4226182617408122,
+            0.0
+          ],
+          [
+            0.0,
+            -0.42261826174081224,
+            0.9063077870365973,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.upper_slat_rotor": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.9063077870365974,
+            0.4226182617408122,
+            0.0
+          ],
+          [
+            0.0,
+            -0.42261826174081224,
+            0.9063077870365973,
+            80.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.coupler": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -1.873844259267
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -8.452365234814
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.lower_washer": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.9063077870365974,
+            0.4226182617408122,
+            0.0
+          ],
+          [
+            0.0,
+            -0.42261826174081224,
+            0.9063077870365973,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.upper_washer": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.9063077870365974,
+            0.4226182617408122,
+            0.0
+          ],
+          [
+            0.0,
+            -0.42261826174081224,
+            0.9063077870365973,
+            80.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "open_060": {
+      "angle_deg": 60,
+      "step_sha256": "488c9b929881a80bb36981fdeb2090d1fbf6d4cdaa583696aa5fc49eca670632",
+      "world_from_local_cad": {
+        "shade.fixture": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.lower_slat_rotor": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.50000000000019,
+            0.866025403784329,
+            0.0
+          ],
+          [
+            0.0,
+            -0.866025403784329,
+            0.50000000000019,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.upper_slat_rotor": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.50000000000019,
+            0.866025403784329,
+            0.0
+          ],
+          [
+            0.0,
+            -0.866025403784329,
+            0.50000000000019,
+            80.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.coupler": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -10.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -17.32050807568
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.lower_washer": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.50000000000019,
+            0.866025403784329,
+            0.0
+          ],
+          [
+            0.0,
+            -0.866025403784329,
+            0.50000000000019,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "shade.upper_washer": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.50000000000019,
+            0.866025403784329,
+            0.0
+          ],
+          [
+            0.0,
+            -0.866025403784329,
+            0.50000000000019,
+            80.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "samples": [
+    {
+      "angle_deg": 0,
+      "analytic": {
+        "C_yz_mm": [
+          20.0,
+          -0.0
+        ],
+        "D_yz_mm": [
+          20.0,
+          80.0
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 0.0,
+        "angle_agreement_error_deg": 0.0
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 5,
+      "analytic": {
+        "C_yz_mm": [
+          19.92389396183491,
+          -1.7431148549531632
+        ],
+        "D_yz_mm": [
+          19.92389396183491,
+          78.25688514504684
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 0.0,
+        "angle_agreement_error_deg": 1.7763568394002505e-15
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 10,
+      "analytic": {
+        "C_yz_mm": [
+          19.69615506024416,
+          -3.4729635533386065
+        ],
+        "D_yz_mm": [
+          19.69615506024416,
+          76.5270364466614
+        ],
+        "lower_crank_mm": 19.999999999999996,
+        "upper_crank_mm": 19.999999999999996,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 3.552713678800501e-15,
+        "angle_agreement_error_deg": 1.2434497875801753e-14
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 15,
+      "analytic": {
+        "C_yz_mm": [
+          19.318516525781366,
+          -5.176380902050415
+        ],
+        "D_yz_mm": [
+          19.318516525781366,
+          74.82361909794959
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 0.0,
+        "angle_agreement_error_deg": 1.0658141036401503e-14
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 20,
+      "analytic": {
+        "C_yz_mm": [
+          18.79385241571817,
+          -6.840402866513374
+        ],
+        "D_yz_mm": [
+          18.79385241571817,
+          73.15959713348663
+        ],
+        "lower_crank_mm": 20.000000000000004,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 3.552713678800501e-15,
+        "angle_agreement_error_deg": 7.105427357601002e-15
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 25,
+      "analytic": {
+        "C_yz_mm": [
+          18.126155740732997,
+          -8.452365234813989
+        ],
+        "D_yz_mm": [
+          18.126155740732997,
+          71.54763476518602
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 19.999999999999996,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 3.552713678800501e-15,
+        "angle_agreement_error_deg": 1.4210854715202004e-14
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 30,
+      "analytic": {
+        "C_yz_mm": [
+          17.320508075688775,
+          -9.999999999999998
+        ],
+        "D_yz_mm": [
+          17.320508075688775,
+          70.0
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 0.0,
+        "angle_agreement_error_deg": 7.105427357601002e-15
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 35,
+      "analytic": {
+        "C_yz_mm": [
+          16.383040885779835,
+          -11.471528727020921
+        ],
+        "D_yz_mm": [
+          16.383040885779835,
+          68.52847127297908
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 0.0,
+        "angle_agreement_error_deg": 1.4210854715202004e-14
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 40,
+      "analytic": {
+        "C_yz_mm": [
+          15.32088886237956,
+          -12.855752193730785
+        ],
+        "D_yz_mm": [
+          15.32088886237956,
+          67.14424780626922
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 19.999999999999996,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 3.552713678800501e-15,
+        "angle_agreement_error_deg": 1.4210854715202004e-14
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 45,
+      "analytic": {
+        "C_yz_mm": [
+          14.142135623730951,
+          -14.14213562373095
+        ],
+        "D_yz_mm": [
+          14.142135623730951,
+          65.85786437626905
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 0.0,
+        "angle_agreement_error_deg": 0.0
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 50,
+      "analytic": {
+        "C_yz_mm": [
+          12.855752193730787,
+          -15.32088886237956
+        ],
+        "D_yz_mm": [
+          12.855752193730787,
+          64.67911113762044
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 0.0,
+        "angle_agreement_error_deg": 0.0
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 55,
+      "analytic": {
+        "C_yz_mm": [
+          11.471528727020921,
+          -16.383040885779835
+        ],
+        "D_yz_mm": [
+          11.471528727020921,
+          63.616959114220165
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 0.0,
+        "angle_agreement_error_deg": 0.0
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    },
+    {
+      "angle_deg": 60,
+      "analytic": {
+        "C_yz_mm": [
+          10.000000000000002,
+          -17.32050807568877
+        ],
+        "D_yz_mm": [
+          10.000000000000002,
+          62.67949192431123
+        ],
+        "lower_crank_mm": 20.0,
+        "upper_crank_mm": 20.0,
+        "coupler_mm": 80.0,
+        "loop_closure_error_mm": 0.0,
+        "angle_agreement_error_deg": 7.105427357601002e-15
+      },
+      "pairwise_checks": 15,
+      "intersections": [
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.fixture",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_slat_rotor"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.coupler"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.upper_slat_rotor",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.lower_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.coupler",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        },
+        {
+          "parts": [
+            "shade.lower_washer",
+            "shade.upper_washer"
+          ],
+          "intersection_mm3": 0
+        }
+      ]
+    }
+  ],
+  "sample_count": 13,
+  "pairwise_checks_per_sample": 15,
+  "clearances": {
+    "shaft_support_radial_mm": 0.2,
+    "pin_coupler_radial_mm": 0.2,
+    "pin_washer_radial_mm": 0.1,
+    "moving_plate_axial_mm": 0.5
+  },
+  "negative_controls": {
+    "incorrect_link_error_mm": 1.0,
+    "wrong_pose_loop_error_mm": 0.3149160023026951,
+    "tight_support_intersection_mm3": 2.733185608623127,
+    "rejected_angles_deg": [
+      -1,
+      61,
+      90
+    ],
+    "duplicate_id_rejected": true
+  },
+  "provenance": {
+    "source_commit": "7a0efbf7e3ea93cac6f1b1cd81bdbba5ce7ff56f",
+    "head_at_generation": "258815e37d6715d31ac5772b06fd8c22af2a2266",
+    "candidate": "WORKTREE_UNCOMMITTED",
+    "tracked_tree_clean": false,
+    "python": "3.12.12",
+    "cadquery": "2.8.0",
+    "ocp": "7.9.3.1"
+  },
+  "elapsed_seconds": 1.4510112499119714
+}
