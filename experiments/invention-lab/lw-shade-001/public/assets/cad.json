@@ -3,7 +3,7 @@
   "id": "LW-SHADE-001",
   "passed": true,
   "units": "mm",
-  "spec_sha256": "baf088d531529d985cd2dd80c31c019fc71a83343bc6803a426f7874b6cc93f4",
+  "spec_sha256": "be23c79a2ef6f9f6166315b786670172857bf910ea54d74caa42a2a6fa048af2",
   "parts": {
     "shade.fixture": {
       "file": "fixture",
@@ -41,7 +41,7 @@
         ],
         "volume_mm3": 4553.5247833867525
       },
-      "step_sha256": "a7a36874f994782e6c11e8e30522dd6b54e98c5922b6125342cfcd264d295070",
+      "step_sha256": "a07df4cbbb6ffea8ba33238094fe4d02398edf3af99f3e7988926b50b0a567bf",
       "stl_sha256": "7e8fc4f202945b2af225394cbd5399581a8f976d809ec4c9a691ea923997f484"
     },
     "shade.lower_slat_rotor": {
@@ -80,7 +80,7 @@
         ],
         "volume_mm3": 72932.22342311715
       },
-      "step_sha256": "0d1c145ae5cb95545ed54058a68ce10c55137098c9a9fdd1df43faff34cb2bc5",
+      "step_sha256": "236013e4413762da82b8bfc56fe0875b85856a2d9c08c6c74d1d9c943e8fe4e1",
       "stl_sha256": "4ed063a3da3d548e584f426aca44f1c4158c43b2005f0ec8f45b621620ea584d"
     },
     "shade.upper_slat_rotor": {
@@ -119,7 +119,7 @@
         ],
         "volume_mm3": 72932.22342311715
       },
-      "step_sha256": "461fb65c88732b9eca3be8c01f1dc7380f982c2cc82fc98c1796de5ad05667d4",
+      "step_sha256": "480b1f873863814d1d2909a3a52ca60c85db3c276bd385784a6326b693e0c6bd",
       "stl_sha256": "4ed063a3da3d548e584f426aca44f1c4158c43b2005f0ec8f45b621620ea584d"
     },
     "shade.coupler": {
@@ -158,7 +158,7 @@
         ],
         "volume_mm3": 2581.1442324059713
       },
-      "step_sha256": "3bc94e490361551624a61643cf2d0be4a9bd8e6b3a42cd999f46eeebc4a249fd",
+      "step_sha256": "bf8e26a28947b57fe0c375f9eef7098cd913ab4dbe821ce3ab40dee35a3aee7e",
       "stl_sha256": "c833f11a30383903f8470d7c68f8472c00000466a050d001d8627ac4e821ed43"
     },
     "shade.lower_washer": {
@@ -197,7 +197,7 @@
         ],
         "volume_mm3": 15.221016406642883
       },
-      "step_sha256": "b51a540f92fc040b74e027fdb6fc562fbe24cbe12a567776ec0248bdd596771e",
+      "step_sha256": "d6e0926110b3ffcc56ec913cf9705555bf7e1d6414f3cec65476e5a03a82e5b7",
       "stl_sha256": "21b15330a2cd2334f5cd18b8e275426a867290ac2a97ad8d434dcab57586c597"
     },
     "shade.upper_washer": {
@@ -236,14 +236,14 @@
         ],
         "volume_mm3": 15.221016406642883
       },
-      "step_sha256": "c3d4752a9ed9a8df3f5b2cd2076bb4d3d964043f9f7177cc578dfe54de32bbf5",
+      "step_sha256": "49f7148998e6ad38618b49c255087a91b7d5ebfac153813437d24a921ecc402c",
       "stl_sha256": "21b15330a2cd2334f5cd18b8e275426a867290ac2a97ad8d434dcab57586c597"
     }
   },
   "poses": {
     "closed_000": {
       "angle_deg": 0,
-      "step_sha256": "5dd09ecf3f8ff9ee21129245a88a038ea0e81b3c15d976500841e0d82ae7b920",
+      "step_sha256": "c80afd228809eb68316a9b702330a0265d2519ced18548466b16e32de64ff675",
       "world_from_local_cad": {
         "shade.fixture": [
           [
@@ -405,7 +405,7 @@
     },
     "nominal_025": {
       "angle_deg": 25,
-      "step_sha256": "4d2fe75fcaab25bd0de50604480e931e1210a0da0adc4fd4a139b6081c0b3fae",
+      "step_sha256": "8af247acb95ba3cea732b2118ae2461ac15d097f9cc6664b8c6325b674a5b8a5",
       "world_from_local_cad": {
         "shade.fixture": [
           [
@@ -567,7 +567,7 @@
     },
     "open_060": {
       "angle_deg": 60,
-      "step_sha256": "d09cb62eec8e59170a2bdf2b1c98c7c49e0cc0c90d546adf62fdf1b808cd697c",
+      "step_sha256": "488c9b929881a80bb36981fdeb2090d1fbf6d4cdaa583696aa5fc49eca670632",
       "world_from_local_cad": {
         "shade.fixture": [
           [
@@ -2389,12 +2389,12 @@
   },
   "provenance": {
     "source_commit": "7a0efbf7e3ea93cac6f1b1cd81bdbba5ce7ff56f",
-    "head_at_generation": "35cba3bdbc8a41b256e30b3e3d7046a505b0f913",
+    "head_at_generation": "258815e37d6715d31ac5772b06fd8c22af2a2266",
     "candidate": "WORKTREE_UNCOMMITTED",
     "tracked_tree_clean": false,
     "python": "3.12.12",
     "cadquery": "2.8.0",
     "ocp": "7.9.3.1"
   },
-  "elapsed_seconds": 1.4661328749498352
+  "elapsed_seconds": 1.4510112499119714
 }

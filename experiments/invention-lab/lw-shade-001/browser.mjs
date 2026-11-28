@@ -1,16 +1,53 @@
 import { createServer } from 'node:http';
-import { mkdir, readFile } from 'node:fs/promises';
-import { extname, join, resolve } from 'node:path';
+import { cp, mkdir, mkdtemp, readdir, readFile, rm, stat } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { extname, join, relative, resolve } from 'node:path';
 import { chromium } from 'playwright';
 
 const demand = (value, message) => { if (!value) throw new Error(message); };
-const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json',
-  '.glb': 'model/gltf-binary', '.svg': 'image/svg+xml', '.png': 'image/png' };
+const CLOUDFLARE_MAX_FILE_BYTES = 25 * 1024 * 1024;
+const types = {
+  '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
+  '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8',
+  '.glb': 'model/gltf-binary', '.svg': 'image/svg+xml', '.png': 'image/png',
+  '.step': 'application/step',
+};
 
-async function serve(root) {
+async function measureStaticBundle(root) {
+  const files = [];
+  async function walk(dir) {
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      const full = join(dir, entry.name);
+      if (entry.isDirectory()) await walk(full);
+      else if (entry.isFile()) {
+        const info = await stat(full);
+        files.push({ path: relative(root, full), bytes: info.size });
+      }
+    }
+  }
+  await walk(root);
+  files.sort((a, b) => b.bytes - a.bytes);
+  const totalBytes = files.reduce((sum, f) => sum + f.bytes, 0);
+  const largest = files[0] ?? { path: null, bytes: 0 };
+  return {
+    file_count: files.length,
+    total_bytes: totalBytes,
+    max_file: largest.path,
+    max_file_bytes: largest.bytes,
+    cloudflare_25mib_limit_ok: largest.bytes < CLOUDFLARE_MAX_FILE_BYTES,
+  };
+}
+
+export async function serve(root, mountPrefix = '') {
   const base = resolve(root);
+  const prefix = mountPrefix ? '/' + mountPrefix.replace(/^\/+|\/+$/g, '') : '';
   const server = createServer(async (request, response) => {
-    const pathname = decodeURIComponent(new URL(request.url, 'http://127.0.0.1').pathname);
+    let pathname = decodeURIComponent(new URL(request.url, 'http://127.0.0.1').pathname);
+    if (prefix) {
+      if (pathname === prefix) return response.writeHead(302, { Location: `${prefix}/` }).end();
+      if (!pathname.startsWith(`${prefix}/`)) return response.writeHead(404).end('Not found');
+      pathname = pathname.slice(prefix.length);
+    }
     const requested = pathname === '/' ? '/index.html' : pathname;
     const file = resolve(base, '.' + requested);
     if (!file.startsWith(base + '/') || request.method !== 'GET') return response.writeHead(404).end('Not found');
@@ -23,13 +60,18 @@ async function serve(root) {
     }
   });
   await new Promise((ok, fail) => { server.once('error', fail); server.listen(0, '127.0.0.1', ok); });
-  return { url: `http://127.0.0.1:${server.address().port}`, close: () => server.close() };
+  return { url: `http://127.0.0.1:${server.address().port}${prefix ? `${prefix}/` : ''}`, close: () => server.close() };
 }
 
 export async function browserQA(dist, evidence) {
   await mkdir(evidence, { recursive: true });
   process.env.PLAYWRIGHT_BROWSERS_PATH = '0';
-  const server = await serve(dist);
+  const cleanCopy = await mkdtemp(join(tmpdir(), 'lw-shade-static-'));
+  await cp(resolve(dist), cleanCopy, { recursive: true });
+  const previewPackage = await measureStaticBundle(cleanCopy);
+  demand(previewPackage.cloudflare_25mib_limit_ok, `Static preview exceeds 25 MiB per-file limit: ${previewPackage.max_file}`);
+  const server = await serve(cleanCopy);
+  const subpathServer = await serve(cleanCopy, '/lw-shade-001');
   let browser;
   try {
     browser = await chromium.launch({ channel: 'chromium', headless: true });
@@ -72,6 +114,28 @@ export async function browserQA(dist, evidence) {
         autoplay: true, orbit: true, explode_reassemble: true, reset: true, browser_errors: 0 });
       await page.close();
     }
+
+    // Clean-directory non-root subpath mount check + out-of-range angle negative controls
+    const subpathPage = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+    const subErrors = [], subHttpErrors = [];
+    subpathPage.on('pageerror', (e) => subErrors.push(e.message));
+    subpathPage.on('response', (r) => { if (r.status() >= 400) subHttpErrors.push({ url: r.url(), status: r.status() }); });
+    await subpathPage.goto(subpathServer.url);
+    await subpathPage.locator('#app[data-state="ready"]').waitFor();
+    const outOfRange = await subpathPage.evaluate(() => {
+      const results = [];
+      for (const bad of [-1, 61, 90]) {
+        let threw = false;
+        try { window.__LW_SHADE__.setAngle(bad); } catch (e) { threw = /Angle outside 0–60°/.test(e.message); }
+        results.push({ angle: bad, rejected: threw, stayedAt: window.__LW_SHADE__.state().angle });
+      }
+      return results;
+    });
+    demand(subErrors.length === 0 && subHttpErrors.length === 0, `Subpath preview errors: ${JSON.stringify({ subErrors, subHttpErrors })}`);
+    demand(outOfRange.every((r) => r.rejected && r.stayedAt === 25), `Out-of-range angle control failed: ${JSON.stringify(outOfRange)}`);
+    await subpathPage.close();
+
+    // Negative control: missing GLB (HTTP 404)
     const missing = await browser.newPage({ viewport: { width: 900, height: 600 } });
     const responses = [];
     missing.on('response', (response) => { if (response.status() >= 400) responses.push(response.status()); });
@@ -80,11 +144,31 @@ export async function browserQA(dist, evidence) {
     demand(/Load failed/.test(await missing.locator('#status').textContent()) && responses.includes(404),
       'missing asset was not rejected');
     await missing.close();
+
+    // Negative control: stale/failed geometry.json receipt
+    const stale = await browser.newPage({ viewport: { width: 900, height: 600 } });
+    await stale.route('**/assets/geometry.json', (route) => route.fulfill({
+      status: 200, contentType: 'application/json', body: JSON.stringify({ id: 'LW-SHADE-001', passed: false }),
+    }));
+    await stale.goto(server.url);
+    await stale.locator('#app[data-state="error"]').waitFor();
+    demand(/Stale geometry receipt/.test(await stale.locator('#status').textContent()), 'stale geometry receipt was not rejected');
+    await stale.close();
+
     return { schema: 1, passed: true, chromium: browser.version(), cases,
-      negative_controls: [{ name: 'missing GLB', passed: true, http_status: 404 }],
+      preview_package: { ...previewPackage, clean_dir_served: true, subpath_mount_verified: '/lw-shade-001/' },
+      negative_controls: [
+        { name: 'missing GLB', passed: true, http_status: 404 },
+        { name: 'stale geometry receipt', passed: true },
+        { name: 'out-of-range angles (-1, 61, 90)', passed: true, angles: outOfRange },
+      ],
       mobile_is_emulation: true };
   } finally {
-    try { await browser?.close(); } finally { server.close(); }
+    try { await browser?.close(); } finally {
+      server.close();
+      subpathServer.close();
+      await rm(cleanCopy, { recursive: true, force: true });
+    }
   }
 }
 

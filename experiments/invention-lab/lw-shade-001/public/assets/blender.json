@@ -5,7 +5,7 @@
   "blender": "4.4.0",
   "build": "05377985c527",
   "python": "3.11.11",
-  "cad_sha256": "dc726a0cf52edea5cf5948347c12480a9f2fe073c2120b6f1d1e012d6bfebbe6",
+  "cad_sha256": "7c397775f8f8b7acc85f92c86dbf41c9541b609f348fa1dd0321e7c3ab97f15e",
   "scene_units": "m",
   "axes": "[X,Z,-Y]/1000",
   "parts": {
@@ -107,5 +107,5 @@
     }
   },
   "glb_sha256": "32b2bbe524e5599be540789e8f192d5830371b645b559a7563461cdfdfcfbbfd",
-  "hero_sha256": "08889767b9df06d6eee98c2bcba955d86692f9bf6b5191d3999a62328810984a"
+  "hero_sha256": "9965023c7ff1b4664b063a0634710ed7ffa161871c91b56ac81dd46460a7ff96"
 }

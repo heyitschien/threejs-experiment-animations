@@ -26,11 +26,45 @@
       "browser_errors": 0
     }
   ],
+  "preview_package": {
+    "file_count": 20,
+    "total_bytes": 3154807,
+    "max_file": "assets/hero.png",
+    "max_file_bytes": 1358123,
+    "cloudflare_25mib_limit_ok": true,
+    "clean_dir_served": true,
+    "subpath_mount_verified": "/lw-shade-001/"
+  },
   "negative_controls": [
     {
       "name": "missing GLB",
       "passed": true,
       "http_status": 404
+    },
+    {
+      "name": "stale geometry receipt",
+      "passed": true
+    },
+    {
+      "name": "out-of-range angles (-1, 61, 90)",
+      "passed": true,
+      "angles": [
+        {
+          "angle": -1,
+          "rejected": true,
+          "stayedAt": 25
+        },
+        {
+          "angle": 61,
+          "rejected": true,
+          "stayedAt": 25
+        },
+        {
+          "angle": 90,
+          "rejected": true,
+          "stayedAt": 25
+        }
+      ]
     }
   ],
   "mobile_is_emulation": true

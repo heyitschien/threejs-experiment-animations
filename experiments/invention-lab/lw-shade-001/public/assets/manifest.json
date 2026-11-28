@@ -5,29 +5,61 @@
   "provenance": {
     "cad": "CadQuery 2.8.0 / OCP 7.9.3.1",
     "glb_and_hero": "Blender 4.4.0",
-    "viewer": "Three.js 0.187.0 / Vite 7.1.x",
-    "washer": "original procedural geometry; catalog models excluded for unconfirmed redistribution rights"
+    "viewer": "Three.js 0.187.0 / Vite 7.3.8",
+    "washer": "original procedural geometry; catalog models excluded for unconfirmed redistribution rights",
+    "catalog_trial": {
+      "source": "step.parts",
+      "repo_commit": "c6113328a5695b976a010a203a90fe86191769bf",
+      "catalog_sha256": "36766ef8cf73776fd12d659855ec9de51527e29c4d10d1d752b84df8153a593b",
+      "decision": "procedural_fallback",
+      "reason": "Neither candidate appears in catalog/new-parts-review.csv (0/4113) or carries an upstream file-level license; THIRD_PARTY_NOTICES.md excludes files with undocumented redistribution licenses.",
+      "candidates": [
+        {
+          "id": "din125_flat_washer_m3",
+          "sha256": "df57fbc49f55dd15c2780249a178c36e005ac299762d6def9f2c5b11fc8f7aff",
+          "measured_mm": {
+            "id": 3.2,
+            "od": 7,
+            "thickness": 0.5
+          },
+          "fit": "exact_nominal_match",
+          "license_status": "undocumented_excluded"
+        },
+        {
+          "id": "flat_washer_normal_m3_simple",
+          "sha256": "6aaad3e26efa4c59d8c081d53fb38053091648aa8f34c031294b50fbd743f409",
+          "measured_mm": {
+            "id": 3.2,
+            "od": 7,
+            "thickness": 1.1
+          },
+          "metadata_claimed_thickness_mm": 0.55,
+          "fit": "rejected_2x_thickness_metadata_mismatch",
+          "license_status": "undocumented_excluded"
+        }
+      ]
+    }
   },
   "coordinate_mapping": {
     "cad_to_glb": "[X,Z,-Y]/1000",
     "glb_units": "m"
   },
   "files": {
-    "blender.json": "dbdfefcd737b9f673187b3339d417ef001ac7ec7cd5d170d219a23c1e88bbdf5",
-    "cad.json": "dc726a0cf52edea5cf5948347c12480a9f2fe073c2120b6f1d1e012d6bfebbe6",
-    "closed_000.step": "5dd09ecf3f8ff9ee21129245a88a038ea0e81b3c15d976500841e0d82ae7b920",
-    "coupler.step": "3bc94e490361551624a61643cf2d0be4a9bd8e6b3a42cd999f46eeebc4a249fd",
-    "fixture.step": "a7a36874f994782e6c11e8e30522dd6b54e98c5922b6125342cfcd264d295070",
-    "geometry.json": "736276e9701ac8023dc80c97c2b40ac2f3e3d1048b7f03a902e80310eff212fe",
-    "hero.png": "08889767b9df06d6eee98c2bcba955d86692f9bf6b5191d3999a62328810984a",
-    "lower_slat_rotor.step": "0d1c145ae5cb95545ed54058a68ce10c55137098c9a9fdd1df43faff34cb2bc5",
-    "lower_washer.step": "b51a540f92fc040b74e027fdb6fc562fbe24cbe12a567776ec0248bdd596771e",
-    "nominal_025.step": "4d2fe75fcaab25bd0de50604480e931e1210a0da0adc4fd4a139b6081c0b3fae",
-    "open_060.step": "d09cb62eec8e59170a2bdf2b1c98c7c49e0cc0c90d546adf62fdf1b808cd697c",
+    "blender.json": "7d7a04b6d089eed36b07bee3a727199e33867eee1a084f2fd0c2f5103a622824",
+    "cad.json": "7c397775f8f8b7acc85f92c86dbf41c9541b609f348fa1dd0321e7c3ab97f15e",
+    "closed_000.step": "c80afd228809eb68316a9b702330a0265d2519ced18548466b16e32de64ff675",
+    "coupler.step": "bf8e26a28947b57fe0c375f9eef7098cd913ab4dbe821ce3ab40dee35a3aee7e",
+    "fixture.step": "a07df4cbbb6ffea8ba33238094fe4d02398edf3af99f3e7988926b50b0a567bf",
+    "geometry.json": "59f71d6058244804c02bdc920b49dfa098ee956be247bb0ce40de8170d275a6f",
+    "hero.png": "9965023c7ff1b4664b063a0634710ed7ffa161871c91b56ac81dd46460a7ff96",
+    "lower_slat_rotor.step": "236013e4413762da82b8bfc56fe0875b85856a2d9c08c6c74d1d9c943e8fe4e1",
+    "lower_washer.step": "d6e0926110b3ffcc56ec913cf9705555bf7e1d6414f3cec65476e5a03a82e5b7",
+    "nominal_025.step": "8af247acb95ba3cea732b2118ae2461ac15d097f9cc6664b8c6325b674a5b8a5",
+    "open_060.step": "488c9b929881a80bb36981fdeb2090d1fbf6d4cdaa583696aa5fc49eca670632",
     "reference.svg": "720ed745775af75298b4a0cd815abf1c02562c6ebca4fb6c483cfd5ab6f3adfe",
     "shade.glb": "32b2bbe524e5599be540789e8f192d5830371b645b559a7563461cdfdfcfbbfd",
-    "spec.json": "baf088d531529d985cd2dd80c31c019fc71a83343bc6803a426f7874b6cc93f4",
-    "upper_slat_rotor.step": "461fb65c88732b9eca3be8c01f1dc7380f982c2cc82fc98c1796de5ad05667d4",
-    "upper_washer.step": "c3d4752a9ed9a8df3f5b2cd2076bb4d3d964043f9f7177cc578dfe54de32bbf5"
+    "spec.json": "be23c79a2ef6f9f6166315b786670172857bf910ea54d74caa42a2a6fa048af2",
+    "upper_slat_rotor.step": "480b1f873863814d1d2909a3a52ca60c85db3c276bd385784a6326b693e0c6bd",
+    "upper_washer.step": "49f7148998e6ad38618b49c255087a91b7d5ebfac153813437d24a921ecc402c"
   }
 }

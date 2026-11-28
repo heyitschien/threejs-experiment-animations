@@ -132,9 +132,12 @@ renderer.setAnimationLoop((now) => {
   renderer.render(scene, camera);
 });
 
-window.__LW_SHADE__ = { state: () => ({ angle, exploded, playing,
-  lowerRotationX: nodes.get('shade.lower_slat_rotor')?.rotation.x,
-  upperRotationX: nodes.get('shade.upper_slat_rotor')?.rotation.x,
-  couplerPosition: nodes.get('shade.coupler')?.position.toArray(),
-}) };
+window.__LW_SHADE__ = {
+  setAngle: (next) => applyMotion(next),
+  state: () => ({ angle, exploded, playing,
+    lowerRotationX: nodes.get('shade.lower_slat_rotor')?.rotation.x,
+    upperRotationX: nodes.get('shade.upper_slat_rotor')?.rotation.x,
+    couplerPosition: nodes.get('shade.coupler')?.position.toArray(),
+  }),
+};
 load();

@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { cp, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Box3, Vector3 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -67,4 +68,61 @@ export async function verify(out) {
   return { schema: 1, id: spec.id, passed: true, units: 'm', axes: '[X,Z,-Y]',
     spec, glb_sha256: blender.glb_sha256, hero_sha256: blender.hero_sha256,
     cad_sha256: blender.cad_sha256, sample_count: 13, pairwise_checks: 195, parts };
+}
+
+export async function verifyNegatives(out) {
+  const cases = [];
+  async function expectRejected(name, mutate, pattern) {
+    const dir = await mkdtemp(join(tmpdir(), 'lw-shade-neg-'));
+    try {
+      for (const file of ['spec.json', 'cad.json', 'blender.json', 'shade.glb', 'hero.png']) {
+        await cp(join(out, file), join(dir, file));
+      }
+      await mutate(dir);
+      let error = null;
+      try { await verify(dir); } catch (err) { error = err; }
+      demand(error && pattern.test(error.message), `Negative control "${name}" was not rejected (got: ${error?.message ?? 'PASSED'})`);
+      cases.push({ name, passed: true, error: error.message });
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  }
+
+  await expectRejected('incorrect loop closure in cad.json', async (dir) => {
+    const cad = await json(dir, 'cad.json');
+    cad.samples[5].analytic.loop_closure_error_mm = 1.0;
+    await writeFile(join(dir, 'cad.json'), JSON.stringify(cad, null, 2) + '\n');
+    const blender = await json(dir, 'blender.json');
+    blender.cad_sha256 = await digest(dir, 'cad.json');
+    await writeFile(join(dir, 'blender.json'), JSON.stringify(blender, null, 2) + '\n');
+  }, /CAD sample failed/);
+
+  await expectRejected('out-of-tolerance GLB bounds (>0.5 mm)', async (dir) => {
+    const cad = await json(dir, 'cad.json');
+    cad.parts['shade.coupler'].cad.bounds_mm[0][1] += 2.0;
+    await writeFile(join(dir, 'cad.json'), JSON.stringify(cad, null, 2) + '\n');
+    const blender = await json(dir, 'blender.json');
+    blender.cad_sha256 = await digest(dir, 'cad.json');
+    await writeFile(join(dir, 'blender.json'), JSON.stringify(blender, null, 2) + '\n');
+  }, /GLB bounds/);
+
+  await expectRejected('invalid component ID in spec.json', async (dir) => {
+    const spec = await json(dir, 'spec.json');
+    spec.parts[0].id = 'shade.unexpected_id';
+    await writeFile(join(dir, 'spec.json'), JSON.stringify(spec, null, 2) + '\n');
+    const cad = await json(dir, 'cad.json');
+    cad.spec_sha256 = await digest(dir, 'spec.json');
+    await writeFile(join(dir, 'cad.json'), JSON.stringify(cad, null, 2) + '\n');
+    const blender = await json(dir, 'blender.json');
+    blender.cad_sha256 = await digest(dir, 'cad.json');
+    await writeFile(join(dir, 'blender.json'), JSON.stringify(blender, null, 2) + '\n');
+  }, /unexpected GLB component IDs/);
+
+  await expectRejected('tampered GLB hash in blender.json', async (dir) => {
+    const blender = await json(dir, 'blender.json');
+    blender.glb_sha256 = '0'.repeat(64);
+    await writeFile(join(dir, 'blender.json'), JSON.stringify(blender, null, 2) + '\n');
+  }, /Blender asset hash mismatch/);
+
+  return { schema: 1, id: 'LW-SHADE-001', passed: true, cases };
 }

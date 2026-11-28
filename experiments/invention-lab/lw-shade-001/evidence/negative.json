@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "id": "LW-SHADE-001",
+  "passed": true,
+  "cases": [
+    {
+      "name": "incorrect loop closure in cad.json",
+      "passed": true,
+      "error": "CAD sample failed"
+    },
+    {
+      "name": "out-of-tolerance GLB bounds (>0.5 mm)",
+      "passed": true,
+      "error": "shade.coupler GLB bounds: -15.00000071246177 differs from -17"
+    },
+    {
+      "name": "invalid component ID in spec.json",
+      "passed": true,
+      "error": "unexpected GLB component IDs"
+    },
+    {
+      "name": "tampered GLB hash in blender.json",
+      "passed": true,
+      "error": "Blender asset hash mismatch"
+    }
+  ]
+}

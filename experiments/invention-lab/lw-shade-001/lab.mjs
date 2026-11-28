@@ -5,7 +5,7 @@ import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { browserQA } from './browser.mjs';
-import { verify } from './verify.mjs';
+import { verify, verifyNegatives } from './verify.mjs';
 
 const here = fileURLToPath(new URL('.', import.meta.url));
 const repo = fileURLToPath(new URL('../../../', import.meta.url));
@@ -48,7 +48,8 @@ async function packagePreview(out, geometry) {
     [file, await digest(join(assets, file))])));
   const manifest = { schema: 1, id: spec.id, passed: true,
     provenance: { cad: 'CadQuery 2.8.0 / OCP 7.9.3.1', glb_and_hero: 'Blender 4.4.0',
-      viewer: 'Three.js 0.187.0 / Vite 7.1.x', washer: spec.joint.washer.source },
+      viewer: 'Three.js 0.187.0 / Vite 7.3.8', washer: spec.joint.washer.source,
+      catalog_trial: spec.joint.washer.catalog_trial },
     coordinate_mapping: spec.coordinate_mapping, files: hashes };
   await writeFile(join(assets, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
   return manifest;
@@ -56,12 +57,14 @@ async function packagePreview(out, geometry) {
 
 async function pipeline(out) {
   const geometry = await generate(out);
+  const negatives = await verifyNegatives(out);
+  await writeFile(join(out, 'negative.json'), JSON.stringify(negatives, null, 2) + '\n');
   const manifest = await packagePreview(out, geometry);
   run(process.env.LAB_NPM, ['run', 'lw-shade:build']);
   const browser = await browserQA(join(here, 'dist'), join(out, 'browser'));
   await writeFile(join(out, 'browser.json'), JSON.stringify(browser, null, 2) + '\n');
   return { passed: true, geometry: { sample_count: geometry.sample_count, pairwise_checks: geometry.pairwise_checks },
-    manifest, browser };
+    negatives, manifest, browser };
 }
 
 async function main() {
