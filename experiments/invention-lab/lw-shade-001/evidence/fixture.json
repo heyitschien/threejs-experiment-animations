@@ -1,0 +1,256 @@
+{
+  "schema": 1,
+  "id": "HNG-001",
+  "revision": 1,
+  "source_commit": "742545fe46eb5b7bad040ae5b8a0f6cff1e45021",
+  "units": "mm",
+  "frame": "right-handed Z-up, world-from-local row-major matrix acting on column vectors",
+  "root": "hinge",
+  "joint": {
+    "id": "hinge.pin_axis",
+    "type": "revolute",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "limits_deg": [
+      0,
+      90
+    ]
+  },
+  "parts": {
+    "fixed": {
+      "id": "hinge.fixed_leaf",
+      "backbone": [
+        [
+          -32,
+          -2,
+          0
+        ],
+        [
+          -8,
+          2,
+          24
+        ]
+      ],
+      "bridge_xy": [
+        [
+          -9,
+          -2
+        ],
+        [
+          -3.5,
+          2
+        ]
+      ],
+      "collar_z": [
+        [
+          0,
+          6
+        ],
+        [
+          18,
+          24
+        ]
+      ],
+      "collar_r": 5,
+      "pin_z": [
+        5.5,
+        18.5
+      ],
+      "pin_r": 3,
+      "exposed_pin_z": [
+        6,
+        18
+      ],
+      "bounds": [
+        [
+          -32,
+          -5,
+          0
+        ],
+        [
+          5,
+          5,
+          24
+        ]
+      ],
+      "witness": [
+        -32,
+        -2,
+        24
+      ],
+      "volume": 3736.332932165449
+    },
+    "moving": {
+      "id": "hinge.moving_leaf",
+      "leaf": [
+        [
+          3.5,
+          -2,
+          6.5
+        ],
+        [
+          32,
+          2,
+          17.5
+        ]
+      ],
+      "eye_r": 5,
+      "bore_r": 3.2,
+      "bounds": [
+        [
+          -5,
+          -5,
+          6.5
+        ],
+        [
+          32,
+          5,
+          17.5
+        ]
+      ],
+      "witness": [
+        32,
+        2,
+        17.5
+      ],
+      "volume": 1704.0851852792514
+    }
+  },
+  "poses": [
+    {
+      "id": "closed_000",
+      "angle_deg": 0,
+      "moving_bounds": [
+        [
+          -5,
+          -5,
+          6.5
+        ],
+        [
+          32,
+          5,
+          17.5
+        ]
+      ],
+      "moving_witness": [
+        32,
+        2,
+        17.5
+      ]
+    },
+    {
+      "id": "half_045",
+      "angle_deg": 45,
+      "moving_bounds": [
+        [
+          -5,
+          -5,
+          6.5
+        ],
+        [
+          24.041630560342615,
+          24.041630560342615,
+          17.5
+        ]
+      ],
+      "moving_witness": [
+        21.213203435596423,
+        24.041630560342615,
+        17.5
+      ]
+    },
+    {
+      "id": "open_090",
+      "angle_deg": 90,
+      "moving_bounds": [
+        [
+          -5,
+          -5,
+          6.5
+        ],
+        [
+          5,
+          32,
+          17.5
+        ]
+      ],
+      "moving_witness": [
+        -2,
+        32,
+        17.5
+      ]
+    }
+  ],
+  "fit": {
+    "radial_gap": 0.2,
+    "axial_gap": [
+      0.5,
+      0.5
+    ],
+    "sample_step_deg": 5,
+    "keep_in": {
+      "r": 2.9,
+      "z": [
+        7,
+        17
+      ]
+    },
+    "keep_out": {
+      "r": 3.1,
+      "z": [
+        6.75,
+        17.25
+      ]
+    },
+    "contact_bore_r": 3,
+    "undersize_bore_r": 2.8,
+    "undersize_radial_gap": -0.2,
+    "undersize_overlap_mm3": 40.08672225980579,
+    "offset_x_mm": 0.3,
+    "offset_gap": -0.1,
+    "offset_z_mm": -0.75,
+    "shoulder_overlap_mm": 0.25,
+    "rejected_angles_deg": [
+      -1,
+      91
+    ],
+    "wrong_signed_pose_deg": -45
+  },
+  "edit": {
+    "x_max_mm": 36,
+    "added_volume_mm3": 176,
+    "allowed_slab": [
+      [
+        32,
+        -2,
+        6.5
+      ],
+      [
+        36,
+        2,
+        17.5
+      ]
+    ]
+  },
+  "tolerances": {
+    "cad_mm": 0.01,
+    "witness_mm": 0.02,
+    "axis_deg": 0.1,
+    "rigid_matrix": 0.000001,
+    "volume_mm3": 0.01,
+    "step_volume_relative": 0.000001,
+    "control_overlap_mm3": 0.05,
+    "glb_mm": 0.5,
+    "linear_mesh_mm": 0.05,
+    "angular_mesh_rad": 0.1,
+    "oriented_triangle_coordinate_mm": 0.001
+  }
+}
