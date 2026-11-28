@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "run_id": "4ff8f5f0-2516-4cfe-b943-f9c56dce21ca",
+  "chromium": "159.0.8154.6",
+  "passed": true,
+  "labels": [
+    {
+      "id": "calibration_box",
+      "cad": "100.000 × 60.000 × 20.000 mm",
+      "glb": "100.000 × 20.000 × 60.000 mm",
+      "landmark": "12.000, 13.000, 19.000 mm",
+      "error": "0.000002 mm"
+    },
+    {
+      "id": "calibration_box_variant",
+      "cad": "120.000 × 70.000 × 15.000 mm",
+      "glb": "120.000 × 15.000 × 70.000 mm",
+      "landmark": "19.000, 9.000, 23.000 mm",
+      "error": "0.000003 mm"
+    },
+    {
+      "id": "calibration_box",
+      "cad": "100.000 × 60.000 × 20.000 mm",
+      "glb": "100.000 × 20.000 × 60.000 mm",
+      "landmark": "12.000, 13.000, 19.000 mm",
+      "error": "0.000002 mm"
+    }
+  ],
+  "orbit": true,
+  "recovery": true,
+  "rejected": [
+    "missing GLB",
+    "stale receipt",
+    "GLB hash mismatch",
+    "invalid receipt bounds"
+  ],
+  "http_errors": [
+    {
+      "path": "/assets/missing-model.glb",
+      "status": 404
+    }
+  ],
+  "page_errors": []
+}

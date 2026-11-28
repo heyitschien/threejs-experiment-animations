@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "threshold_mm": 0.5,
+  "linear_tolerance_mm": 0.05,
+  "angular_tolerance_rad": 0.1,
+  "cad_units": "mm",
+  "scene_units": "m",
+  "cad_to_scene": "[x,z,-y]",
+  "models": [
+    {"id": "calibration_box", "size": [100, 60, 20], "pocket_min": [12, -19, 13], "pocket_size": [11, 8, 7]},
+    {"id": "calibration_box_variant", "size": [120, 70, 15], "pocket_min": [19, -23, 9], "pocket_size": [14, 9, 6]}
+  ]
+}

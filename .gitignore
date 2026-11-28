@@ -1,7 +1,12 @@
 node_modules/
 dist/
+.venv*/
+.agentcad/
+__pycache__/
+*.pyc
 .DS_Store
 *.log
 playwright-report/
 test-results/
 octo-evidence/
+invention-lab-runs/

@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "passed": true,
+  "run_id": "7d91d1ca-a650-4d23-b942-18609659a802",
+  "units": "mm",
+  "spec_sha256": "3f84fc060904506adff76913c0cce95571a9698a61e251e8cce2bb6ce9293f75",
+  "python": "3.12.12",
+  "cadquery": "2.8.0",
+  "ocp": "7.9.3.1",
+  "models": [
+    {
+      "id": "calibration_box",
+      "cad": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            -50.0,
+            -30.0,
+            0.0
+          ],
+          [
+            50.0,
+            30.0,
+            20.0
+          ]
+        ],
+        "volume_mm3": 119384.0,
+        "pocket_corner_mm": [
+          12,
+          -19,
+          13
+        ]
+      },
+      "step": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            -50.0,
+            -30.0,
+            0.0
+          ],
+          [
+            50.0,
+            30.0,
+            20.0
+          ]
+        ],
+        "volume_mm3": 119384.0,
+        "pocket_corner_mm": [
+          12,
+          -19,
+          13
+        ]
+      },
+      "step_sha256": "59a666147725b759d3efad0a024da921267046252d11fd953cb70d48317d532c",
+      "stl_sha256": "c10dec953f5b00c17d63a6118d081c182b68fddb6b0a65fb9a532e3b20ca5122"
+    },
+    {
+      "id": "calibration_box_variant",
+      "cad": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            -60.0,
+            -35.0,
+            0.0
+          ],
+          [
+            60.0,
+            35.0,
+            15.0
+          ]
+        ],
+        "volume_mm3": 125244.0,
+        "pocket_corner_mm": [
+          19,
+          -23,
+          9
+        ]
+      },
+      "step": {
+        "valid": true,
+        "solids": 1,
+        "bounds_mm": [
+          [
+            -60.0,
+            -35.0,
+            0.0
+          ],
+          [
+            60.0,
+            35.0,
+            15.0
+          ]
+        ],
+        "volume_mm3": 125244.0,
+        "pocket_corner_mm": [
+          19,
+          -23,
+          9
+        ]
+      },
+      "step_sha256": "9af10d1637c6abd63c4488bf688f92e324d7f517c6908b68a317f3cd527d498b",
+      "stl_sha256": "942c3d621727b64034525757ae7665ca3885531f339c12b7fbb886e3867fcf62"
+    }
+  ]
+}

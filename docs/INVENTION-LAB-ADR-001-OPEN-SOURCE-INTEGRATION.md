@@ -1,0 +1,50 @@
+# ADR-001 — Open-source CAD and engineering integration
+
+Date: 2026-11-25
+Status: current baseline decision and proposed extension roadmap; owner approved Session 0.3A only. No new runtime adoption or candidate execution authorized.
+
+[Adoption protocol](INVENTION-LAB-TECHNOLOGY-ADOPTION.md) · [Pinned source research and HNG-001 specification](INVENTION-LAB-SESSION-0.2-RESEARCH.md) · [Runbook](INVENTION-LAB-AGENT-RUNBOOK.md) · [Issue #22](https://github.com/heyitschien/threejs-experiment-animations/issues/22) · [Draft PR #20](https://github.com/heyitschien/threejs-experiment-animations/pull/20)
+
+## Context and decision criteria
+
+The lab needs accurate parametric geometry, named assemblies and joints, inspectable designs, repeatable agent operation, reliable evidence and future engineering simulation. Reuse existing open-source implementations wherever they meet the need. Do not equate minimal dependencies with maximum leverage; compare the cost of maintaining our own code with the benefit of mature upstream functionality.
+
+Session 0.1 at `686acc0c34dbb0128de36d5b7a89dd8dabc42bc3` provides a measured same-Mac baseline using CadQuery 2.8.0/OCP 7.9.3.1, Blender 4.4.0 and Three.js 0.187.0. A fresh Codex session reproduced it; another agent product and other OSes remain untested. The existing installed Blender bundle is not trusted; use the verified separate copy under the runbook. Session 0.2 at `742545fe46eb5b7bad040ae5b8a0f6cff1e45021` is pinned source reconnaissance, not a comparative execution benchmark. The Session 0 AgentCAD 0.8.1 smoke test covered one solid only.
+
+## Specific decisions
+
+| Technology | Disposition | Rationale and scope | Reconsideration trigger |
+| --- | --- | --- | --- |
+| CadQuery + OCP | RETAIN canonical authoring for current baseline | Existing measured geometry, deterministic source, STEP interchange, locked and validated workflow. No evidence that a replacement is better for our tasks yet. | Alternative demonstrably reduces assembly authoring/maintenance effort while meeting all existing gates and migration costs. |
+| Blender, Three.js, Playwright | RETAIN | Existing verified presentation and browser validation tools; preserve source geometry, provenance, explicit coordinate mapping. | Upstream renderer/viewer or export path measurably improves required capability without sacrificing fidelity or isolation. |
+| [Text-to-CAD](https://github.com/earthtojake/text-to-cad/tree/b61fb3a974737e27d7b87a2b518a846d11861bc9) | ADAPT conventions now; DEFER runtime, not reject | Reuse component labels, grounded joint frames, named poses, static export vs live mechanism distinction; credit upstream and retain license notices if copying. Runtime offers a substantial suite of skills, drawings, assemblies and joints that may outperform custom work. Its build123d/OCP 8.0 lane conflicts in-process with our OCP 7.9 lane; global installer, updates, telemetry and separate state require review. Do not run hosted installer. | Once HNG-001 baseline exists, source-level gap analysis and a separately approved isolated same-fixture trial for assembly authoring, drawing or live-joint workflow. Prioritize if we would otherwise build these features ourselves. A fair comparison may justify a future change of authoring engine; no silent migration. |
+| [AgentCAD](https://github.com/jdilla1277/agentcad/tree/5beb654ebb3781abb8bebc97420a93cf4d0d99e2) | DEFER executable adoption; first candidate for STEP inspection (0.3B) | Prior one-solid trial passed; candidate may add part-aware inspection, contact/overlap, geometry diffs and actionable review. OCP 7.8 cannot share our OCP import namespace. IDs are scoped to STEP versions; need mapping to lab-owned IDs. Same kernel family, not independent-kernel verification. | After 0.3A passes, request approval for offline file-only isolated trial using same STEP/edited pair. Require zero false passes, measured useful observation beyond baseline, pinned reviewed closure and verified no external egress. |
+| [Assembly Harness](https://github.com/MountainClimberJiwen/text-to-cad-assembly/tree/f0c768537e3d1ef6b9f8cd49618905ae5152f64d) | LEARN declarative task/transform and review patterns; DEFER runtime | Useful assembly schema, staged placement and viewer. Current verify command can return 0 with errors; placement and alternate dependency lane need review. Do not use workflow exit status as geometric acceptance. Avoid duplicating viewer or solver if an upstream module passes a narrow need. | Larger multi-part constraints or placement workflows become costly; benchmark candidate capabilities and geometry checks, review code/asset licenses and isolate FreeCAD/VLM paths. |
+| [CADGenBench](https://github.com/huggingface/cadgenbench/tree/33304cf771fc5639144b1df9611e347251052cf8) | ADAPT validity-first and negative-test methodology; DEFER scorer/data | Rich topology, shape and interface metrics; alignment can obscure absolute pose errors. Preserve raw signed placement before alignment. Existing lab-owned fixture avoids private ground-truth dataset whose license is unverified. Full scorer/native dependencies and provider agents unnecessary for first hinge. | Need complex-shape/topology or interface comparisons beyond current analytic checks; evaluate narrow reusable metric implementations with public/lab-owned fixtures and reviewed licenses. |
+| FreeCAD/CADPilot, BIM and physics solvers | DEFER until explicit use case | No defined need for a second GUI CAD author or specialized solver in 0.3A. Geometry validity is not physical validation. | Specific independent review, constraint-solver, daylight, airflow, thermal or structural question justifies focused evaluation before Phase F. |
+
+All candidate SHA references are fixed research inputs, not endorsements of the latest release. The research report contains specific source, security, dependency and licensing findings.
+
+## Interoperability, not one giant Python environment
+
+OCP is the Python binding to Open Cascade. The selected distributions expose the same `OCP` module namespace with different native versions: AgentCAD candidate 7.8, existing CadQuery 7.9, Text-to-CAD mechanical extra 8.0. They must not share a Python interpreter, venv, PYTHONPATH or native library search path. This is an in-process dependency conflict, NOT proof of incompatible STEP files. Separate processes with immutable inputs and explicit outputs are the proposed integration boundary.
+
+- Canonical lab-owned brief, parameters, component IDs, local/world coordinate frames, units, joint/pose manifest and source CAD.
+- CadQuery emits per-part and posed STEP, derivative meshes, provenance and analytic checks. STEP snapshots do not preserve all editable feature/joint semantics; use the sidecar. Never silently overwrite source.
+- Optional AgentCAD process consumes read-only STEP and emits JSON measurements/IDs/diffs in isolated evidence; map IDs to lab identity and validate results independently. Candidate must not write core source.
+- Optional Text-to-CAD lane can consume the same brief or interchange geometry and emit its own model/drawings/STEP. Compare before deciding whether to adopt a capability, alternate authoring lane or migrate. Do not assume feature-history round trip.
+- Blender/Three.js consume geometry derivatives; verify scales, signed orientation, hierarchy, transforms and hashes. Do not treat images/animation as physics.
+- Use versioned CLI/file contracts rather than a new custom MCP server unless a measured use case requires one. Candidate telemetry, network, native libraries, licenses and runtime isolation must be verified before execution.
+
+## Are we maximizing reuse?
+
+Not yet proven. We currently optimize for reliable learning and reversible adoption, not maximum feature count. We are already reusing entire CAD/rendering/browser tools and selected upstream ideas. Remaining opportunities: reusable Text-to-CAD skills/drawing/joint implementation; AgentCAD inspection/diff rather than writing our own; mature assembly solvers; CADGenBench metric functions rather than reimplementing broad scoring. If a feature is already implemented upstream, compare reuse/adaptation against custom work BEFORE writing a substantial replacement. Prefer existing tested code when licensing, correctness, maintainability and integration costs permit. Keep attribution and contribute upstream when useful and authorized.
+
+## Ordered experiment roadmap and promotion gates
+
+1. **0.3A authorized:** HNG-001 direct CadQuery baseline, frozen specification, existing stack, 90 minutes / USD 0. Produce evidence, reusable assembly instructions and stop at review. This tests our integration, not superiority over candidates.
+2. **0.3B proposed only:** same STEP fixtures in isolated offline AgentCAD process. Review exact wheels/notices and egress first. Compare identity, measurements, overlap, diff and negative cases; require actionable incremental value. No new permission inferred from 0.3A.
+3. **Text-to-CAD proposed follow-up:** before substantial custom assembly/drawing feature development, compare same brief and pose/export tests using reviewed isolated upstream runtime/skills. Measure setup effort, agent steps, failures, time, geometry quality and maintenance. It may remove work from our pipeline; evidence decides. Separate owner approval.
+4. **Before complex Phase E/F:** evaluate actual gaps in assembly, validation and physics; prefer upstream implementations when proven appropriate. Avoid overlapping experiments and unnecessary solvers.
+
+Adopt/adapt/reject based on the [protocol](INVENTION-LAB-TECHNOLOGY-ADOPTION.md): hard security/license/provenance/correctness/reproduction gates, comparable fixtures, and measurable effort/quality/resource tradeoffs. No invented scores; record unknowns. Require independent review and owner approval before changing the canonical environment. Preserve previous receipts, version this ADR or supersede it with a new decision when evidence changes. No new installations, merges, deployment or fabrication authorized by this ADR.

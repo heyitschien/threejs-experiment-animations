@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "run_id": "3d3c077a-0d1c-40be-908a-b74c31f5b240",
+  "passed": true,
+  "chromium": "159.0.8154.6",
+  "pose_labels": [
+    {
+      "id": "closed_000",
+      "angle_deg": 0,
+      "witness_label": "32.000, 2.000, 17.500 mm"
+    },
+    {
+      "id": "half_045",
+      "angle_deg": 45,
+      "witness_label": "21.213, 24.042, 17.500 mm"
+    },
+    {
+      "id": "open_090",
+      "angle_deg": 90,
+      "witness_label": "-2.000, 32.000, 17.500 mm"
+    }
+  ],
+  "continuous_angle_deg": 31.5,
+  "autoplay": true,
+  "orbit": true,
+  "recovery": true,
+  "rejected": [
+    "missing asset",
+    "stale receipt",
+    "mismatched bytes",
+    "corrupt GLB with matching receipt hash"
+  ],
+  "http_errors": [
+    {
+      "path": "/assets/missing.glb",
+      "status": 404
+    }
+  ],
+  "page_errors": []
+}

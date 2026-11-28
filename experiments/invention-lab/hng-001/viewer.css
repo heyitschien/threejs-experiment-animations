@@ -1,0 +1,30 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101821; color: #e5eef4; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(1260px, calc(100% - 36px)); margin: 32px auto; }
+header { margin-bottom: 22px; }
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin: 0; letter-spacing: -.04em; }
+header p { margin: 6px 0 0; color: #afbdc9; }
+.workspace { display: grid; grid-template-columns: minmax(0, 2.5fr) minmax(285px, 1fr); border: 1px solid #354450; border-radius: 12px; overflow: hidden; }
+.viewport { position: relative; min-height: 580px; background: #14212c; }
+canvas { position: absolute; width: 100%; height: 100%; display: block; touch-action: none; }
+.legend { position: absolute; display: flex; flex-wrap: wrap; gap: 16px; bottom: 16px; left: 16px; color: #deecf3; font-size: .83rem; pointer-events: none; }
+.legend span::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 6px; border-radius: 50%; background: currentColor; }
+.fixed { color: #7cc6f1; } .moving { color: #ffad62; } .axis { color: #8bddc1; }
+aside { padding: 22px; background: #192632; border-left: 1px solid #354450; }
+h2 { margin: 0 0 5px; font-size: 1.15rem; }
+#status { min-height: 2.5em; margin: 5px 0 14px; color: #83d5b4; }
+#status[data-state="error"] { color: #ff9e8e; }
+label { display: flex; justify-content: space-between; font-size: .88rem; }
+output, dd { font-variant-numeric: tabular-nums; }
+input[type="range"] { width: 100%; margin: 13px 0 18px; accent-color: #83d5b4; }
+.controls { display: flex; flex-wrap: wrap; gap: 7px; }
+.secondary { margin-top: 10px; }
+button { font: inherit; font-size: .83rem; border: 1px solid #516373; border-radius: 6px; padding: 7px 9px; background: #223542; color: #eff5f7; cursor: pointer; }
+button:hover, button:focus-visible { border-color: #a4d9e6; }
+button[aria-pressed="true"] { border-color: #83d5b4; color: #83d5b4; }
+button:disabled { opacity: .55; cursor: default; }
+dt { font-size: .75rem; margin-top: 14px; color: #aabcc9; }
+dd { margin: 3px 0 0; font-size: .85rem; overflow-wrap: anywhere; }
+.note { color: #b8c7d2; font-size: .8rem; line-height: 1.5; margin-bottom: 0; }
+@media (max-width: 760px) { .workspace { grid-template-columns: 1fr; } .viewport { min-height: 390px; } aside { border-left: 0; border-top: 1px solid #354450; } }

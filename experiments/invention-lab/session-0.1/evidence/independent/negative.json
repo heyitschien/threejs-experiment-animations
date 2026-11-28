@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "outcomes": [
+    {
+      "name": "Missing GLB",
+      "rejected": true
+    },
+    {
+      "name": "Invalid GLB with matching stage hash",
+      "rejected": true
+    },
+    {
+      "name": "Stale Blender stage",
+      "rejected": true
+    },
+    {
+      "name": "Invalid numeric bounds",
+      "rejected": true
+    },
+    {
+      "name": "Hash mismatch",
+      "rejected": true
+    },
+    {
+      "name": "Failed upstream stage",
+      "rejected": true
+    },
+    {
+      "name": "Empty upstream ID set",
+      "rejected": true
+    },
+    {
+      "name": "Reflected GLB with unchanged bounds",
+      "rejected": true
+    },
+    {
+      "name": "Blender Python exit propagated",
+      "rejected": true
+    },
+    {
+      "name": "Incomplete run rejected",
+      "rejected": true
+    },
+    {
+      "name": "Existing run directory rejected",
+      "rejected": true
+    }
+  ]
+}

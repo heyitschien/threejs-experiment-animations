@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "run_id": "4ff8f5f0-2516-4cfe-b943-f9c56dce21ca",
+  "calibration_base": "e59fc23f6ca14f96225037bb828c43f247efc478",
+  "head": "072120c70fbb4374bf6d997666a71b7f9dc64943",
+  "worktree_clean": true,
+  "started_utc": "2026-11-25T08:14:25.485Z",
+  "versions": {
+    "host": "26.6.2",
+    "arch": "arm64",
+    "uv": "0.6.9",
+    "python": "3.12.12",
+    "cadquery": "2.8.0",
+    "ocp": "7.9.3.1",
+    "blender": "4.4.0",
+    "blender_trust": "Notarized Developer ID",
+    "node": "26.13.0",
+    "npm": "11.20.0",
+    "three": "0.187.0",
+    "vite": "7.3.8",
+    "playwright": "1.65.1"
+  },
+  "sources": {
+    "experiments/invention-lab/session-0.1/blender.py": "dce233d5bde9fb52d0d1f4cd9540077959cd79e5ab664cc71dc0ec590148f5bc",
+    "experiments/invention-lab/session-0.1/browser.mjs": "792f76e3bd33335f3c80756d7b0cdbbe5905fd5d2090ecf13c22ccde65e374f2",
+    "experiments/invention-lab/session-0.1/cad.py": "f9c9caedf41d54a84f344e7030bcc1801f7d5370cc333b5a9a987d9e2bde9714",
+    "experiments/invention-lab/session-0.1/geometry.mjs": "8faf29d6ba1195145d3a488ebc1b2c872473332f49597c1def365064a5d382d4",
+    "experiments/invention-lab/session-0.1/lab.mjs": "5cef3e23fe2e7beed594defa243e75754f8aa2e681e046e829cba66e6444da2e",
+    "experiments/invention-lab/session-0.1/requirements-macos-arm64.lock": "a35ca45f0de334ab3005ef2c67f0453cac3be696473f4b92b43a1e85db313b2a",
+    "experiments/invention-lab/session-0.1/spec.json": "3f84fc060904506adff76913c0cce95571a9698a61e251e8cce2bb6ce9293f75",
+    "experiments/invention-lab/session-0.1/verify.mjs": "561af0a6d61879ba9ea34e5a767986d8b53f687c85da6aaf82ad17b4c59592b2",
+    "experiments/invention-lab/session-0.1/viewer.html": "452d74d1a8099c361c4ace631b71c64c74b1b6e489e5c75cc9e428b5451df9fa",
+    "experiments/invention-lab/session-0.1/viewer.mjs": "bef62ecc079e2863caccef06dcec7c5d2777e1436f474c1642b27cac032404e1",
+    "experiments/invention-lab/session-0/blender_export.py": "05695d666838e356c6d51548e2c5bc0c19f4686270bdffa01b707e08759f3d89",
+    "experiments/invention-lab/session-0/model.py": "6a47d95c0c6cd3920b3250a1facdb87dddedfa06d6fd3c6ae7a67e5b3341987f",
+    "experiments/invention-lab/session-0/viewer/style.css": "be3b138e7e33a969cbe39b0784d9adcb3225a86b026a64c158ef06052e94d449",
+    "package-lock.json": "56d68607b6a15e182910103c8097d769b115bee666218264ff3f1a36474a4e47",
+    "package.json": "83559b2e022860cd9ab3f06e4d6b9f81a3b4770e2657fcaa3a51facf202f68ec"
+  }
+}

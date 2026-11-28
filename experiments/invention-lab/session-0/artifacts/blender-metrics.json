@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "blender_version": "4.4.0",
+  "blender_python": "3.11.11",
+  "import_contract": "STL numeric coordinates treated as mm; global_scale=0.001 to Blender metres/Z-up",
+  "export_contract": "glTF exporter export_yup=true; Three.js receives metres/Y-up",
+  "models": [
+    {
+      "id": "calibration_box",
+      "source_stl": "calibration_box.stl",
+      "blender_bounds_m_z_up": {
+        "min": [
+          -0.05000000074505806,
+          -0.030000001192092896,
+          0.0
+        ],
+        "max": [
+          0.05000000074505806,
+          0.030000001192092896,
+          0.020000001415610313
+        ],
+        "dimensions": [
+          0.10000000149011612,
+          0.06000000238418579,
+          0.020000001415610313
+        ]
+      },
+      "expected_dimensions_mm": [
+        100.0,
+        60.0,
+        20.0
+      ],
+      "max_dimension_error_mm": 2.384185791015625e-06,
+      "glb": "calibration_box.glb",
+      "glb_sha256": "ad2a0586c3535cf9af51e91d606e52ab7c60aa9370ca51c973f8f1113c84f583",
+      "passed": true
+    },
+    {
+      "id": "calibration_box_variant",
+      "source_stl": "calibration_box_variant.stl",
+      "blender_bounds_m_z_up": {
+        "min": [
+          -0.06000000238418579,
+          -0.03500000014901161,
+          0.0
+        ],
+        "max": [
+          0.06000000238418579,
+          0.03500000014901161,
+          0.015000000596046448
+        ],
+        "dimensions": [
+          0.12000000476837158,
+          0.07000000029802322,
+          0.015000000596046448
+        ]
+      },
+      "expected_dimensions_mm": [
+        120.0,
+        70.0,
+        15.0
+      ],
+      "max_dimension_error_mm": 4.76837158203125e-06,
+      "glb": "calibration_box_variant.glb",
+      "glb_sha256": "a61b211dcdc891c01482c77281a57a3134476e5d1f36bcd7cfbaa8f0302ae0ab",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

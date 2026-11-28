@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "run_id": "4ff8f5f0-2516-4cfe-b943-f9c56dce21ca",
+  "files": {
+    "blender.json": "855347eb05d6e1b47d5f4b8d4a2854e492d542c8ea5938bfe78a3c4b2ae01115",
+    "browser-calibration.png": "fab331ec28e4c1ed7a65c02af5a7ac5c63cbb7ad2c7ad365faf79530b4630ceb",
+    "browser-missing.png": "ff640058c9b5b6f44bbbbd255fbbd225a97a6ba1ce30190ac84d5e2ee3ea5b0d",
+    "browser-variant.png": "3831bffdd63fcc95ce603cc6caf37926c761b9991e4997a042634e1437f22324",
+    "browser.json": "7768f948dfc63eab9cc26ae9fe2d6b876bf01d079532a785001cb6a50db164b3",
+    "cad.json": "3d7636c7a975c2d51aef1f6252fd389906ba65a21eb96b3a3d80d652b12d4767",
+    "calibration_box.glb": "d6ab4f70a5bbf7e0b325373ddd7ea667129d052afa503289e5b5d3608c2b9b5e",
+    "calibration_box.step": "d6271bc6525ced29cc4f4113667590bb76f3ea3e70614ccc8074fd71e2a540d3",
+    "calibration_box.stl": "c10dec953f5b00c17d63a6118d081c182b68fddb6b0a65fb9a532e3b20ca5122",
+    "calibration_box_variant.glb": "20a8e049e1311f1f0518acee3292dc44298951b69ace0dfaa86e3a7267d82c13",
+    "calibration_box_variant.step": "3c8857f9575085d94c85b112e5f176983b8f85f812f2673b11271e30f70e7d11",
+    "calibration_box_variant.stl": "942c3d621727b64034525757ae7665ca3885531f339c12b7fbb886e3867fcf62",
+    "geometry.json": "9751605af51d9eec396caeb89a0a7d6828492d0bcf55648596f2bba8330cfd31",
+    "run.json": "58dc64b7ec5826659416b930926f01e5a8d2fa1c1dfaa83a8d80f3318e4bf609",
+    "spec.json": "3f84fc060904506adff76913c0cce95571a9698a61e251e8cce2bb6ce9293f75"
+  }
+}

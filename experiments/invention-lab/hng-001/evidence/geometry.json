@@ -1,0 +1,801 @@
+{
+  "schema": 1,
+  "run_id": "3d3c077a-0d1c-40be-908a-b74c31f5b240",
+  "passed": true,
+  "fixture": {
+    "schema": 1,
+    "id": "HNG-001",
+    "revision": 1,
+    "source_commit": "742545fe46eb5b7bad040ae5b8a0f6cff1e45021",
+    "units": "mm",
+    "frame": "right-handed Z-up, world-from-local row-major matrix acting on column vectors",
+    "root": "hinge",
+    "joint": {
+      "id": "hinge.pin_axis",
+      "type": "revolute",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "limits_deg": [
+        0,
+        90
+      ]
+    },
+    "parts": {
+      "fixed": {
+        "id": "hinge.fixed_leaf",
+        "backbone": [
+          [
+            -32,
+            -2,
+            0
+          ],
+          [
+            -8,
+            2,
+            24
+          ]
+        ],
+        "bridge_xy": [
+          [
+            -9,
+            -2
+          ],
+          [
+            -3.5,
+            2
+          ]
+        ],
+        "collar_z": [
+          [
+            0,
+            6
+          ],
+          [
+            18,
+            24
+          ]
+        ],
+        "collar_r": 5,
+        "pin_z": [
+          5.5,
+          18.5
+        ],
+        "pin_r": 3,
+        "exposed_pin_z": [
+          6,
+          18
+        ],
+        "bounds": [
+          [
+            -32,
+            -5,
+            0
+          ],
+          [
+            5,
+            5,
+            24
+          ]
+        ],
+        "witness": [
+          -32,
+          -2,
+          24
+        ],
+        "volume": 3736.332932165449
+      },
+      "moving": {
+        "id": "hinge.moving_leaf",
+        "leaf": [
+          [
+            3.5,
+            -2,
+            6.5
+          ],
+          [
+            32,
+            2,
+            17.5
+          ]
+        ],
+        "eye_r": 5,
+        "bore_r": 3.2,
+        "bounds": [
+          [
+            -5,
+            -5,
+            6.5
+          ],
+          [
+            32,
+            5,
+            17.5
+          ]
+        ],
+        "witness": [
+          32,
+          2,
+          17.5
+        ],
+        "volume": 1704.0851852792514
+      }
+    },
+    "poses": [
+      {
+        "id": "closed_000",
+        "angle_deg": 0,
+        "moving_bounds": [
+          [
+            -5,
+            -5,
+            6.5
+          ],
+          [
+            32,
+            5,
+            17.5
+          ]
+        ],
+        "moving_witness": [
+          32,
+          2,
+          17.5
+        ]
+      },
+      {
+        "id": "half_045",
+        "angle_deg": 45,
+        "moving_bounds": [
+          [
+            -5,
+            -5,
+            6.5
+          ],
+          [
+            24.041630560342615,
+            24.041630560342615,
+            17.5
+          ]
+        ],
+        "moving_witness": [
+          21.213203435596423,
+          24.041630560342615,
+          17.5
+        ]
+      },
+      {
+        "id": "open_090",
+        "angle_deg": 90,
+        "moving_bounds": [
+          [
+            -5,
+            -5,
+            6.5
+          ],
+          [
+            5,
+            32,
+            17.5
+          ]
+        ],
+        "moving_witness": [
+          -2,
+          32,
+          17.5
+        ]
+      }
+    ],
+    "fit": {
+      "radial_gap": 0.2,
+      "axial_gap": [
+        0.5,
+        0.5
+      ],
+      "sample_step_deg": 5,
+      "keep_in": {
+        "r": 2.9,
+        "z": [
+          7,
+          17
+        ]
+      },
+      "keep_out": {
+        "r": 3.1,
+        "z": [
+          6.75,
+          17.25
+        ]
+      },
+      "contact_bore_r": 3,
+      "undersize_bore_r": 2.8,
+      "undersize_radial_gap": -0.2,
+      "undersize_overlap_mm3": 40.08672225980579,
+      "offset_x_mm": 0.3,
+      "offset_gap": -0.1,
+      "offset_z_mm": -0.75,
+      "shoulder_overlap_mm": 0.25,
+      "rejected_angles_deg": [
+        -1,
+        91
+      ],
+      "wrong_signed_pose_deg": -45
+    },
+    "edit": {
+      "x_max_mm": 36,
+      "added_volume_mm3": 176,
+      "allowed_slab": [
+        [
+          32,
+          -2,
+          6.5
+        ],
+        [
+          36,
+          2,
+          17.5
+        ]
+      ]
+    },
+    "tolerances": {
+      "cad_mm": 0.01,
+      "witness_mm": 0.02,
+      "axis_deg": 0.1,
+      "rigid_matrix": 0.000001,
+      "volume_mm3": 0.01,
+      "step_volume_relative": 0.000001,
+      "control_overlap_mm3": 0.05,
+      "glb_mm": 0.5,
+      "linear_mesh_mm": 0.05,
+      "angular_mesh_rad": 0.1,
+      "oriented_triangle_coordinate_mm": 0.001
+    }
+  },
+  "cad_sha256": "df94fe615ba3bbc2ea71eb358686f1e7b9d0fc470860fc4f2ffb55a9ef3a5799",
+  "blender_sha256": "5b46f9bb6e0dbab7dcb4d1d2cc974f171651bd41f9b8cc50f502cd88b8ed3562",
+  "fit": {
+    "pin": {
+      "radius_mm": 3,
+      "axis_origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "unsigned_axis": [
+        0,
+        0,
+        1
+      ],
+      "z_mm": [
+        6,
+        18
+      ]
+    },
+    "bore": {
+      "radius_mm": 3.2,
+      "axis_origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "unsigned_axis": [
+        0,
+        0,
+        1
+      ],
+      "z_mm": [
+        6.5,
+        17.5
+      ]
+    },
+    "radial_gap_mm": 0.20000000000000018,
+    "axial_gaps_mm": [
+      0.5,
+      0.5
+    ],
+    "samples": [
+      {
+        "angle_deg": 0,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.1999999999999994
+      },
+      {
+        "angle_deg": 5,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.20000000000000007
+      },
+      {
+        "angle_deg": 10,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.19999999999999932
+      },
+      {
+        "angle_deg": 15,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.20000000000000004
+      },
+      {
+        "angle_deg": 20,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.20000000000000007
+      },
+      {
+        "angle_deg": 25,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.1999999999999995
+      },
+      {
+        "angle_deg": 30,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.2000000000000001
+      },
+      {
+        "angle_deg": 35,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.19999999999999973
+      },
+      {
+        "angle_deg": 40,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.2
+      },
+      {
+        "angle_deg": 45,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.1999999999999995
+      },
+      {
+        "angle_deg": 50,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.1999999999999998
+      },
+      {
+        "angle_deg": 55,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.19999999999999984
+      },
+      {
+        "angle_deg": 60,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.2
+      },
+      {
+        "angle_deg": 65,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.19999999999999954
+      },
+      {
+        "angle_deg": 70,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.19999999999999973
+      },
+      {
+        "angle_deg": 75,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.19999999999999987
+      },
+      {
+        "angle_deg": 80,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.19999999999999987
+      },
+      {
+        "angle_deg": 85,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.19999999999999954
+      },
+      {
+        "angle_deg": 90,
+        "intersection_mm3": 0,
+        "min_distance_mm": 0.20000000000000012
+      }
+    ],
+    "keep_in_missing_mm3": 0,
+    "keep_out_occupied_mm3": 0
+  },
+  "poses": {
+    "closed_000": {
+      "angle_deg": 0,
+      "sha256": "787565b4e32b08c6ddd1b4a3001b6d347e5b2f16e9dda4490b254ccde36e9b7b",
+      "parts": {
+        "hinge.fixed_leaf": {
+          "bounds_mm": [
+            [
+              -32.00000151991844,
+              0,
+              -4.999224900231192
+            ],
+            [
+              5.0000002374872565,
+              24.00000113993883,
+              4.999224900231192
+            ]
+          ],
+          "corner_mm": [
+            -32.00000151991844,
+            24.00000113993883,
+            2.0000000949949026
+          ],
+          "max_error_mm": 0.0007750997688082961,
+          "triangles": 1408,
+          "basis_scene": [
+            [
+              1.0000000474974513,
+              0,
+              0
+            ],
+            [
+              0,
+              1.0000000474974513,
+              0
+            ],
+            [
+              0,
+              0,
+              1.0000000474974513
+            ]
+          ],
+          "matrix_world": [
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "surface": {
+            "triangles": 1408,
+            "unique_vertices": 704,
+            "manifold_oriented_edges": 2112,
+            "max_correspondence_error_mm": 0
+          }
+        },
+        "hinge.moving_leaf": {
+          "bounds_mm": [
+            [
+              -5.0000002374872565,
+              6.5000003087334335,
+              -4.999224900231192
+            ],
+            [
+              32.00000151991844,
+              17.500000831205398,
+              4.999224900231192
+            ]
+          ],
+          "corner_mm": [
+            32.00000151991844,
+            17.500000831205398,
+            -2.0000000949949026
+          ],
+          "max_error_mm": 0.0007750997688082961,
+          "triangles": 956,
+          "basis_scene": [
+            [
+              1.0000000474974513,
+              0,
+              0
+            ],
+            [
+              0,
+              1.0000000474974513,
+              0
+            ],
+            [
+              0,
+              0,
+              1.0000000474974513
+            ]
+          ],
+          "matrix_world": [
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "surface": {
+            "triangles": 956,
+            "unique_vertices": 478,
+            "manifold_oriented_edges": 1434,
+            "max_correspondence_error_mm": 0
+          }
+        }
+      }
+    },
+    "half_045": {
+      "angle_deg": 45,
+      "sha256": "ef002ff1bf060e14f583d0d46c6276a1b595a5f1c9a622bdbaf34bf0fe12c2d1",
+      "parts": {
+        "hinge.fixed_leaf": {
+          "bounds_mm": [
+            [
+              -32.00000151991844,
+              0,
+              -4.999224900231192
+            ],
+            [
+              5.0000002374872565,
+              24.00000113993883,
+              4.999224900231192
+            ]
+          ],
+          "corner_mm": [
+            -32.00000151991844,
+            24.00000113993883,
+            2.0000000949949026
+          ],
+          "max_error_mm": 0.0007750997688082961,
+          "triangles": 1408,
+          "basis_scene": [
+            [
+              1.0000000474974513,
+              0,
+              0
+            ],
+            [
+              0,
+              1.0000000474974513,
+              0
+            ],
+            [
+              0,
+              0,
+              1.0000000474974513
+            ]
+          ],
+          "matrix_world": [
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "surface": {
+            "triangles": 1408,
+            "unique_vertices": 704,
+            "manifold_oriented_edges": 2112,
+            "max_correspondence_error_mm": 0
+          }
+        },
+        "hinge.moving_leaf": {
+          "bounds_mm": [
+            [
+              -4.999806637739819,
+              6.5000003087334335,
+              -24.04163525060031
+            ],
+            [
+              24.041630773561625,
+              17.500000831205398,
+              4.999806628447737
+            ]
+          ],
+          "corner_mm": [
+            21.213203061906384,
+            17.500000831205398,
+            -24.04163525060031
+          ],
+          "max_error_mm": 0.00019337155226306635,
+          "triangles": 956,
+          "basis_scene": [
+            [
+              0.7071067786791876,
+              0,
+              -0.7071069279138105
+            ],
+            [
+              0,
+              1.0000000474974513,
+              0
+            ],
+            [
+              0.7071069279138105,
+              0,
+              0.7071067786791876
+            ]
+          ],
+          "matrix_world": [
+            0.0007071067786791876,
+            0,
+            -0.0007071069279138104,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0.0007071069279138104,
+            0,
+            0.0007071067786791876,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "surface": {
+            "triangles": 956,
+            "unique_vertices": 478,
+            "manifold_oriented_edges": 1434,
+            "max_correspondence_error_mm": 0
+          }
+        }
+      }
+    },
+    "open_090": {
+      "angle_deg": 90,
+      "sha256": "ec425b799eaa22c705832cbe439578a3a06c1abf531c018b0feb0f164fac1dc5",
+      "parts": {
+        "hinge.fixed_leaf": {
+          "bounds_mm": [
+            [
+              -32.00000151991844,
+              0,
+              -4.999224900231192
+            ],
+            [
+              5.0000002374872565,
+              24.00000113993883,
+              4.999224900231192
+            ]
+          ],
+          "corner_mm": [
+            -32.00000151991844,
+            24.00000113993883,
+            2.0000000949949026
+          ],
+          "max_error_mm": 0.0007750997688082961,
+          "triangles": 1408,
+          "basis_scene": [
+            [
+              1.0000000474974513,
+              0,
+              0
+            ],
+            [
+              0,
+              1.0000000474974513,
+              0
+            ],
+            [
+              0,
+              0,
+              1.0000000474974513
+            ]
+          ],
+          "matrix_world": [
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "surface": {
+            "triangles": 1408,
+            "unique_vertices": 704,
+            "manifold_oriented_edges": 2112,
+            "max_correspondence_error_mm": 0
+          }
+        },
+        "hinge.moving_leaf": {
+          "bounds_mm": [
+            [
+              -4.999225583751969,
+              6.5000003087334335,
+              -32.00000608811978
+            ],
+            [
+              4.999225560090695,
+              17.500000831205398,
+              5.00000090928157
+            ]
+          ],
+          "corner_mm": [
+            -2.00000466319624,
+            17.500000831205398,
+            -32.00000555068432
+          ],
+          "max_error_mm": 0.0007744399093052579,
+          "triangles": 956,
+          "basis_scene": [
+            [
+              -1.3435886286675388e-7,
+              0,
+              -1.000000181856314
+            ],
+            [
+              0,
+              1.0000000474974513,
+              0
+            ],
+            [
+              1.000000181856314,
+              0,
+              -1.3435886286675388e-7
+            ]
+          ],
+          "matrix_world": [
+            -1.3435886286675388e-10,
+            0,
+            -0.001000000181856314,
+            0,
+            0,
+            0.0010000000474974513,
+            0,
+            0,
+            0.001000000181856314,
+            0,
+            -1.3435886286675388e-10,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "surface": {
+            "triangles": 956,
+            "unique_vertices": 478,
+            "manifold_oriented_edges": 1434,
+            "max_correspondence_error_mm": 0
+          }
+        }
+      }
+    }
+  },
+  "edited_mesh": {
+    "triangles": 956,
+    "unique_vertices": 478,
+    "manifold_oriented_edges": 1434,
+    "max_correspondence_error_mm": 0
+  }
+}

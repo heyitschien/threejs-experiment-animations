@@ -1,0 +1,24 @@
+{
+  "units": "mm",
+  "tessellation": {
+    "linear_tolerance_mm": 0.05,
+    "angular_tolerance_radians": 0.1
+  },
+  "integration_threshold_mm": 0.5,
+  "models": [
+    {
+      "id": "calibration_box",
+      "label": "Calibration box 100 × 60 × 20 mm",
+      "width_mm": 100.0,
+      "depth_mm": 60.0,
+      "height_mm": 20.0
+    },
+    {
+      "id": "calibration_box_variant",
+      "label": "Calibration box variant 120 × 70 × 15 mm",
+      "width_mm": 120.0,
+      "depth_mm": 70.0,
+      "height_mm": 15.0
+    }
+  ]
+}

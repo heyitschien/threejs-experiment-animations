@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "three_version": "0.187.0",
+  "axis_mapping": "CAD X/Y/Z -> Three.js X/Z/Y; CAD Z-up becomes glTF/Three.js Y-up",
+  "integration_threshold_mm": 0.5,
+  "upstream_blender_passed": true,
+  "models": [
+    {
+      "id": "calibration_box",
+      "expected_cad_dimensions_mm_xyz": [
+        100,
+        60,
+        20
+      ],
+      "expected_three_dimensions_mm_xyz": [
+        100,
+        20,
+        60
+      ],
+      "measured_three_dimensions_mm_xyz": [
+        100.00000474974513,
+        20.000000949949026,
+        60.00000284984708
+      ],
+      "axis_errors_mm": [
+        0.0000047497451305389404,
+        9.499490261077881e-7,
+        0.0000028498470783233643
+      ],
+      "max_dimension_error_mm": 0.0000047497451305389404,
+      "passed": true
+    },
+    {
+      "id": "calibration_box_variant",
+      "expected_cad_dimensions_mm_xyz": [
+        120,
+        70,
+        15
+      ],
+      "expected_three_dimensions_mm_xyz": [
+        120,
+        15,
+        70
+      ],
+      "measured_three_dimensions_mm_xyz": [
+        120.00000569969416,
+        15.00000071246177,
+        70.00000332482159
+      ],
+      "axis_errors_mm": [
+        0.0000056996941566467285,
+        7.124617695808411e-7,
+        0.0000033248215913772583
+      ],
+      "max_dimension_error_mm": 0.0000056996941566467285,
+      "passed": true
+    }
+  ],
+  "passed": true
+}
