@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "run_id": "3d3c077a-0d1c-40be-908a-b74c31f5b240",
+  "passed": true,
+  "cases": [
+    {
+      "name": "duplicate component ID",
+      "passed": true
+    },
+    {
+      "name": "reflected GLB",
+      "passed": true
+    },
+    {
+      "name": "wrong signed pose",
+      "passed": true
+    },
+    {
+      "name": "one reversed triangle",
+      "passed": true
+    },
+    {
+      "name": "Blender raises before completion",
+      "passed": true,
+      "exit_code": 23,
+      "manifest_absent": true
+    }
+  ]
+}
